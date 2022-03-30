@@ -50,32 +50,34 @@ module Gitabu
 
     def endpoint_list(document)
       list = []
-      document.css("td").each_slice(4) do |col|
-        vars = {}
-        col_hash = fill_column(col)
-        vars = fill_vars(vars, col_hash)
-        list << vars
+      index = 0
+      columns = document.css("td")
+      endpoints = document.css(".CodeBlock_codeBlock__24GuD")
+
+      document.css("tbody").each.with_index do |var, body_index|
+        row_count = var.css("tr").count
+        ending = row_count * 4
+
+        row_count.times do |_|
+          vars = {}
+          params = []
+
+          columns[index...ending].each_slice(4) { |col| params << fill_column(col) }
+
+          vars[:endpoints] = endpoints[body_index].text
+          vars[:params] = params
+          list << vars
+        end
+        index = ending
       end
       list
     end
 
     def fill_column(col)
-      { name: col[0].content, type: col[1].content, in: col[2].content, description: col[3].content }
-    end
-
-    def fill_vars(vars, col_hash)
-      case col_hash[:in]
-      when "header"
-        vars[:headers] = col_hash
-      when "path"
-        vars[:path_params] = col_hash
-      when "query"
-        vars[:query_params] = col_hash
-      else
-        vars[:other] = col_hash
-      end
-
-      vars
+      {
+        field_type: col[2].content,
+        fields: { name: col[0].content, type: col[1].content, in: col[2].content, description: col[3].content }
+      }
     end
   end
 end
