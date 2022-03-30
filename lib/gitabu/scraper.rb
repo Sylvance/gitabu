@@ -37,7 +37,7 @@ module Gitabu
       page = download_link_page
       document = parse(page)
 
-      endpoint_list(document)
+      table_list(document)
     end
 
     def download_link_page
@@ -48,35 +48,45 @@ module Gitabu
       Nokogiri::HTML(page)
     end
 
-    def endpoint_list(document)
+    def table_list(document)
       list = []
-      index = 0
-      columns = document.css("td")
-      endpoints = document.css(".CodeBlock_codeBlock__24GuD")
+      rows = document.css("td")
+      methods = document.css(".markdown-body pre.CodeBlock_codeBlock__24GuD code span.p-1")
+      endpoints = []
+      document.css(".markdown-body pre.CodeBlock_codeBlock__24GuD code").select do |code|
+        text = code&.content
 
-      document.css("tbody").each.with_index do |var, body_index|
-        row_count = var.css("tr").count
-        ending = row_count * 4
+        next if text.include? "Accept:"
+        next if text.include? "await octokit"
+        next if text.include? "{\n"
+        next if text.include? "curl \\\n"
+        next if text.include? "Status:"
 
-        row_count.times do |_|
-          vars = {}
-          params = []
-
-          columns[index...ending].each_slice(4) { |col| params << fill_column(col) }
-
-          vars[:endpoints] = endpoints[body_index].text
-          vars[:params] = params
-          list << vars
-        end
-        index = ending
+        endpoints << code
       end
+
+      document.css("tbody").each.with_index do |var, index|
+        table = {}
+        row_count = var.css("tr").count
+
+        row_count.times do |count|
+          row_name = "row_#{count}"
+          table[row_name] = fill_column(rows[0..3])
+          rows -= rows[0..3]
+        end
+
+        table["method"] = methods[index]&.content
+        table["endpoint"] = endpoints[index]&.content
+        list << table
+      end
+
       list
     end
 
     def fill_column(col)
       {
-        field_type: col[2].content,
-        fields: { name: col[0].content, type: col[1].content, in: col[2].content, description: col[3].content }
+        field_type: col[2]&.content,
+        fields: { name: col[0]&.content, type: col[1]&.content, in: col[2]&.content, description: col[3]&.content }
       }
     end
   end

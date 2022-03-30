@@ -11,9 +11,9 @@ module Gitabu
   # Http client that acts as a middleman to the API.
   class HttpClient
     NET_HTTP_ERRORS = [
-      Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, EOFError,
+      Timeout::Error, Errno::EINVAL, Errno::ECONNRESET, Errno::ECONNREFUSED, EOFError,
       Net::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError,
-      JSON::ParserError
+      JSON::ParserError, SocketError
     ].freeze
 
     def self.call(method:, uri:, body: nil, params: nil, headers: nil, auth: nil, expect: nil)
