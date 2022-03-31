@@ -50,36 +50,27 @@ module Gitabu
 
     def table_list(document)
       list = []
-      rows = document.css("td")
-      methods = document.css(".markdown-body pre.CodeBlock_codeBlock__24GuD code span.p-1")
-      endpoints = []
-      document.css(".markdown-body pre.CodeBlock_codeBlock__24GuD code").select do |code|
-        text = code&.content
+      namespace = "/html/body/div/div/div[2]/main/div/div[4]/div"
+      namespace_count = document.xpath(namespace).size
+      namespace_count.times do |namespace_index|
+        block_count = document.xpath("#{namespace}[#{namespace_index + 1}]/div").size
+        block_count.times do |block_index|
+          next if block_index.zero?
 
-        next if text.include? "Accept:"
-        next if text.include? "await octokit"
-        next if text.include? "{\n"
-        next if text.include? "curl \\\n"
-        next if text.include? "Status:"
-
-        endpoints << code
-      end
-
-      document.css("tbody").each.with_index do |var, index|
-        table = {}
-        row_count = var.css("tr").count
-
-        row_count.times do |count|
-          row_name = "row_#{count}"
-          table[row_name] = fill_column(rows[0..3])
-          rows -= rows[0..3]
+          table = {}
+          table["namespace_description"] = document.xpath("#{namespace}[#{namespace_index + 1}]/div[#{block_index + 1}]/h3/text()")
+          table["method"] = document.xpath("#{namespace}[#{namespace_index + 1}]/div[#{block_index + 1}]/div/pre/code/span/text()")
+          endpoint = document.xpath("#{namespace}[#{namespace_index + 1}]/div[#{block_index + 1}]/div/pre/code")&.text
+          table["endpoint"] = endpoint.slice(0..(endpoint.index(" curl"))).gsub(" ", "").gsub("#{table["method"]} ", "")
+          row_count = document.xpath("#{namespace}[#{namespace_index + 1}]/div[#{block_index + 1}]/table[1]/tbody/tr").size
+          row_count.times do |row_index|
+            col = document.xpath("#{namespace}[#{namespace_index + 1}]/div[#{block_index + 1}]/table[1]/tbody/tr[#{row_index + 1}]/td")
+            row_name = "field_#{row_index}"
+            table[row_name] = fill_column(col)
+          end
+          list << table
         end
-
-        table["method"] = methods[index]&.content
-        table["endpoint"] = endpoints[index]&.content
-        list << table
       end
-
       list
     end
 
