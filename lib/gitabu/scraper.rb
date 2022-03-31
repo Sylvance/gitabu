@@ -60,8 +60,8 @@ module Gitabu
           table = {}
           table["namespace_description"] = document.xpath("#{namespace}[#{namespace_index + 1}]/div[#{block_index + 1}]/h3/text()")
           table["method"] = document.xpath("#{namespace}[#{namespace_index + 1}]/div[#{block_index + 1}]/div/pre/code/span/text()")
-          endpoint = document.xpath("#{namespace}[#{namespace_index + 1}]/div[#{block_index + 1}]/div/pre/code")&.text
-          table["endpoint"] = endpoint.slice(0..(endpoint.index(" curl"))).gsub(" ", "").gsub("#{table["method"]} ", "")
+          endpoint = document.xpath("#{namespace}[#{namespace_index + 1}]/div[#{block_index + 1}]/div/pre/code")[0]&.text
+          table["endpoint"] = endpoint.gsub("#{table["method"]} ", "")
           row_count = document.xpath("#{namespace}[#{namespace_index + 1}]/div[#{block_index + 1}]/table[1]/tbody/tr").size
           row_count.times do |row_index|
             col = document.xpath("#{namespace}[#{namespace_index + 1}]/div[#{block_index + 1}]/table[1]/tbody/tr[#{row_index + 1}]/td")
