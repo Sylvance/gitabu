@@ -1,0 +1,58 @@
+# frozen_string_literal: true
+
+# Ruby gem that helps you work with Github API.
+module Gitabu
+  # API module
+  module Api
+    # Github Version <%= @version_number %>
+    module V<%= @version_number %>
+      # Class to display <%= @class_name %> result
+      class <%= @class_name %>Result
+        attr_accessor :result, :message
+
+        def initialize(result:, message:)
+          @result = result
+          @message = message
+        end
+      end
+
+      # Class to display error result
+      class <%= @class_name %>ErrorResult
+        attr_accessor :result, :message
+
+        def initialize(result:, message:)
+          @result = result
+          @message = message
+        end
+      end
+
+      # <%= @class_name %> endpoints.
+      class <%= @class_name %>
+      <% for @item in @items %>
+        def self.<%= @item['method_name'] %>(<%= @item['params_key_value_flat'] %>)
+          new.<%= @item['method_name'] %>(<%= @item['params_flat'] %>)
+        end
+      <% end %>
+
+        private
+      <% for @item in @items %>
+        def <%= @item['method_name'] %>(<%= @item['params_flat'] %>)
+          uri = "#{Gitabu::BASE_URL}<%= @item['endpoint'] %>"
+          headers = "<%= @item['headers'] %>"
+          params = "<%= @item['params'] %>" unless options.nil?
+          body = "<%= @item['body'] %>"
+          auth = "<%= @item['auth'] %>"
+
+          http_call = Gitabu::HttpClient.call(auth: auth, body: body, headers: headers, method: :<%= @item['method'] %>, params: params, uri: uri)
+
+          if http_call.successful?
+            <%= @class_name %>Result.new(result: http_call, message: "Successful call to <%= @item['description'] %> endpoint.")
+          else
+            <%= @class_name %>ErrorResult.new(result: http_call, message: "Failure while calling <%= @item['description'] %> endpoint.")
+          end
+        end
+      <% end %>
+      end
+    end
+  end
+end

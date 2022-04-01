@@ -16,10 +16,13 @@ Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
 
 Layout/LineLength:
-  Max: 150
+  Enabled: false
 
 Metrics/MethodLength:
-  Max: 50
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
 
 Metrics/AbcSize:
   Enabled: false
