@@ -95,7 +95,7 @@ module Gitabu
       api_hash["http_method"]                  = block["method"]
       api_hash["endpoint"]                     = block["endpoint"].gsub("{", '#{')
       api_hash["description"]                  = block["namespace_description"].downcase
-      api_hash["method_name"]                  = block["namespace_description"].downcase.split(" ").join("_")
+      api_hash["method_name"]                  = block["namespace_description"].downcase.gsub("-", "_").split(" ").join("_")
       api_hash["auth"]                         = values[:auth].size.zero? ? "nil" : "{ #{values[:auth].join(", ")} }"
       api_hash["body"]                         = values[:body].size.zero? ? "nil" : "{ #{values[:body].join(", ")} }"
       api_hash["documentation"]                = values[:documentation].size.zero? ? "# @params options [Hash]" : values[:documentation].join("\n\t\t\t\t")
