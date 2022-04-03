@@ -1,0 +1,1768 @@
+{
+  "result": [
+    {
+      "namespace_description": "List pull requests",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "query",
+          "description": "Either open, closed, or all to filter by state.Default: open"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "head",
+          "type": "string",
+          "in": "query",
+          "description": "Filter pulls by head user or head organization and branch name in the format of user:ref-name or organization:ref-name. For example: github:new-script-format or octocat:test-branch."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "base",
+          "type": "string",
+          "in": "query",
+          "description": "Filter pulls by base branch name. Example: gh-pages."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "What to sort results by. Can be either created, updated, popularity (comment count) or long-running (age, filtering by pulls updated in the last month).Default: created"
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "The direction of the sort. Can be either asc or desc. Default: desc when sort is created or sort is not specified, otherwise asc."
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_9": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a pull request",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/pulls",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "title",
+          "type": "string",
+          "in": "body",
+          "description": "The title of the new pull request."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "head",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the branch where your changes are implemented. For cross-repository pull requests in the same network, namespace head with a user like this: username:branch."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "base",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the branch you want the changes pulled into. This should be an existing branch on the current repository. You cannot submit a pull request to one repository that requests a merge to a base of another repository."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "The contents of the pull request."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "maintainer_can_modify",
+          "type": "boolean",
+          "in": "body",
+          "description": "Indicates whether maintainers can modify the pull request."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "draft",
+          "type": "boolean",
+          "in": "body",
+          "description": "Indicates whether the pull request is a draft. See \"Draft Pull Requests\" in the GitHub Help documentation to learn more."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "issue",
+          "type": "integer",
+          "in": "body",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a pull request",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a pull request",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "title",
+          "type": "string",
+          "in": "body",
+          "description": "The title of the pull request."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "The contents of the pull request."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "body",
+          "description": "State of this Pull Request. Either open or closed."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "base",
+          "type": "string",
+          "in": "body",
+          "description": "The name of the branch you want your changes pulled into. This should be an existing branch on the current repository. You cannot update the base branch on a pull request to point to another repository."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "maintainer_can_modify",
+          "type": "boolean",
+          "in": "body",
+          "description": "Indicates whether maintainers can modify the pull request."
+        }
+      }
+    },
+    {
+      "namespace_description": "List commits on a pull request",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/commits",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List pull requests files",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/files",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Check if a pull request has been merged",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/merge",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Merge a pull request",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/merge",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "commit_title",
+          "type": "string",
+          "in": "body",
+          "description": "Title for the automatic commit message."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "commit_message",
+          "type": "string",
+          "in": "body",
+          "description": "Extra detail to append to automatic commit message."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "sha",
+          "type": "string",
+          "in": "body",
+          "description": "SHA that pull request head must match to allow merge."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "merge_method",
+          "type": "string",
+          "in": "body",
+          "description": "Merge method to use. Possible values are merge, squash or rebase. Default is merge."
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a pull request branch",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/update-branch",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "expected_head_sha",
+          "type": "string",
+          "in": "body",
+          "description": "The expected SHA of the pull request's HEAD ref. This is the most recent commit on the pull request's branch. If the expected SHA does not match the pull request's HEAD, you will receive a 422 Unprocessable Entity status. You can use the \"List commits\" endpoint to find the most recent commit SHA. Default: SHA of the pull request's current HEAD ref."
+        }
+      }
+    },
+    {
+      "namespace_description": "List review comments in a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "Can be either asc or desc. Ignored without sort parameter."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a review comment for a pull request",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls/comments/{comment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a review comment for a pull request",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/pulls/comments/{comment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The text of the reply to the review comment."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a review comment for a pull request",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/pulls/comments/{comment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List review comments on a pull request",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "One of created (when the repository was starred) or updated (when it was last pushed to).Default: created"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "Can be either asc or desc. Ignored without sort parameter."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a review comment for a pull request",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The text of the review comment."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "commit_id",
+          "type": "string",
+          "in": "body",
+          "description": "The SHA of the commit needing a comment. Not using the latest commit SHA may render your comment outdated if a subsequent commit modifies the line you specify as the position."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "path",
+          "type": "string",
+          "in": "body",
+          "description": "The relative path to the file that necessitates a comment."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "position",
+          "type": "integer",
+          "in": "body",
+          "description": "Required without comfort-fade preview unless using in_reply_to. The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note above."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "side",
+          "type": "string",
+          "in": "body",
+          "description": "Required with comfort-fade preview unless using in_reply_to. In a split diff view, the side of the diff that the pull request's changes appear on. Can be LEFT or RIGHT. Use LEFT for deletions that appear in red. Use RIGHT for additions that appear in green or unchanged lines that appear in white and are shown for context. For a multi-line comment, side represents whether the last line of the comment range is a deletion or addition. For more information, see \"Diff view options\" in the GitHub Help documentation."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "line",
+          "type": "integer",
+          "in": "body",
+          "description": "Required with comfort-fade preview unless using in_reply_to. The line of the blob in the pull request diff that the comment applies to. For a multi-line comment, the last line of the range that your comment applies to."
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "start_line",
+          "type": "integer",
+          "in": "body",
+          "description": "Required when using multi-line comments unless using in_reply_to. To create multi-line comments, you must use the comfort-fade preview header. The start_line is the first line in the pull request diff that your multi-line comment applies to. To learn more about multi-line comments, see \"Commenting on a pull request\" in the GitHub Help documentation."
+        }
+      },
+      "field_11": {
+        "field_type": "body",
+        "fields": {
+          "name": "start_side",
+          "type": "string",
+          "in": "body",
+          "description": "Required when using multi-line comments unless using in_reply_to. To create multi-line comments, you must use the comfort-fade preview header. The start_side is the starting side of the diff that the comment applies to. Can be LEFT or RIGHT. To learn more about multi-line comments, see \"Commenting on a pull request\" in the GitHub Help documentation. See side in this table for additional context."
+        }
+      },
+      "field_12": {
+        "field_type": "body",
+        "fields": {
+          "name": "in_reply_to",
+          "type": "integer",
+          "in": "body",
+          "description": "The ID of the review comment to reply to. To find the ID of a review comment with \"List review comments on a pull request\". When specified, all parameters other than body in the request body are ignored."
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a reply for a review comment",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/comments/{comment_id}/replies",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The text of the review comment."
+        }
+      }
+    },
+    {
+      "namespace_description": "List requested reviewers for a pull request",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Request reviewers for a pull request",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "reviewers",
+          "type": "array of strings",
+          "in": "body",
+          "description": "An array of user logins that will be requested."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "team_reviewers",
+          "type": "array of strings",
+          "in": "body",
+          "description": "An array of team slugs that will be requested."
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove requested reviewers from a pull request",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/requested_reviewers",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "reviewers",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. An array of user logins that will be removed."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "team_reviewers",
+          "type": "array of strings",
+          "in": "body",
+          "description": "An array of team slugs that will be removed."
+        }
+      }
+    },
+    {
+      "namespace_description": "List reviews for a pull request",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a review for a pull request",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "commit_id",
+          "type": "string",
+          "in": "body",
+          "description": "The SHA of the commit that needs a review. Not using the latest commit SHA may render your review comment outdated if a subsequent commit modifies the line you specify as the position. Defaults to the most recent commit in the pull request when you do not specify a value."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required when using REQUEST_CHANGES or COMMENT for the event parameter. The body text of the pull request review."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "event",
+          "type": "string",
+          "in": "body",
+          "description": "The review action you want to perform. The review actions include: APPROVE, REQUEST_CHANGES, or COMMENT. By leaving this blank, you set the review action state to PENDING, which means you will need to submit the pull request review when you are ready."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "comments",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Use the following table to specify the location, destination, and contents of the draft review comment."
+        }
+      },
+      "field_8": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thecommentsitemsName (Type)Descriptionpath (string)Required. The relative path to the file that necessitates a review comment.position (integer)The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.body (string)Required. Text of the review comment.line (integer)side (string)start_line (integer)start_side (string)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a review for a pull request",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "review_id",
+          "type": "integer",
+          "in": "path",
+          "description": "review_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a review for a pull request",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "review_id",
+          "type": "integer",
+          "in": "path",
+          "description": "review_id parameter"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The body text of the pull request review."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a pending review for a pull request",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "review_id",
+          "type": "integer",
+          "in": "path",
+          "description": "review_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List comments for a pull request review",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "review_id",
+          "type": "integer",
+          "in": "path",
+          "description": "review_id parameter"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Dismiss a review for a pull request",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "review_id",
+          "type": "integer",
+          "in": "path",
+          "description": "review_id parameter"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "message",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The message for the pull request review dismissal"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "event",
+          "type": "string",
+          "in": "body",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Submit a review for a pull request",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "review_id",
+          "type": "integer",
+          "in": "path",
+          "description": "review_id parameter"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "The body text of the pull request review"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "event",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The review action you want to perform. The review actions include: APPROVE, REQUEST_CHANGES, or COMMENT. When you leave this blank, the API returns HTTP 422 (Unrecognizable entity) and sets the review action state to PENDING, which means you will need to re-submit the pull request review using a review action."
+        }
+      }
+    }
+  ]
+}

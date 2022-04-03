@@ -1,0 +1,830 @@
+{
+  "result": [
+    {
+      "namespace_description": "List commits",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/commits",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "sha",
+          "type": "string",
+          "in": "query",
+          "description": "SHA or branch to start listing commits from. Default: the repository’s default branch (usually master)."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "path",
+          "type": "string",
+          "in": "query",
+          "description": "Only commits containing this file path will be returned."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "author",
+          "type": "string",
+          "in": "query",
+          "description": "GitHub login or email address by which to filter by commit author."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "until",
+          "type": "string",
+          "in": "query",
+          "description": "Only commits before this date will be returned. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_9": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List branches for HEAD commit",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "commit_sha",
+          "type": "string",
+          "in": "path",
+          "description": "commit_sha parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List pull requests associated with a commit",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/commits/{commit_sha}/pulls",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "commit_sha",
+          "type": "string",
+          "in": "path",
+          "description": "commit_sha parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a commit",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/commits/{ref}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "path",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "path",
+          "description": "ref parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Compare two commits",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/compare/{basehead}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "path",
+        "fields": {
+          "name": "basehead",
+          "type": "string",
+          "in": "path",
+          "description": "The base branch and head branch to compare. This parameter expects the format {base}...{head}."
+        }
+      }
+    },
+    {
+      "namespace_description": "List commit comments for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a commit comment",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/comments/{comment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a commit comment",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/comments/{comment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The contents of the comment"
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a commit comment",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/comments/{comment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List commit comments",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "commit_sha",
+          "type": "string",
+          "in": "path",
+          "description": "commit_sha parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a commit comment",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/commits/{commit_sha}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "commit_sha",
+          "type": "string",
+          "in": "path",
+          "description": "commit_sha parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The contents of the comment."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "path",
+          "type": "string",
+          "in": "body",
+          "description": "Relative path of the file to comment on."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "position",
+          "type": "integer",
+          "in": "body",
+          "description": "Line index in the diff to comment on."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "line",
+          "type": "integer",
+          "in": "body",
+          "description": "Deprecated. Use position parameter instead. Line number in the file to comment on."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get the combined status for a specific reference",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/commits/{ref}/status",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "path",
+          "description": "ref parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List commit statuses for a reference",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/commits/{ref}/statuses",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "path",
+          "description": "ref parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a commit status",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/statuses/{sha}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "sha",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The state of the status. Can be one of error, failure, pending, or success."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "target_url",
+          "type": "string",
+          "in": "body",
+          "description": "The target URL to associate with this status. This URL will be linked from the GitHub UI to allow users to easily see the source of the status.\nFor example, if your continuous integration system is posting build status, you would want to provide the deep link for the build output for this specific SHA:\nhttp://ci.example.com/user/repo/build/sha"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "A short description of the status."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "context",
+          "type": "string",
+          "in": "body",
+          "description": "A string label to differentiate this status from the status of other systems. This field is case-insensitive.Default: default"
+        }
+      }
+    }
+  ]
+}

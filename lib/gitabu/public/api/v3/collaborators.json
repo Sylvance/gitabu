@@ -1,0 +1,464 @@
+{
+  "result": [
+    {
+      "namespace_description": "List repository collaborators",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/collaborators",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "affiliation",
+          "type": "string",
+          "in": "query",
+          "description": "Filter collaborators returned by their affiliation. Can be one of:\n* outside: All outside collaborators of an organization-owned repository.\n* direct: All collaborators with permissions to an organization-owned repository, regardless of organization membership status.\n* all: All collaborators the authenticated user can see.Default: all"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Check if a user is a repository collaborator",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/collaborators/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Add a repository collaborator",
+      "method": "put",
+      "endpoint": "Cannot assign {member} permission of {role name}\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "permission",
+          "type": "string",
+          "in": "body",
+          "description": "The permission to grant the collaborator. Only valid on organization-owned repositories. Can be one of:\n* pull - can pull, but not push to or administer this repository.\n* push - can pull and push, but not administer this repository.\n* admin - can pull, push and administer this repository.\n* maintain - Recommended for project managers who need to manage the repository without access to sensitive or destructive actions.\n* triage - Recommended for contributors who need to proactively manage issues and pull requests without write access.\n* custom repository role name - A custom repository role, if the owning organization has defined any.Default: push"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "permissions",
+          "type": "string",
+          "in": "body",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a repository collaborator",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/collaborators/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get repository permissions for a user",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/collaborators/{username}/permission",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository invitations",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/invitations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a repository invitation",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/invitations/{invitation_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "invitation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "invitation_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "permissions",
+          "type": "string",
+          "in": "body",
+          "description": "The permissions that the associated user will have on the repository. Valid values are read, write, maintain, triage, and admin."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a repository invitation",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/invitations/{invitation_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "invitation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "invitation_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository invitations for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/repository_invitations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Accept a repository invitation",
+      "method": "patch",
+      "endpoint": "/user/repository_invitations/{invitation_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "invitation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "invitation_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Decline a repository invitation",
+      "method": "delete",
+      "endpoint": "/user/repository_invitations/{invitation_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "invitation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "invitation_id parameter"
+        }
+      }
+    }
+  ]
+}

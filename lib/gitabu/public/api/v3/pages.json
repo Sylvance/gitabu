@@ -1,0 +1,373 @@
+{
+  "result": [
+    {
+      "namespace_description": "Get a GitHub Pages site",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pages",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a GitHub Pages site",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/pages",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "source",
+          "type": "object",
+          "in": "body",
+          "description": "Required. The source branch and directory used to publish your Pages site."
+        }
+      },
+      "field_4": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thesourceobjectName (Type)Descriptionbranch (string)Required. The repository branch used to publish your site's source files.path (string)The repository directory that includes the source files for the Pages site. Allowed paths are / or /docs. Default: /",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Update information about a GitHub Pages site",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/pages",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "cname",
+          "type": "string or null",
+          "in": "body",
+          "description": "Specify a custom domain for the repository. Sending a null value will remove the custom domain. For more about custom domains, see \"Using a custom domain with GitHub Pages.\""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "https_enforced",
+          "type": "boolean",
+          "in": "body",
+          "description": "Specify whether HTTPS should be enforced for the repository."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "public",
+          "type": "boolean",
+          "in": "body",
+          "description": "Configures access controls for the GitHub Pages site. If public is set to true, the site is accessible to anyone on the internet. If set to false, the site will only be accessible to users who have at least read access to the repository that published the site. This includes anyone in your Enterprise if the repository is set to internal visibility. This feature is only available to repositories in an organization on an Enterprise plan."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "source",
+          "type": "",
+          "in": "body",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a GitHub Pages site",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/pages",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List GitHub Pages builds",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pages/builds",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Request a GitHub Pages build",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/pages/builds",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get latest Pages build",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pages/builds/latest",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get GitHub Pages build",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pages/builds/{build_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "build_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a DNS health check for GitHub Pages",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pages/health",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    }
+  ]
+}

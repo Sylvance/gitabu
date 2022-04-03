@@ -1,0 +1,69 @@
+{
+  "result": [
+    {
+      "namespace_description": "GitHub API Root",
+      "method": "get",
+      "endpoint": "/",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get GitHub meta information",
+      "method": "get",
+      "endpoint": "/meta",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get Octocat",
+      "method": "get",
+      "endpoint": "/octocat",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "s",
+          "type": "string",
+          "in": "query",
+          "description": "The words to show in Octocat's speech bubble"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get the Zen of GitHub",
+      "method": "get",
+      "endpoint": "/zen",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      }
+    }
+  ]
+}

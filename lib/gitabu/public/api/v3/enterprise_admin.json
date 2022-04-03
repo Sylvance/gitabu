@@ -1,0 +1,881 @@
+{
+  "result": [
+    {
+      "namespace_description": "Get the audit log for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/audit-log",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "phrase",
+          "type": "string",
+          "in": "query",
+          "description": "A search phrase. For more information, see Searching the audit log."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "include",
+          "type": "string",
+          "in": "query",
+          "description": "The event types to include:\n\nweb - returns web (non-Git) events.\ngit - returns Git events.\nall - returns both web and Git events.\n\nThe default is web."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "after",
+          "type": "string",
+          "in": "query",
+          "description": "A cursor, as given in the Link header. If specified, the query only searches for events after this cursor."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "before",
+          "type": "string",
+          "in": "query",
+          "description": "A cursor, as given in the Link header. If specified, the query only searches for events before this cursor."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "order",
+          "type": "string",
+          "in": "query",
+          "description": "The order of audit log events. To list newest events first, specify desc. To list oldest events first, specify asc.\nThe default is desc."
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get GitHub Actions billing for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/settings/billing/actions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get GitHub Advanced Security active committers for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/settings/billing/advanced-security",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get GitHub Packages billing for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/settings/billing/packages",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get shared storage billing for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/settings/billing/shared-storage",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      }
+    },
+    {
+      "namespace_description": "List provisioned SCIM groups for an enterprise",
+      "method": "get",
+      "endpoint": "/scim/v2/enterprises/{enterprise}/Groups",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "startIndex",
+          "type": "integer",
+          "in": "query",
+          "description": "Used for pagination: the index of the first result to return."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "count",
+          "type": "integer",
+          "in": "query",
+          "description": "Used for pagination: the number of results to return."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "filter",
+          "type": "string",
+          "in": "query",
+          "description": "filter results"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "excludedAttributes",
+          "type": "string",
+          "in": "query",
+          "description": "attributes to exclude"
+        }
+      }
+    },
+    {
+      "namespace_description": "Provision a SCIM enterprise group and invite users",
+      "method": "post",
+      "endpoint": "/scim/v2/enterprises/{enterprise}/Groups",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "schemas",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. The SCIM schema URIs."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "displayName",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the SCIM group. This must match the GitHub organization that the group maps to."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "members",
+          "type": "array of objects",
+          "in": "body",
+          "description": ""
+        }
+      },
+      "field_5": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of themembersitemsName (Type)Descriptionvalue (string)Required. The SCIM user ID for a user.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Get SCIM provisioning information for an enterprise group",
+      "method": "get",
+      "endpoint": "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "scim_group_id",
+          "type": "string",
+          "in": "path",
+          "description": "Identifier generated by the GitHub SCIM endpoint."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "excludedAttributes",
+          "type": "string",
+          "in": "query",
+          "description": "Attributes to exclude."
+        }
+      }
+    },
+    {
+      "namespace_description": "Set SCIM information for a provisioned enterprise group",
+      "method": "put",
+      "endpoint": "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "scim_group_id",
+          "type": "string",
+          "in": "path",
+          "description": "Identifier generated by the GitHub SCIM endpoint."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "schemas",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. The SCIM schema URIs."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "displayName",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the SCIM group. This must match the GitHub organization that the group maps to."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "members",
+          "type": "array of objects",
+          "in": "body",
+          "description": ""
+        }
+      },
+      "field_6": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of themembersitemsName (Type)Descriptionvalue (string)Required. The SCIM user ID for a user.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Update an attribute for a SCIM enterprise group",
+      "method": "patch",
+      "endpoint": "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "scim_group_id",
+          "type": "string",
+          "in": "path",
+          "description": "Identifier generated by the GitHub SCIM endpoint."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "schemas",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. The SCIM schema URIs."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "Operations",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Required. Array of SCIM operations."
+        }
+      },
+      "field_5": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theOperationsitemsName (Type)Descriptionop (string)Required. path (string)value ()Can be any value - string, number, array or object.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a SCIM group from an enterprise",
+      "method": "delete",
+      "endpoint": "/scim/v2/enterprises/{enterprise}/Groups/{scim_group_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "scim_group_id",
+          "type": "string",
+          "in": "path",
+          "description": "Identifier generated by the GitHub SCIM endpoint."
+        }
+      }
+    },
+    {
+      "namespace_description": "List SCIM provisioned identities for an enterprise",
+      "method": "get",
+      "endpoint": "/scim/v2/enterprises/{enterprise}/Users",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "startIndex",
+          "type": "integer",
+          "in": "query",
+          "description": "Used for pagination: the index of the first result to return."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "count",
+          "type": "integer",
+          "in": "query",
+          "description": "Used for pagination: the number of results to return."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "filter",
+          "type": "string",
+          "in": "query",
+          "description": "filter results"
+        }
+      }
+    },
+    {
+      "namespace_description": "Provision and invite a SCIM enterprise user",
+      "method": "post",
+      "endpoint": "/scim/v2/enterprises/{enterprise}/Users",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "schemas",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. The SCIM schema URIs."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "userName",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The username for the user."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "object",
+          "in": "body",
+          "description": "Required. "
+        }
+      },
+      "field_5": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thenameobjectName (Type)DescriptiongivenName (string)Required. The first name of the user.familyName (string)Required. The last name of the user.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "emails",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Required. List of user emails."
+        }
+      },
+      "field_7": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theemailsitemsName (Type)Descriptionvalue (string)Required. The email address.type (string)Required. The type of email address.primary (boolean)Required. Whether this email address is the primary address.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "groups",
+          "type": "array of objects",
+          "in": "body",
+          "description": "List of SCIM group IDs the user is a member of."
+        }
+      },
+      "field_9": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thegroupsitemsName (Type)Descriptionvalue (string)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Get SCIM provisioning information for an enterprise user",
+      "method": "get",
+      "endpoint": "/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "scim_user_id",
+          "type": "string",
+          "in": "path",
+          "description": "scim_user_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set SCIM information for a provisioned enterprise user",
+      "method": "put",
+      "endpoint": "/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "scim_user_id",
+          "type": "string",
+          "in": "path",
+          "description": "scim_user_id parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "schemas",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. The SCIM schema URIs."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "userName",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The username for the user."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "object",
+          "in": "body",
+          "description": "Required. "
+        }
+      },
+      "field_6": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thenameobjectName (Type)DescriptiongivenName (string)Required. The first name of the user.familyName (string)Required. The last name of the user.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "emails",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Required. List of user emails."
+        }
+      },
+      "field_8": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theemailsitemsName (Type)Descriptionvalue (string)Required. The email address.type (string)Required. The type of email address.primary (boolean)Required. Whether this email address is the primary address.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "groups",
+          "type": "array of objects",
+          "in": "body",
+          "description": "List of SCIM group IDs the user is a member of."
+        }
+      },
+      "field_10": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thegroupsitemsName (Type)Descriptionvalue (string)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Update an attribute for a SCIM enterprise user",
+      "method": "patch",
+      "endpoint": "{\n  \"Operations\":[{\n    \"op\":\"replace\",\n    \"value\":{\n      \"active\":false\n    }\n  }]\n}\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "scim_user_id",
+          "type": "string",
+          "in": "path",
+          "description": "scim_user_id parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "schemas",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. The SCIM schema URIs."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "Operations",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Required. Array of SCIM operations."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a SCIM user from an enterprise",
+      "method": "delete",
+      "endpoint": "/scim/v2/enterprises/{enterprise}/Users/{scim_user_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "scim_user_id",
+          "type": "string",
+          "in": "path",
+          "description": "scim_user_id parameter"
+        }
+      }
+    }
+  ]
+}

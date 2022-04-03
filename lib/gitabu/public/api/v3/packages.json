@@ -1,0 +1,1078 @@
+{
+  "result": [
+    {
+      "namespace_description": "List packages for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/packages",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "query",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "visibility",
+          "type": "string",
+          "in": "query",
+          "description": "The selected visibility of the packages. Can be one of public, private, or internal. Only container package_types currently support internal visibility properly. For other ecosystems internal is synonymous with private. This parameter is optional and only filters an existing result set."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a package for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/packages/{package_type}/{package_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a package for an organization",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/packages/{package_type}/{package_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Restore a package for an organization",
+      "method": "post",
+      "endpoint": "/orgs/{org}/packages/{package_type}/{package_name}/restore",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "token",
+          "type": "string",
+          "in": "query",
+          "description": "package token"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get all package versions for a package owned by an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/packages/{package_type}/{package_name}/versions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "query",
+          "description": "The state of the package, either active or deleted.Default: active"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a package version for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_version_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the package version."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete package version for an organization",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_version_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the package version."
+        }
+      }
+    },
+    {
+      "namespace_description": "Restore package version for an organization",
+      "method": "post",
+      "endpoint": "/orgs/{org}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_version_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the package version."
+        }
+      }
+    },
+    {
+      "namespace_description": "List packages for the authenticated user's namespace",
+      "method": "get",
+      "endpoint": "/user/packages",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "query",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "visibility",
+          "type": "string",
+          "in": "query",
+          "description": "The selected visibility of the packages. Can be one of public, private, or internal. Only container package_types currently support internal visibility properly. For other ecosystems internal is synonymous with private. This parameter is optional and only filters an existing result set."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a package for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/packages/{package_type}/{package_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a package for the authenticated user",
+      "method": "delete",
+      "endpoint": "/user/packages/{package_type}/{package_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      }
+    },
+    {
+      "namespace_description": "Restore a package for the authenticated user",
+      "method": "post",
+      "endpoint": "/user/packages/{package_type}/{package_name}/restore",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "token",
+          "type": "string",
+          "in": "query",
+          "description": "package token"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get all package versions for a package owned by the authenticated user",
+      "method": "get",
+      "endpoint": "/user/packages/{package_type}/{package_name}/versions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "query",
+          "description": "The state of the package, either active or deleted.Default: active"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a package version for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/packages/{package_type}/{package_name}/versions/{package_version_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_version_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the package version."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a package version for the authenticated user",
+      "method": "delete",
+      "endpoint": "/user/packages/{package_type}/{package_name}/versions/{package_version_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_version_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the package version."
+        }
+      }
+    },
+    {
+      "namespace_description": "Restore a package version for the authenticated user",
+      "method": "post",
+      "endpoint": "/user/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_version_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the package version."
+        }
+      }
+    },
+    {
+      "namespace_description": "List packages for a user",
+      "method": "get",
+      "endpoint": "/users/{username}/packages",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "query",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "visibility",
+          "type": "string",
+          "in": "query",
+          "description": "The selected visibility of the packages. Can be one of public, private, or internal. Only container package_types currently support internal visibility properly. For other ecosystems internal is synonymous with private. This parameter is optional and only filters an existing result set."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a package for a user",
+      "method": "get",
+      "endpoint": "/users/{username}/packages/{package_type}/{package_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a package for a user",
+      "method": "delete",
+      "endpoint": "/users/{username}/packages/{package_type}/{package_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Restore a package for a user",
+      "method": "post",
+      "endpoint": "/users/{username}/packages/{package_type}/{package_name}/restore",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "token",
+          "type": "string",
+          "in": "query",
+          "description": "package token"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get all package versions for a package owned by a user",
+      "method": "get",
+      "endpoint": "/users/{username}/packages/{package_type}/{package_name}/versions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a package version for a user",
+      "method": "get",
+      "endpoint": "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_version_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the package version."
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete package version for a user",
+      "method": "delete",
+      "endpoint": "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_version_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the package version."
+        }
+      }
+    },
+    {
+      "namespace_description": "Restore package version for a user",
+      "method": "post",
+      "endpoint": "/users/{username}/packages/{package_type}/{package_name}/versions/{package_version_id}/restore",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_type",
+          "type": "string",
+          "in": "path",
+          "description": "The type of supported package. Can be one of npm, maven, rubygems, nuget, docker, or container. Packages in GitHub's Gradle registry have the type maven. Docker images pushed to GitHub's Container registry (ghcr.io) have the type container. You can use the type docker to find images that were pushed to GitHub's Docker registry (docker.pkg.github.com), even if these have now been migrated to the Container registry."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the package."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "package_version_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the package version."
+        }
+      }
+    }
+  ]
+}

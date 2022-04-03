@@ -1,0 +1,689 @@
+{
+  "result": [
+    {
+      "namespace_description": "List gists for the authenticated user",
+      "method": "get",
+      "endpoint": "/gists",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a gist",
+      "method": "post",
+      "endpoint": "/gists",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "Description of the gist"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "files",
+          "type": "object",
+          "in": "body",
+          "description": "Required. Names and content for the files that make up the gist"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "public",
+          "type": "boolean or string or ",
+          "in": "body",
+          "description": "Flag indicating whether the gist is public"
+        }
+      }
+    },
+    {
+      "namespace_description": "List public gists",
+      "method": "get",
+      "endpoint": "/gists/public",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List starred gists",
+      "method": "get",
+      "endpoint": "/gists/starred",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a gist",
+      "method": "get",
+      "endpoint": "/gists/{gist_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a gist",
+      "method": "patch",
+      "endpoint": "/gists/{gist_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "Description of the gist"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "files",
+          "type": "object",
+          "in": "body",
+          "description": "Names of files to be updated"
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a gist",
+      "method": "delete",
+      "endpoint": "/gists/{gist_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List gist commits",
+      "method": "get",
+      "endpoint": "/gists/{gist_id}/commits",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List gist forks",
+      "method": "get",
+      "endpoint": "/gists/{gist_id}/forks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Fork a gist",
+      "method": "post",
+      "endpoint": "/gists/{gist_id}/forks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Check if a gist is starred",
+      "method": "get",
+      "endpoint": "/gists/{gist_id}/star",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Star a gist",
+      "method": "put",
+      "endpoint": "/gists/{gist_id}/star",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Unstar a gist",
+      "method": "delete",
+      "endpoint": "/gists/{gist_id}/star",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a gist revision",
+      "method": "get",
+      "endpoint": "/gists/{gist_id}/{sha}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "sha",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List gists for a user",
+      "method": "get",
+      "endpoint": "/users/{username}/gists",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List gist comments",
+      "method": "get",
+      "endpoint": "/gists/{gist_id}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a gist comment",
+      "method": "post",
+      "endpoint": "/gists/{gist_id}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The comment text."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a gist comment",
+      "method": "get",
+      "endpoint": "/gists/{gist_id}/comments/{comment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a gist comment",
+      "method": "patch",
+      "endpoint": "/gists/{gist_id}/comments/{comment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The comment text."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a gist comment",
+      "method": "delete",
+      "endpoint": "/gists/{gist_id}/comments/{comment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "gist_id",
+          "type": "string",
+          "in": "path",
+          "description": "gist_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      }
+    }
+  ]
+}

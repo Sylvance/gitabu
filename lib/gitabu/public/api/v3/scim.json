@@ -1,0 +1,412 @@
+{
+  "result": [
+    {
+      "namespace_description": "List SCIM provisioned identities",
+      "method": "get",
+      "endpoint": "/scim/v2/organizations/{org}/Users",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "startIndex",
+          "type": "integer",
+          "in": "query",
+          "description": "Used for pagination: the index of the first result to return."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "count",
+          "type": "integer",
+          "in": "query",
+          "description": "Used for pagination: the number of results to return."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "filter",
+          "type": "string",
+          "in": "query",
+          "description": "Filters results using the equals query parameter operator (eq). You can filter results that are equal to id, userName, emails, and external_id. For example, to search for an identity with the userName Octocat, you would use this query:\n?filter=userName%20eq%20\\\"Octocat\\\".\nTo filter results for the identity with the email octocat@github.com, you would use this query:\n?filter=emails%20eq%20\\\"octocat@github.com\\\"."
+        }
+      }
+    },
+    {
+      "namespace_description": "Provision and invite a SCIM user",
+      "method": "post",
+      "endpoint": "/scim/v2/organizations/{org}/Users",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "userName",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Configured by the admin. Could be an email, login, or username"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "displayName",
+          "type": "string",
+          "in": "body",
+          "description": "The name of the user, suitable for display to end-users"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "object",
+          "in": "body",
+          "description": "Required. "
+        }
+      },
+      "field_5": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thenameobjectName (Type)DescriptiongivenName (string)Required. familyName (string)Required. formatted (string)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "emails",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Required. user emails"
+        }
+      },
+      "field_7": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theemailsitemsName (Type)Descriptionvalue (string)Required. primary (boolean)type (string)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "schemas",
+          "type": "array of strings",
+          "in": "body",
+          "description": ""
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "externalId",
+          "type": "string",
+          "in": "body",
+          "description": ""
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "groups",
+          "type": "array of strings",
+          "in": "body",
+          "description": ""
+        }
+      },
+      "field_11": {
+        "field_type": "body",
+        "fields": {
+          "name": "active",
+          "type": "boolean",
+          "in": "body",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get SCIM provisioning information for a user",
+      "method": "get",
+      "endpoint": "/scim/v2/organizations/{org}/Users/{scim_user_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "scim_user_id",
+          "type": "string",
+          "in": "path",
+          "description": "scim_user_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a provisioned organization membership",
+      "method": "put",
+      "endpoint": "/scim/v2/organizations/{org}/Users/{scim_user_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "scim_user_id",
+          "type": "string",
+          "in": "path",
+          "description": "scim_user_id parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "schemas",
+          "type": "array of strings",
+          "in": "body",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "displayName",
+          "type": "string",
+          "in": "body",
+          "description": "The name of the user, suitable for display to end-users"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "externalId",
+          "type": "string",
+          "in": "body",
+          "description": ""
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "groups",
+          "type": "array of strings",
+          "in": "body",
+          "description": ""
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "active",
+          "type": "boolean",
+          "in": "body",
+          "description": ""
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "userName",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Configured by the admin. Could be an email, login, or username"
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "object",
+          "in": "body",
+          "description": "Required. "
+        }
+      },
+      "field_10": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thenameobjectName (Type)DescriptiongivenName (string)Required. familyName (string)Required. formatted (string)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_11": {
+        "field_type": "body",
+        "fields": {
+          "name": "emails",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Required. user emails"
+        }
+      },
+      "field_12": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theemailsitemsName (Type)Descriptiontype (string)value (string)Required. primary (boolean)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Update an attribute for a SCIM user",
+      "method": "patch",
+      "endpoint": "{\n  \"Operations\":[{\n    \"op\":\"replace\",\n    \"value\":{\n      \"active\":false\n    }\n  }]\n}\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "scim_user_id",
+          "type": "string",
+          "in": "path",
+          "description": "scim_user_id parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "schemas",
+          "type": "array of strings",
+          "in": "body",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "Operations",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Required. Set of operations to be performed"
+        }
+      },
+      "field_5": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theOperationsitemsName (Type)Descriptionop (string)Required. path (string)value (object or array or string or )",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a SCIM user from an organization",
+      "method": "delete",
+      "endpoint": "/scim/v2/organizations/{org}/Users/{scim_user_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "scim_user_id",
+          "type": "string",
+          "in": "path",
+          "description": "scim_user_id parameter"
+        }
+      }
+    }
+  ]
+}

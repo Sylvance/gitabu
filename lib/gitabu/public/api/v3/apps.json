@@ -1,0 +1,1174 @@
+{
+  "result": [
+    {
+      "namespace_description": "Get the authenticated app",
+      "method": "get",
+      "endpoint": "/app",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a GitHub App from a manifest",
+      "method": "post",
+      "endpoint": "/app-manifests/{code}/conversions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "code",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List installations for the authenticated app",
+      "method": "get",
+      "endpoint": "/app/installations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "outdated",
+          "type": "string",
+          "in": "query",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an installation for the authenticated app",
+      "method": "get",
+      "endpoint": "/app/installations/{installation_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "installation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "installation_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an installation for the authenticated app",
+      "method": "delete",
+      "endpoint": "/app/installations/{installation_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "installation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "installation_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create an installation access token for an app",
+      "method": "post",
+      "endpoint": "/app/installations/{installation_id}/access_tokens",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "installation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "installation_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "repositories",
+          "type": "array of strings",
+          "in": "body",
+          "description": "List of repository names that the token should have access to"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "repository_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "List of repository IDs that the token should have access to"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "permissions",
+          "type": "object",
+          "in": "body",
+          "description": "The permissions granted to the user-to-server access token."
+        }
+      },
+      "field_5": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thepermissionsobjectName (Type)Descriptionactions (string)The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts. Can be one of: read or write.administration (string)The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation. Can be one of: read or write.checks (string)The level of permission to grant the access token for checks on code. Can be one of: read or write.contents (string)The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges. Can be one of: read or write.deployments (string)The level of permission to grant the access token for deployments and deployment statuses. Can be one of: read or write.environments (string)The level of permission to grant the access token for managing repository environments. Can be one of: read or write.issues (string)The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones. Can be one of: read or write.metadata (string)The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata. Can be one of: read or write.packages (string)The level of permission to grant the access token for packages published to GitHub Packages. Can be one of: read or write.pages (string)The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds. Can be one of: read or write.pull_requests (string)The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges. Can be one of: read or write.repository_hooks (string)The level of permission to grant the access token to manage the post-receive hooks for a repository. Can be one of: read or write.repository_projects (string)The level of permission to grant the access token to manage repository projects, columns, and cards. Can be one of: read, write, or admin.secret_scanning_alerts (string)The level of permission to grant the access token to view and manage secret scanning alerts. Can be one of: read or write.secrets (string)The level of permission to grant the access token to manage repository secrets. Can be one of: read or write.security_events (string)The level of permission to grant the access token to view and manage security events like code scanning alerts. Can be one of: read or write.single_file (string)The level of permission to grant the access token to manage just a single file. Can be one of: read or write.statuses (string)The level of permission to grant the access token for commit statuses. Can be one of: read or write.vulnerability_alerts (string)The level of permission to grant the access token to manage Dependabot alerts. Can be one of: read or write.workflows (string)The level of permission to grant the access token to update GitHub Actions workflow files. Can be one of: write.members (string)The level of permission to grant the access token for organization teams and members. Can be one of: read or write.organization_administration (string)The level of permission to grant the access token to manage access to an organization. Can be one of: read or write.organization_hooks (string)The level of permission to grant the access token to manage the post-receive hooks for an organization. Can be one of: read or write.organization_plan (string)The level of permission to grant the access token for viewing an organization's plan. Can be one of: read.organization_projects (string)The level of permission to grant the access token to manage organization projects and projects beta (where available). Can be one of: read, write, or admin.organization_packages (string)The level of permission to grant the access token for organization packages published to GitHub Packages. Can be one of: read or write.organization_secrets (string)The level of permission to grant the access token to manage organization secrets. Can be one of: read or write.organization_self_hosted_runners (string)The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization. Can be one of: read or write.organization_user_blocking (string)The level of permission to grant the access token to view and manage users blocked by the organization. Can be one of: read or write.team_discussions (string)The level of permission to grant the access token to manage team discussions and related comments. Can be one of: read or write.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Suspend an app installation",
+      "method": "put",
+      "endpoint": "/app/installations/{installation_id}/suspended",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "installation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "installation_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Unsuspend an app installation",
+      "method": "delete",
+      "endpoint": "/app/installations/{installation_id}/suspended",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "installation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "installation_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an app",
+      "method": "get",
+      "endpoint": "/apps/{app_slug}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "app_slug",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an organization installation for the authenticated app",
+      "method": "get",
+      "endpoint": "/orgs/{org}/installation",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a repository installation for the authenticated app",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/installation",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a user installation for the authenticated app",
+      "method": "get",
+      "endpoint": "/users/{username}/installation",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List repositories accessible to the app installation",
+      "method": "get",
+      "endpoint": "/installation/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Revoke an installation access token",
+      "method": "delete",
+      "endpoint": "/installation/token",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      }
+    },
+    {
+      "namespace_description": "List app installations accessible to the user access token",
+      "method": "get",
+      "endpoint": "/user/installations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List repositories accessible to the user access token",
+      "method": "get",
+      "endpoint": "/user/installations/{installation_id}/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "installation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "installation_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Add a repository to an app installation",
+      "method": "put",
+      "endpoint": "/user/installations/{installation_id}/repositories/{repository_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "installation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "installation_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a repository from an app installation",
+      "method": "delete",
+      "endpoint": "/user/installations/{installation_id}/repositories/{repository_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "installation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "installation_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a subscription plan for an account",
+      "method": "get",
+      "endpoint": "/marketplace_listing/accounts/{account_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "account_id",
+          "type": "integer",
+          "in": "path",
+          "description": "account_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List plans",
+      "method": "get",
+      "endpoint": "/marketplace_listing/plans",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List accounts for a plan",
+      "method": "get",
+      "endpoint": "/marketplace_listing/plans/{plan_id}/accounts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "plan_id",
+          "type": "integer",
+          "in": "path",
+          "description": "plan_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "One of created (when the repository was starred) or updated (when it was last pushed to).Default: created"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "To return the oldest accounts first, set to asc. Can be one of asc or desc. Ignored without the sort parameter."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a subscription plan for an account (stubbed)",
+      "method": "get",
+      "endpoint": "/marketplace_listing/stubbed/accounts/{account_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "account_id",
+          "type": "integer",
+          "in": "path",
+          "description": "account_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List plans (stubbed)",
+      "method": "get",
+      "endpoint": "/marketplace_listing/stubbed/plans",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List accounts for a plan (stubbed)",
+      "method": "get",
+      "endpoint": "/marketplace_listing/stubbed/plans/{plan_id}/accounts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "plan_id",
+          "type": "integer",
+          "in": "path",
+          "description": "plan_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "One of created (when the repository was starred) or updated (when it was last pushed to).Default: created"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "To return the oldest accounts first, set to asc. Can be one of asc or desc. Ignored without the sort parameter."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List subscriptions for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/marketplace_purchases",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List subscriptions for the authenticated user (stubbed)",
+      "method": "get",
+      "endpoint": "/user/marketplace_purchases/stubbed",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an app authorization",
+      "method": "delete",
+      "endpoint": "/applications/{client_id}/grant",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "client_id",
+          "type": "string",
+          "in": "path",
+          "description": "The client ID of your GitHub app."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "access_token",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The OAuth access token used to authenticate to the GitHub API."
+        }
+      }
+    },
+    {
+      "namespace_description": "Check a token",
+      "method": "post",
+      "endpoint": "/applications/{client_id}/token",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "client_id",
+          "type": "string",
+          "in": "path",
+          "description": "The client ID of your GitHub app."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "access_token",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The access_token of the OAuth application."
+        }
+      }
+    },
+    {
+      "namespace_description": "Reset a token",
+      "method": "patch",
+      "endpoint": "/applications/{client_id}/token",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "client_id",
+          "type": "string",
+          "in": "path",
+          "description": "The client ID of your GitHub app."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "access_token",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The access_token of the OAuth application."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an app token",
+      "method": "delete",
+      "endpoint": "/applications/{client_id}/token",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "client_id",
+          "type": "string",
+          "in": "path",
+          "description": "The client ID of your GitHub app."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "access_token",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The OAuth access token used to authenticate to the GitHub API."
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a scoped access token",
+      "method": "post",
+      "endpoint": "/applications/{client_id}/token/scoped",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "client_id",
+          "type": "string",
+          "in": "path",
+          "description": "The client ID of your GitHub app."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "access_token",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The OAuth access token used to authenticate to the GitHub API."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "target",
+          "type": "string",
+          "in": "body",
+          "description": "The name of the user or organization to scope the user-to-server access token to. Required unless target_id is specified."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "target_id",
+          "type": "integer",
+          "in": "body",
+          "description": "The ID of the user or organization to scope the user-to-server access token to. Required unless target is specified."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "repositories",
+          "type": "array of strings",
+          "in": "body",
+          "description": "The list of repository names to scope the user-to-server access token to. repositories may not be specified if repository_ids is specified."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "repository_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "The list of repository IDs to scope the user-to-server access token to. repository_ids may not be specified if repositories is specified."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "permissions",
+          "type": "object",
+          "in": "body",
+          "description": "The permissions granted to the user-to-server access token."
+        }
+      },
+      "field_8": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thepermissionsobjectName (Type)Descriptionactions (string)The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts. Can be one of: read or write.administration (string)The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation. Can be one of: read or write.checks (string)The level of permission to grant the access token for checks on code. Can be one of: read or write.contents (string)The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges. Can be one of: read or write.deployments (string)The level of permission to grant the access token for deployments and deployment statuses. Can be one of: read or write.environments (string)The level of permission to grant the access token for managing repository environments. Can be one of: read or write.issues (string)The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones. Can be one of: read or write.metadata (string)The level of permission to grant the access token to search repositories, list collaborators, and access repository metadata. Can be one of: read or write.packages (string)The level of permission to grant the access token for packages published to GitHub Packages. Can be one of: read or write.pages (string)The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds. Can be one of: read or write.pull_requests (string)The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges. Can be one of: read or write.repository_hooks (string)The level of permission to grant the access token to manage the post-receive hooks for a repository. Can be one of: read or write.repository_projects (string)The level of permission to grant the access token to manage repository projects, columns, and cards. Can be one of: read, write, or admin.secret_scanning_alerts (string)The level of permission to grant the access token to view and manage secret scanning alerts. Can be one of: read or write.secrets (string)The level of permission to grant the access token to manage repository secrets. Can be one of: read or write.security_events (string)The level of permission to grant the access token to view and manage security events like code scanning alerts. Can be one of: read or write.single_file (string)The level of permission to grant the access token to manage just a single file. Can be one of: read or write.statuses (string)The level of permission to grant the access token for commit statuses. Can be one of: read or write.vulnerability_alerts (string)The level of permission to grant the access token to manage Dependabot alerts. Can be one of: read or write.workflows (string)The level of permission to grant the access token to update GitHub Actions workflow files. Can be one of: write.members (string)The level of permission to grant the access token for organization teams and members. Can be one of: read or write.organization_administration (string)The level of permission to grant the access token to manage access to an organization. Can be one of: read or write.organization_hooks (string)The level of permission to grant the access token to manage the post-receive hooks for an organization. Can be one of: read or write.organization_plan (string)The level of permission to grant the access token for viewing an organization's plan. Can be one of: read.organization_projects (string)The level of permission to grant the access token to manage organization projects and projects beta (where available). Can be one of: read, write, or admin.organization_packages (string)The level of permission to grant the access token for organization packages published to GitHub Packages. Can be one of: read or write.organization_secrets (string)The level of permission to grant the access token to manage organization secrets. Can be one of: read or write.organization_self_hosted_runners (string)The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization. Can be one of: read or write.organization_user_blocking (string)The level of permission to grant the access token to view and manage users blocked by the organization. Can be one of: read or write.team_discussions (string)The level of permission to grant the access token to manage team discussions and related comments. Can be one of: read or write.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a webhook configuration for an app",
+      "method": "get",
+      "endpoint": "/app/hook/config",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a webhook configuration for an app",
+      "method": "patch",
+      "endpoint": "/app/hook/config",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "body",
+        "fields": {
+          "name": "url",
+          "type": "string",
+          "in": "body",
+          "description": "The URL to which the payloads will be delivered."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "content_type",
+          "type": "string",
+          "in": "body",
+          "description": "The media type used to serialize the payloads. Supported values include json and form. The default is form."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "secret",
+          "type": "string",
+          "in": "body",
+          "description": "If provided, the secret will be used as the key to generate the HMAC hex digest value for delivery signature headers."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "insecure_ssl",
+          "type": "string or number or ",
+          "in": "body",
+          "description": "Determines whether the SSL certificate of the host for url will be verified when delivering payloads. Supported values include 0 (verification is performed) and 1 (verification is not performed). The default is 0. We strongly recommend not setting this to 1 as you are subject to man-in-the-middle and other attacks."
+        }
+      }
+    },
+    {
+      "namespace_description": "List deliveries for an app webhook",
+      "method": "get",
+      "endpoint": "/app/hook/deliveries",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "cursor",
+          "type": "string",
+          "in": "query",
+          "description": "Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the link header for the next and previous page cursors."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a delivery for an app webhook",
+      "method": "get",
+      "endpoint": "/app/hook/deliveries/{delivery_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "delivery_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Redeliver a delivery for an app webhook",
+      "method": "post",
+      "endpoint": "/app/hook/deliveries/{delivery_id}/attempts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "delivery_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    }
+  ]
+}

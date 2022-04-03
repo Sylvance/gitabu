@@ -1,0 +1,5779 @@
+{
+  "result": [
+    {
+      "namespace_description": "List artifacts for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/artifacts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an artifact",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "artifact_id",
+          "type": "integer",
+          "in": "path",
+          "description": "artifact_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an artifact",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "artifact_id",
+          "type": "integer",
+          "in": "path",
+          "description": "artifact_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Download an artifact",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/artifacts/{artifact_id}/{archive_format}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "artifact_id",
+          "type": "integer",
+          "in": "path",
+          "description": "artifact_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "archive_format",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List workflow run artifacts",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/artifacts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get GitHub Actions cache usage for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/actions/cache/usage",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get GitHub Actions cache usage for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/cache/usage",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List repositories with GitHub Actions cache usage for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/cache/usage-by-repository",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get GitHub Actions cache usage for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/cache/usage",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get GitHub Actions permissions for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/actions/permissions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      }
+    },
+    {
+      "namespace_description": "Set GitHub Actions permissions for an enterprise",
+      "method": "put",
+      "endpoint": "/enterprises/{enterprise}/actions/permissions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "enabled_organizations",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The policy that controls the organizations in the enterprise that are allowed to run GitHub Actions. Can be one of: all, none, or selected."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "allowed_actions",
+          "type": "string",
+          "in": "body",
+          "description": "The permissions policy that controls the actions and reusable workflows that are allowed to run. Can be one of: all, local_only, or selected."
+        }
+      }
+    },
+    {
+      "namespace_description": "List selected organizations enabled for GitHub Actions in an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/actions/permissions/organizations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set selected organizations enabled for GitHub Actions in an enterprise",
+      "method": "put",
+      "endpoint": "/enterprises/{enterprise}/actions/permissions/organizations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "selected_organization_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "Required. List of organization IDs to enable for GitHub Actions."
+        }
+      }
+    },
+    {
+      "namespace_description": "Enable a selected organization for GitHub Actions in an enterprise",
+      "method": "put",
+      "endpoint": "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "org_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of an organization."
+        }
+      }
+    },
+    {
+      "namespace_description": "Disable a selected organization for GitHub Actions in an enterprise",
+      "method": "delete",
+      "endpoint": "/enterprises/{enterprise}/actions/permissions/organizations/{org_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "org_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of an organization."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get allowed actions and reusable workflows for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/actions/permissions/selected-actions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      }
+    },
+    {
+      "namespace_description": "Set allowed actions and reusable workflows for an enterprise",
+      "method": "put",
+      "endpoint": "/enterprises/{enterprise}/actions/permissions/selected-actions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "github_owned_allowed",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether GitHub-owned actions are allowed. For example, this includes the actions in the actions organization."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "verified_allowed",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether actions from GitHub Marketplace verified creators are allowed. Set to true to allow all actions by GitHub Marketplace verified creators."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "patterns_allowed",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, monalisa/octocat@*, monalisa/octocat@v2, monalisa/*.\""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get GitHub Actions permissions for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/permissions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Set GitHub Actions permissions for an organization",
+      "method": "put",
+      "endpoint": "/orgs/{org}/actions/permissions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "enabled_repositories",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The policy that controls the repositories in the organization that are allowed to run GitHub Actions. Can be one of: all, none, or selected."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "allowed_actions",
+          "type": "string",
+          "in": "body",
+          "description": "The permissions policy that controls the actions and reusable workflows that are allowed to run. Can be one of: all, local_only, or selected."
+        }
+      }
+    },
+    {
+      "namespace_description": "List selected repositories enabled for GitHub Actions in an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/permissions/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set selected repositories enabled for GitHub Actions in an organization",
+      "method": "put",
+      "endpoint": "/orgs/{org}/actions/permissions/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "selected_repository_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "Required. List of repository IDs to enable for GitHub Actions."
+        }
+      }
+    },
+    {
+      "namespace_description": "Enable a selected repository for GitHub Actions in an organization",
+      "method": "put",
+      "endpoint": "/orgs/{org}/actions/permissions/repositories/{repository_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Disable a selected repository for GitHub Actions in an organization",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/actions/permissions/repositories/{repository_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get allowed actions and reusable workflows for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/permissions/selected-actions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Set allowed actions and reusable workflows for an organization",
+      "method": "put",
+      "endpoint": "/orgs/{org}/actions/permissions/selected-actions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "github_owned_allowed",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether GitHub-owned actions are allowed. For example, this includes the actions in the actions organization."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "verified_allowed",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether actions from GitHub Marketplace verified creators are allowed. Set to true to allow all actions by GitHub Marketplace verified creators."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "patterns_allowed",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, monalisa/octocat@*, monalisa/octocat@v2, monalisa/*.\""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get default workflow permissions",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/permissions/workflow",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Set default workflow permissions",
+      "method": "put",
+      "endpoint": "/orgs/{org}/actions/permissions/workflow",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "default_workflow_permissions",
+          "type": "string",
+          "in": "body",
+          "description": "The default workflow permissions granted to the GITHUB_TOKEN when running workflows in an organization."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "can_approve_pull_request_reviews",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether GitHub Actions can submit approving pull request reviews."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get GitHub Actions permissions for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/permissions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Set GitHub Actions permissions for a repository",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/actions/permissions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "enabled",
+          "type": "boolean",
+          "in": "body",
+          "description": "Required. Whether GitHub Actions is enabled on the repository."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "allowed_actions",
+          "type": "string",
+          "in": "body",
+          "description": "The permissions policy that controls the actions and reusable workflows that are allowed to run. Can be one of: all, local_only, or selected."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get the level of access for workflows outside of the repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/permissions/access",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Set the level of access for workflows outside of the repository",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/actions/permissions/access",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "access_level",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the\nrepository. none means access is only possible from workflows in this repository. Can be one of none, organization, enterprise."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get allowed actions and reusable workflows for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/permissions/selected-actions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Set allowed actions and reusable workflows for a repository",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/actions/permissions/selected-actions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "github_owned_allowed",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether GitHub-owned actions are allowed. For example, this includes the actions in the actions organization."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "verified_allowed",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether actions from GitHub Marketplace verified creators are allowed. Set to true to allow all actions by GitHub Marketplace verified creators."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "patterns_allowed",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Specifies a list of string-matching patterns to allow specific action(s) and reusable workflow(s). Wildcards, tags, and SHAs are allowed. For example, monalisa/octocat@*, monalisa/octocat@v2, monalisa/*.\""
+        }
+      }
+    },
+    {
+      "namespace_description": "List organization secrets",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/secrets",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an organization public key",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/secrets/public-key",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an organization secret",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/secrets/{secret_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create or update an organization secret",
+      "method": "require\"rbnacl\"require\"base64\"\"+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0=\"\"my_secret\"# Print the base64 encoded secretput",
+      "endpoint": "const sodium = require('tweetsodium');\n\nconst key = \"base64-encoded-public-key\";\nconst value = \"plain-text-secret\";\n\n// Convert the message and key to Uint8Array's (Buffer implements that interface)\nconst messageBytes = Buffer.from(value);\nconst keyBytes = Buffer.from(key, 'base64');\n\n// Encrypt using LibSodium.\nconst encryptedBytes = sodium.seal(messageBytes, keyBytes);\n\n// Base64 the encrypted secret\nconst encrypted = Buffer.from(encryptedBytes).toString('base64');\n\nconsole.log(encrypted);\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "encrypted_value",
+          "type": "string",
+          "in": "body",
+          "description": "Value for your secret, encrypted with LibSodium using the public key retrieved from the Get an organization public key endpoint."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "key_id",
+          "type": "string",
+          "in": "body",
+          "description": "ID of the key you used to encrypt the secret."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "visibility",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Configures the access that repositories have to the organization secret. Can be one of:\n- all - All repositories in an organization can access the secret.\n- private - Private repositories in an organization can access the secret.\n- selected - Only specific repositories can access the secret."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "selected_repository_ids",
+          "type": "array of strings",
+          "in": "body",
+          "description": "An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the visibility is set to selected. You can manage the list of selected repositories using the List selected repositories for an organization secret, Set selected repositories for an organization secret, and Remove selected repository from an organization secret endpoints."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an organization secret",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/actions/secrets/{secret_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List selected repositories for an organization secret",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/secrets/{secret_name}/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set selected repositories for an organization secret",
+      "method": "put",
+      "endpoint": "/orgs/{org}/actions/secrets/{secret_name}/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "selected_repository_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "Required. An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the visibility is set to selected. You can add and remove individual repositories using the Set selected repositories for an organization secret and Remove selected repository from an organization secret endpoints."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add selected repository to an organization secret",
+      "method": "put",
+      "endpoint": "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove selected repository from an organization secret",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/actions/secrets/{secret_name}/repositories/{repository_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository secrets",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/secrets",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a repository public key",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/secrets/public-key",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a repository secret",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create or update a repository secret",
+      "method": "require\"rbnacl\"require\"base64\"\"+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0=\"\"my_secret\"# Print the base64 encoded secretput",
+      "endpoint": "const sodium = require('tweetsodium');\n\nconst key = \"base64-encoded-public-key\";\nconst value = \"plain-text-secret\";\n\n// Convert the message and key to Uint8Array's (Buffer implements that interface)\nconst messageBytes = Buffer.from(value);\nconst keyBytes = Buffer.from(key, 'base64');\n\n// Encrypt using LibSodium.\nconst encryptedBytes = sodium.seal(messageBytes, keyBytes);\n\n// Base64 the encrypted secret\nconst encrypted = Buffer.from(encryptedBytes).toString('base64');\n\nconsole.log(encrypted);\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "encrypted_value",
+          "type": "string",
+          "in": "body",
+          "description": "Value for your secret, encrypted with LibSodium using the public key retrieved from the Get a repository public key endpoint."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "key_id",
+          "type": "string",
+          "in": "body",
+          "description": "ID of the key you used to encrypt the secret."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a repository secret",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/actions/secrets/{secret_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List environment secrets",
+      "method": "get",
+      "endpoint": "/repositories/{repository_id}/environments/{environment_name}/secrets",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "environment_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the environment"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an environment public key",
+      "method": "get",
+      "endpoint": "/repositories/{repository_id}/environments/{environment_name}/secrets/public-key",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "environment_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the environment"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an environment secret",
+      "method": "get",
+      "endpoint": "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "environment_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the environment"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create or update an environment secret",
+      "method": "require\"rbnacl\"require\"base64\"\"+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0=\"\"my_secret\"# Print the base64 encoded secretput",
+      "endpoint": "const sodium = require('tweetsodium');\n\nconst key = \"base64-encoded-public-key\";\nconst value = \"plain-text-secret\";\n\n// Convert the message and key to Uint8Array's (Buffer implements that interface)\nconst messageBytes = Buffer.from(value);\nconst keyBytes = Buffer.from(key, 'base64');\n\n// Encrypt using LibSodium.\nconst encryptedBytes = sodium.seal(messageBytes, keyBytes);\n\n// Base64 the encrypted secret\nconst encrypted = Buffer.from(encryptedBytes).toString('base64');\n\nconsole.log(encrypted);\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "environment_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the environment"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "encrypted_value",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Value for your secret, encrypted with LibSodium using the public key retrieved from the Get an environment public key endpoint."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "key_id",
+          "type": "string",
+          "in": "body",
+          "description": "Required. ID of the key you used to encrypt the secret."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an environment secret",
+      "method": "delete",
+      "endpoint": "/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "environment_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the environment"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List self-hosted runner groups for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a self-hosted runner group for an enterprise",
+      "method": "post",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Name of the runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "visibility",
+          "type": "string",
+          "in": "body",
+          "description": "Visibility of a runner group. You can select all organizations or select individual organization. Can be one of: all or selected"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "selected_organization_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "List of organization IDs that can access the runner group."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "runners",
+          "type": "array of integers",
+          "in": "body",
+          "description": "List of runner IDs to add to the runner group."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "allows_public_repositories",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether the runner group can be used by public repositories."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a self-hosted runner group for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a self-hosted runner group for an enterprise",
+      "method": "patch",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Name of the runner group."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "visibility",
+          "type": "string",
+          "in": "body",
+          "description": "Visibility of a runner group. You can select all organizations or select individual organizations. Can be one of: all or selectedDefault: all"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "allows_public_repositories",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether the runner group can be used by public repositories."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a self-hosted runner group from an enterprise",
+      "method": "delete",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      }
+    },
+    {
+      "namespace_description": "List organization access to a self-hosted runner group in an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set organization access for a self-hosted runner group in an enterprise",
+      "method": "put",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "selected_organization_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "Required. List of organization IDs that can access the runner group."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add organization access to a self-hosted runner group in an enterprise",
+      "method": "put",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "org_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of an organization."
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove organization access to a self-hosted runner group in an enterprise",
+      "method": "delete",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/organizations/{org_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "org_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of an organization."
+        }
+      }
+    },
+    {
+      "namespace_description": "List self-hosted runners in a group for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set self-hosted runners in a group for an enterprise",
+      "method": "put",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "runners",
+          "type": "array of integers",
+          "in": "body",
+          "description": "Required. List of runner IDs to add to the runner group."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add a self-hosted runner to a group for an enterprise",
+      "method": "put",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a self-hosted runner from a group for an enterprise",
+      "method": "delete",
+      "endpoint": "/enterprises/{enterprise}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "List self-hosted runner groups for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/runner-groups",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a self-hosted runner group for an organization",
+      "method": "post",
+      "endpoint": "/orgs/{org}/actions/runner-groups",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Name of the runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "visibility",
+          "type": "string",
+          "in": "body",
+          "description": "Visibility of a runner group. You can select all repositories, select individual repositories, or limit access to private repositories. Can be one of: all, selected, or private.Default: all"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "selected_repository_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "List of repository IDs that can access the runner group."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "runners",
+          "type": "array of integers",
+          "in": "body",
+          "description": "List of runner IDs to add to the runner group."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "allows_public_repositories",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether the runner group can be used by public repositories."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a self-hosted runner group for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a self-hosted runner group for an organization",
+      "method": "patch",
+      "endpoint": "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Name of the runner group."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "visibility",
+          "type": "string",
+          "in": "body",
+          "description": "Visibility of a runner group. You can select all repositories, select individual repositories, or all private repositories. Can be one of: all, selected, or private."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "allows_public_repositories",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether the runner group can be used by public repositories."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a self-hosted runner group from an organization",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/actions/runner-groups/{runner_group_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository access to a self-hosted runner group in an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set repository access for a self-hosted runner group in an organization",
+      "method": "put",
+      "endpoint": "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "selected_repository_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "Required. List of repository IDs that can access the runner group."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add repository access to a self-hosted runner group in an organization",
+      "method": "put",
+      "endpoint": "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove repository access to a self-hosted runner group in an organization",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List self-hosted runners in a group for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set self-hosted runners in a group for an organization",
+      "method": "put",
+      "endpoint": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "runners",
+          "type": "array of integers",
+          "in": "body",
+          "description": "Required. List of runner IDs to add to the runner group."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add a self-hosted runner to a group for an organization",
+      "method": "put",
+      "endpoint": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a self-hosted runner from a group for an organization",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner group."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "List self-hosted runners for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/actions/runners",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List runner applications for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/actions/runners/downloads",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a registration token for an enterprise",
+      "method": "post",
+      "endpoint": "./config.sh --url https://github.com/enterprises/octo-enterprise --token TOKEN\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a remove token for an enterprise",
+      "method": "post",
+      "endpoint": "./config.sh remove --token TOKEN\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a self-hosted runner for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/actions/runners/{runner_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a self-hosted runner from an enterprise",
+      "method": "delete",
+      "endpoint": "/enterprises/{enterprise}/actions/runners/{runner_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "List labels for a self-hosted runner for an enterprise",
+      "method": "get",
+      "endpoint": "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add custom labels to a self-hosted runner for an enterprise",
+      "method": "post",
+      "endpoint": "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "labels",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. The names of the custom labels to add to the runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Set custom labels for a self-hosted runner for an enterprise",
+      "method": "put",
+      "endpoint": "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "labels",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. The names of the custom labels to set for the runner. You can pass an empty array to remove all custom labels."
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove all custom labels from a self-hosted runner for an enterprise",
+      "method": "delete",
+      "endpoint": "/enterprises/{enterprise}/actions/runners/{runner_id}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a custom label from a self-hosted runner for an enterprise",
+      "method": "delete",
+      "endpoint": "/enterprises/{enterprise}/actions/runners/{runner_id}/labels/{name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "enterprise",
+          "type": "string",
+          "in": "path",
+          "description": "The slug version of the enterprise name. You can also substitute this value with the enterprise id."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of a self-hosted runner's custom label."
+        }
+      }
+    },
+    {
+      "namespace_description": "List self-hosted runners for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/runners",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List runner applications for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/runners/downloads",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a registration token for an organization",
+      "method": "post",
+      "endpoint": "./config.sh --url https://github.com/octo-org --token TOKEN\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a remove token for an organization",
+      "method": "post",
+      "endpoint": "./config.sh remove --token TOKEN\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a self-hosted runner for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/runners/{runner_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a self-hosted runner from an organization",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/actions/runners/{runner_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "List labels for a self-hosted runner for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/actions/runners/{runner_id}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add custom labels to a self-hosted runner for an organization",
+      "method": "post",
+      "endpoint": "/orgs/{org}/actions/runners/{runner_id}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "labels",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. The names of the custom labels to add to the runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Set custom labels for a self-hosted runner for an organization",
+      "method": "put",
+      "endpoint": "/orgs/{org}/actions/runners/{runner_id}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "labels",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. The names of the custom labels to set for the runner. You can pass an empty array to remove all custom labels."
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove all custom labels from a self-hosted runner for an organization",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/actions/runners/{runner_id}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a custom label from a self-hosted runner for an organization",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/actions/runners/{runner_id}/labels/{name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of a self-hosted runner's custom label."
+        }
+      }
+    },
+    {
+      "namespace_description": "List self-hosted runners for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runners",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List runner applications for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runners/downloads",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a registration token for a repository",
+      "method": "post",
+      "endpoint": "./config.sh --url https://github.com/octo-org/octo-repo-artifacts --token TOKEN\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a remove token for a repository",
+      "method": "post",
+      "endpoint": "./config.sh remove --token TOKEN\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a self-hosted runner for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a self-hosted runner from a repository",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/actions/runners/{runner_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "List labels for a self-hosted runner for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add custom labels to a self-hosted runner for a repository",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "labels",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. The names of the custom labels to add to the runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Set custom labels for a self-hosted runner for a repository",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "labels",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. The names of the custom labels to set for the runner. You can pass an empty array to remove all custom labels."
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove all custom labels from a self-hosted runner for a repository",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a custom label from a self-hosted runner for a repository",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "runner_id",
+          "type": "integer",
+          "in": "path",
+          "description": "Unique identifier of the self-hosted runner."
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of a self-hosted runner's custom label."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a job for a workflow run",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/jobs/{job_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "job_id",
+          "type": "integer",
+          "in": "path",
+          "description": "job_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Download job logs for a workflow run",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/jobs/{job_id}/logs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "job_id",
+          "type": "integer",
+          "in": "path",
+          "description": "job_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List jobs for a workflow run attempt",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/jobs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "attempt_number",
+          "type": "integer",
+          "in": "path",
+          "description": "The attempt number of the workflow run."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List jobs for a workflow run",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/jobs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "filter",
+          "type": "string",
+          "in": "query",
+          "description": "Filters jobs by their completed_at timestamp. Can be one of:\n* latest: Returns jobs from the most recent execution of the workflow run.\n* all: Returns all jobs for a workflow run, including from old executions of the workflow run.Default: latest"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Re-run a job from a workflow run",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/actions/jobs/{job_id}/rerun",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "job_id",
+          "type": "integer",
+          "in": "path",
+          "description": "job_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List workflow runs for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "actor",
+          "type": "string",
+          "in": "query",
+          "description": "Returns someone's workflow runs. Use the login for the user who created the push associated with the check suite or workflow run."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "query",
+          "description": "Returns workflow runs associated with a branch. Use the name of the branch of the push."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "event",
+          "type": "string",
+          "in": "query",
+          "description": "Returns workflow run triggered by the event you specify. For example, push, pull_request or issue. For more information, see \"Events that trigger workflows.\""
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "status",
+          "type": "string",
+          "in": "query",
+          "description": "Returns workflow runs with the check run status or conclusion that you specify. For example, a conclusion can be success or a status can be in_progress. Only GitHub can set a status of waiting or requested. For a list of the possible status and conclusion options, see \"Create a check run.\""
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_9": {
+        "field_type": "query",
+        "fields": {
+          "name": "created",
+          "type": "string",
+          "in": "query",
+          "description": "Returns workflow runs created within the given date-time range. For more information on the syntax, see \"Understanding the search syntax.\""
+        }
+      },
+      "field_10": {
+        "field_type": "query",
+        "fields": {
+          "name": "exclude_pull_requests",
+          "type": "boolean",
+          "in": "query",
+          "description": "If true pull requests are omitted from the response (empty array)."
+        }
+      },
+      "field_11": {
+        "field_type": "query",
+        "fields": {
+          "name": "check_suite_id",
+          "type": "integer",
+          "in": "query",
+          "description": "Returns workflow runs with the check_suite_id that you specify."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a workflow run",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "exclude_pull_requests",
+          "type": "boolean",
+          "in": "query",
+          "description": "If true pull requests are omitted from the response (empty array)."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a workflow run",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get the review history for a workflow run",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/approvals",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      }
+    },
+    {
+      "namespace_description": "Approve a workflow run for a fork pull request",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/approve",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a workflow run attempt",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "attempt_number",
+          "type": "integer",
+          "in": "path",
+          "description": "The attempt number of the workflow run."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "exclude_pull_requests",
+          "type": "boolean",
+          "in": "query",
+          "description": "If true pull requests are omitted from the response (empty array)."
+        }
+      }
+    },
+    {
+      "namespace_description": "Download workflow run attempt logs",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/attempts/{attempt_number}/logs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "attempt_number",
+          "type": "integer",
+          "in": "path",
+          "description": "The attempt number of the workflow run."
+        }
+      }
+    },
+    {
+      "namespace_description": "Cancel a workflow run",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/cancel",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      }
+    },
+    {
+      "namespace_description": "Download workflow run logs",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete workflow run logs",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/logs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get pending deployments for a workflow run",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      }
+    },
+    {
+      "namespace_description": "Review pending deployments for a workflow run",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "environment_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "Required. The list of environment ids to approve or reject"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Whether to approve or reject deployment to the specified environments. Must be one of: approved or rejected"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "comment",
+          "type": "string",
+          "in": "body",
+          "description": "Required. A comment to accompany the deployment review"
+        }
+      }
+    },
+    {
+      "namespace_description": "Re-run a workflow",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/rerun",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      }
+    },
+    {
+      "namespace_description": "Re-run failed jobs from a workflow run",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get workflow run usage",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/runs/{run_id}/timing",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "The id of the workflow run."
+        }
+      }
+    },
+    {
+      "namespace_description": "List workflow runs",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "workflow_id",
+          "type": "",
+          "in": "path",
+          "description": "The ID of the workflow. You can also pass the workflow file name as a string."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "actor",
+          "type": "string",
+          "in": "query",
+          "description": "Returns someone's workflow runs. Use the login for the user who created the push associated with the check suite or workflow run."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "query",
+          "description": "Returns workflow runs associated with a branch. Use the name of the branch of the push."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "event",
+          "type": "string",
+          "in": "query",
+          "description": "Returns workflow run triggered by the event you specify. For example, push, pull_request or issue. For more information, see \"Events that trigger workflows.\""
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "status",
+          "type": "string",
+          "in": "query",
+          "description": "Returns workflow runs with the check run status or conclusion that you specify. For example, a conclusion can be success or a status can be in_progress. Only GitHub can set a status of waiting or requested. For a list of the possible status and conclusion options, see \"Create a check run.\""
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_9": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_10": {
+        "field_type": "query",
+        "fields": {
+          "name": "created",
+          "type": "string",
+          "in": "query",
+          "description": "Returns workflow runs created within the given date-time range. For more information on the syntax, see \"Understanding the search syntax.\""
+        }
+      },
+      "field_11": {
+        "field_type": "query",
+        "fields": {
+          "name": "exclude_pull_requests",
+          "type": "boolean",
+          "in": "query",
+          "description": "If true pull requests are omitted from the response (empty array)."
+        }
+      },
+      "field_12": {
+        "field_type": "query",
+        "fields": {
+          "name": "check_suite_id",
+          "type": "integer",
+          "in": "query",
+          "description": "Returns workflow runs with the check_suite_id that you specify."
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository workflows",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/workflows",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a workflow",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "workflow_id",
+          "type": "",
+          "in": "path",
+          "description": "The ID of the workflow. You can also pass the workflow file name as a string."
+        }
+      }
+    },
+    {
+      "namespace_description": "Disable a workflow",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "workflow_id",
+          "type": "",
+          "in": "path",
+          "description": "The ID of the workflow. You can also pass the workflow file name as a string."
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a workflow dispatch event",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "workflow_id",
+          "type": "",
+          "in": "path",
+          "description": "The ID of the workflow. You can also pass the workflow file name as a string."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The git reference for the workflow. The reference can be a branch or tag name."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "inputs",
+          "type": "object",
+          "in": "body",
+          "description": "Input keys and values configured in the workflow file. The maximum number of properties is 10. Any default properties configured in the workflow file will be used when inputs are omitted."
+        }
+      }
+    },
+    {
+      "namespace_description": "Enable a workflow",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "workflow_id",
+          "type": "",
+          "in": "path",
+          "description": "The ID of the workflow. You can also pass the workflow file name as a string."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get workflow usage",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "workflow_id",
+          "type": "",
+          "in": "path",
+          "description": "The ID of the workflow. You can also pass the workflow file name as a string."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1886 @@
+{
+  "result": [
+    {
+      "namespace_description": "List branches",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/branches",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "protected",
+          "type": "boolean",
+          "in": "query",
+          "description": "Setting to true returns only protected branches. When set to false, only unprotected branches are returned. Omitting this parameter returns all branches."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a branch",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Rename a branch",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/rename",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "new_name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The new name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Sync a fork branch with the upstream repository",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/merge-upstream",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the branch which should be updated to match upstream."
+        }
+      }
+    },
+    {
+      "namespace_description": "Merge a branch",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/merges",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "base",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the base branch that the head will be merged into."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "head",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The head to merge. This can be a branch name or a commit SHA1."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "commit_message",
+          "type": "string",
+          "in": "body",
+          "description": "Commit message to use for the merge commit. If omitted, a default message will be used."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get branch protection",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Update branch protection",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "required_status_checks",
+          "type": "object or null",
+          "in": "body",
+          "description": "Required. Require status checks to pass before merging. Set to null to disable."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "enforce_admins",
+          "type": "boolean or null",
+          "in": "body",
+          "description": "Required. Enforce all configured restrictions for administrators. Set to true to enforce required status checks for repository administrators. Set to null to disable."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "required_pull_request_reviews",
+          "type": "object or null",
+          "in": "body",
+          "description": "Required. Require at least one approving review on a pull request, before merging. Set to null to disable."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "restrictions",
+          "type": "object or null",
+          "in": "body",
+          "description": "Required. Restrict who can push to the protected branch. User, app, and team restrictions are only available for organization-owned repositories. Set to null to disable."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "required_linear_history",
+          "type": "boolean",
+          "in": "body",
+          "description": "Enforces a linear commit Git history, which prevents anyone from pushing merge commits to a branch. Set to true to enforce a linear commit history. Set to false to disable a linear commit Git history. Your repository must allow squash merging or rebase merging before you can enable a linear commit history. Default: false. For more information, see \"Requiring a linear commit history\" in the GitHub Help documentation."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_force_pushes",
+          "type": "boolean or null",
+          "in": "body",
+          "description": "Permits force pushes to the protected branch by anyone with write access to the repository. Set to true to allow force pushes. Set to false or null to block force pushes. Default: false. For more information, see \"Enabling force pushes to a protected branch\" in the GitHub Help documentation.\""
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_deletions",
+          "type": "boolean",
+          "in": "body",
+          "description": "Allows deletion of the protected branch by anyone with write access to the repository. Set to false to prevent deletion of the protected branch. Default: false. For more information, see \"Enabling force pushes to a protected branch\" in the GitHub Help documentation."
+        }
+      },
+      "field_11": {
+        "field_type": "body",
+        "fields": {
+          "name": "required_conversation_resolution",
+          "type": "boolean",
+          "in": "body",
+          "description": "Requires all conversations on code to be resolved before a pull request can be merged into a branch that matches this rule. Set to false to disable. Default: false."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete branch protection",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get admin branch protection",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Set admin branch protection",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete admin branch protection",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get pull request review protection",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Update pull request review protection",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "dismissal_restrictions",
+          "type": "object",
+          "in": "body",
+          "description": "Specify which users and teams can dismiss pull request reviews. Pass an empty dismissal_restrictions object to disable. User and team dismissal_restrictions are only available for organization-owned repositories. Omit this parameter for personal repositories."
+        }
+      },
+      "field_5": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thedismissal_restrictionsobjectName (Type)Descriptionusers (array of strings)The list of user logins with dismissal accessteams (array of strings)The list of team slugs with dismissal access",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "dismiss_stale_reviews",
+          "type": "boolean",
+          "in": "body",
+          "description": "Set to true if you want to automatically dismiss approving reviews when someone pushes a new commit."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "require_code_owner_reviews",
+          "type": "boolean",
+          "in": "body",
+          "description": "Blocks merging pull requests until code owners have reviewed."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "required_approving_review_count",
+          "type": "integer",
+          "in": "body",
+          "description": "Specifies the number of reviewers required to approve pull requests. Use a number between 1 and 6 or 0 to not require reviewers."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "bypass_pull_request_allowances",
+          "type": "object",
+          "in": "body",
+          "description": "Allow specific users or teams to bypass pull request requirements."
+        }
+      },
+      "field_10": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thebypass_pull_request_allowancesobjectName (Type)Descriptionusers (array of strings)The list of user logins allowed to bypass pull request requirements.teams (array of strings)The list of team slugs allowed to bypass pull request requirements.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete pull request review protection",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get commit signature protection",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Create commit signature protection",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete commit signature protection",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_signatures",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get status checks protection",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Update status check protection",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "strict",
+          "type": "boolean",
+          "in": "body",
+          "description": "Require branches to be up to date before merging."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "contexts",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Deprecated: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use checks instead of contexts for more fine-grained control."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "checks",
+          "type": "array of objects",
+          "in": "body",
+          "description": "The list of status checks to require in order to merge into this branch."
+        }
+      },
+      "field_7": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thechecksitemsName (Type)Descriptioncontext (string)Required. The name of the required checkapp_id (integer)The ID of the GitHub App that must provide this check. Omit this field to automatically select the GitHub App that has recently provided this check, or any app if it was not set by a GitHub App. Pass -1 to explicitly allow any app to set the status.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove status check protection",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get all status check contexts",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add status check contexts",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "contexts",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. contexts parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set status check contexts",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "contexts",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. contexts parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove status check contexts",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "contexts",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. contexts parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get access restrictions",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete access restrictions",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get apps with access to the protected branch",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add app access restrictions",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "apps",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. apps parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set app access restrictions",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "apps",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. apps parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove app access restrictions",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/apps",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "apps",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. apps parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get teams with access to the protected branch",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add team access restrictions",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "teams",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. teams parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set team access restrictions",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "teams",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. teams parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove team access restrictions",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "teams",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. teams parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get users with access to the protected branch",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add user access restrictions",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "users",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. users parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set user access restrictions",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "users",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. users parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove user access restrictions",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the branch."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "users",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. users parameter"
+        }
+      }
+    }
+  ]
+}

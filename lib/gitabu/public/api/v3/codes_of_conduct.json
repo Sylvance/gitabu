@@ -1,0 +1,41 @@
+{
+  "result": [
+    {
+      "namespace_description": "Get all codes of conduct",
+      "method": "get",
+      "endpoint": "/codes_of_conduct",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a code of conduct",
+      "method": "get",
+      "endpoint": "/codes_of_conduct/{key}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "key",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    }
+  ]
+}

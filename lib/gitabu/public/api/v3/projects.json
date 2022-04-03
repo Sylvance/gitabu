@@ -1,0 +1,966 @@
+{
+  "result": [
+    {
+      "namespace_description": "List organization projects",
+      "method": "get",
+      "endpoint": "/orgs/{org}/projects",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "query",
+          "description": "Indicates the state of the projects to return. Can be either open, closed, or all.Default: open"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create an organization project",
+      "method": "post",
+      "endpoint": "/orgs/{org}/projects",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the project."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "The description of the project."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a project",
+      "method": "get",
+      "endpoint": "/projects/{project_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a project",
+      "method": "patch",
+      "endpoint": "/projects/{project_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Name of the project"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string or null",
+          "in": "body",
+          "description": "Body of the project"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "body",
+          "description": "State of the project; either 'open' or 'closed'"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "organization_permission",
+          "type": "string",
+          "in": "body",
+          "description": "The baseline permission that all organization members have on this project"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "private",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether or not this project can be seen by everyone."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a project",
+      "method": "delete",
+      "endpoint": "/projects/{project_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository projects",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/projects",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "query",
+          "description": "Indicates the state of the projects to return. Can be either open, closed, or all.Default: open"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a repository project",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/projects",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the project."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "The description of the project."
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a user project",
+      "method": "post",
+      "endpoint": "/user/projects",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Name of the project"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string or null",
+          "in": "body",
+          "description": "Body of the project"
+        }
+      }
+    },
+    {
+      "namespace_description": "List user projects",
+      "method": "get",
+      "endpoint": "/users/{username}/projects",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "query",
+          "description": "Indicates the state of the projects to return. Can be either open, closed, or all.Default: open"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a project card",
+      "method": "get",
+      "endpoint": "/projects/columns/cards/{card_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "card_id",
+          "type": "integer",
+          "in": "path",
+          "description": "card_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update an existing project card",
+      "method": "patch",
+      "endpoint": "/projects/columns/cards/{card_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "card_id",
+          "type": "integer",
+          "in": "path",
+          "description": "card_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "note",
+          "type": "string or null",
+          "in": "body",
+          "description": "The project card's note"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "archived",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether or not the card is archived"
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a project card",
+      "method": "delete",
+      "endpoint": "/projects/columns/cards/{card_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "card_id",
+          "type": "integer",
+          "in": "path",
+          "description": "card_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Move a project card",
+      "method": "post",
+      "endpoint": "/projects/columns/cards/{card_id}/moves",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "card_id",
+          "type": "integer",
+          "in": "path",
+          "description": "card_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "position",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The position of the card in a column. Can be one of: top, bottom, or after:<card_id> to place after the specified card."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "column_id",
+          "type": "integer",
+          "in": "body",
+          "description": "The unique identifier of the column the card should be moved to"
+        }
+      }
+    },
+    {
+      "namespace_description": "List project cards",
+      "method": "get",
+      "endpoint": "/projects/columns/{column_id}/cards",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "column_id",
+          "type": "integer",
+          "in": "path",
+          "description": "column_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "archived_state",
+          "type": "string",
+          "in": "query",
+          "description": "Filters the project cards that are returned by the card's state. Can be one of all,archived, or not_archived.Default: not_archived"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a project card",
+      "method": "post",
+      "endpoint": "/projects/columns/{column_id}/cards",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "column_id",
+          "type": "integer",
+          "in": "path",
+          "description": "column_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "note",
+          "type": "string or null",
+          "in": "body",
+          "description": "Required. The project card's note"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "content_id",
+          "type": "integer",
+          "in": "body",
+          "description": "Required. The unique identifier of the content associated with the card"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "content_type",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The piece of content associated with the card"
+        }
+      }
+    },
+    {
+      "namespace_description": "List project collaborators",
+      "method": "get",
+      "endpoint": "/projects/{project_id}/collaborators",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "affiliation",
+          "type": "string",
+          "in": "query",
+          "description": "Filters the collaborators by their affiliation. Can be one of:\n* outside: Outside collaborators of a project that are not a member of the project's organization.\n* direct: Collaborators with permissions to a project, regardless of organization membership status.\n* all: All collaborators the authenticated user can see.Default: all"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Add project collaborator",
+      "method": "put",
+      "endpoint": "/projects/{project_id}/collaborators/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "permission",
+          "type": "string",
+          "in": "body",
+          "description": "The permission to grant the collaborator.Default: write"
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove user as a collaborator",
+      "method": "delete",
+      "endpoint": "/projects/{project_id}/collaborators/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get project permission for a user",
+      "method": "get",
+      "endpoint": "/projects/{project_id}/collaborators/{username}/permission",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a project column",
+      "method": "get",
+      "endpoint": "/projects/columns/{column_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "column_id",
+          "type": "integer",
+          "in": "path",
+          "description": "column_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update an existing project column",
+      "method": "patch",
+      "endpoint": "/projects/columns/{column_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "column_id",
+          "type": "integer",
+          "in": "path",
+          "description": "column_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Name of the project column"
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a project column",
+      "method": "delete",
+      "endpoint": "/projects/columns/{column_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "column_id",
+          "type": "integer",
+          "in": "path",
+          "description": "column_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Move a project column",
+      "method": "post",
+      "endpoint": "/projects/columns/{column_id}/moves",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "column_id",
+          "type": "integer",
+          "in": "path",
+          "description": "column_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "position",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The position of the column in a project. Can be one of: first, last, or after:<column_id> to place after the specified column."
+        }
+      }
+    },
+    {
+      "namespace_description": "List project columns",
+      "method": "get",
+      "endpoint": "/projects/{project_id}/columns",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a project column",
+      "method": "post",
+      "endpoint": "/projects/{project_id}/columns",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Name of the project column"
+        }
+      }
+    }
+  ]
+}

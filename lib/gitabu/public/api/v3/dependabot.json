@@ -1,0 +1,596 @@
+{
+  "result": [
+    {
+      "namespace_description": "List organization secrets",
+      "method": "get",
+      "endpoint": "/orgs/{org}/dependabot/secrets",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an organization public key",
+      "method": "get",
+      "endpoint": "/orgs/{org}/dependabot/secrets/public-key",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an organization secret",
+      "method": "get",
+      "endpoint": "/orgs/{org}/dependabot/secrets/{secret_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create or update an organization secret",
+      "method": "require\"rbnacl\"require\"base64\"\"+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0=\"\"my_secret\"# Print the base64 encoded secretput",
+      "endpoint": "const sodium = require('tweetsodium');\n\nconst key = \"base64-encoded-public-key\";\nconst value = \"plain-text-secret\";\n\n// Convert the message and key to Uint8Array's (Buffer implements that interface)\nconst messageBytes = Buffer.from(value);\nconst keyBytes = Buffer.from(key, 'base64');\n\n// Encrypt using LibSodium.\nconst encryptedBytes = sodium.seal(messageBytes, keyBytes);\n\n// Base64 the encrypted secret\nconst encrypted = Buffer.from(encryptedBytes).toString('base64');\n\nconsole.log(encrypted);\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "encrypted_value",
+          "type": "string",
+          "in": "body",
+          "description": "Value for your secret, encrypted with LibSodium using the public key retrieved from the Get an organization public key endpoint."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "key_id",
+          "type": "string",
+          "in": "body",
+          "description": "ID of the key you used to encrypt the secret."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "visibility",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Configures the access that repositories have to the organization secret. Can be one of:\n- all - All repositories in an organization can access the secret.\n- private - Private repositories in an organization can access the secret.\n- selected - Only specific repositories can access the secret."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "selected_repository_ids",
+          "type": "array of strings",
+          "in": "body",
+          "description": "An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the visibility is set to selected. You can manage the list of selected repositories using the List selected repositories for an organization secret, Set selected repositories for an organization secret, and Remove selected repository from an organization secret endpoints."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an organization secret",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/dependabot/secrets/{secret_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List selected repositories for an organization secret",
+      "method": "get",
+      "endpoint": "/orgs/{org}/dependabot/secrets/{secret_name}/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set selected repositories for an organization secret",
+      "method": "put",
+      "endpoint": "/orgs/{org}/dependabot/secrets/{secret_name}/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "selected_repository_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "Required. An array of repository ids that can access the organization secret. You can only provide a list of repository ids when the visibility is set to selected. You can add and remove individual repositories using the Set selected repositories for an organization secret and Remove selected repository from an organization secret endpoints."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add selected repository to an organization secret",
+      "method": "put",
+      "endpoint": "/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove selected repository from an organization secret",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/dependabot/secrets/{secret_name}/repositories/{repository_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository secrets",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/dependabot/secrets",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a repository public key",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/dependabot/secrets/public-key",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a repository secret",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/dependabot/secrets/{secret_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create or update a repository secret",
+      "method": "require\"rbnacl\"require\"base64\"\"+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0=\"\"my_secret\"# Print the base64 encoded secretput",
+      "endpoint": "const sodium = require('tweetsodium');\n\nconst key = \"base64-encoded-public-key\";\nconst value = \"plain-text-secret\";\n\n// Convert the message and key to Uint8Array's (Buffer implements that interface)\nconst messageBytes = Buffer.from(value);\nconst keyBytes = Buffer.from(key, 'base64');\n\n// Encrypt using LibSodium.\nconst encryptedBytes = sodium.seal(messageBytes, keyBytes);\n\n// Base64 the encrypted secret\nconst encrypted = Buffer.from(encryptedBytes).toString('base64');\n\nconsole.log(encrypted);\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "encrypted_value",
+          "type": "string",
+          "in": "body",
+          "description": "Value for your secret, encrypted with LibSodium using the public key retrieved from the Get a repository public key endpoint."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "key_id",
+          "type": "string",
+          "in": "body",
+          "description": "ID of the key you used to encrypt the secret."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a repository secret",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/dependabot/secrets/{secret_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    }
+  ]
+}

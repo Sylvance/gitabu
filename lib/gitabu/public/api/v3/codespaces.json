@@ -1,0 +1,884 @@
+{
+  "result": [
+    {
+      "namespace_description": "List codespaces in a repository for the authenticated user",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/codespaces",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a codespace in a repository",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/codespaces",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "body",
+          "description": "Git ref (typically a branch name) for this codespace"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "location",
+          "type": "string",
+          "in": "body",
+          "description": "Location for this codespace. Assigned by IP if not provided"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "machine",
+          "type": "string",
+          "in": "body",
+          "description": "Machine type to use for this codespace"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "working_directory",
+          "type": "string",
+          "in": "body",
+          "description": "Working directory for this codespace"
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "idle_timeout_minutes",
+          "type": "integer",
+          "in": "body",
+          "description": "Time in minutes before codespace stops from inactivity"
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "display_name",
+          "type": "string",
+          "in": "body",
+          "description": "Display name for this codespace"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a codespace from a pull request",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/pulls/{pull_number}/codespaces",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "pull_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "location",
+          "type": "string",
+          "in": "body",
+          "description": "Location for this codespace. Assigned by IP if not provided"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "machine",
+          "type": "string",
+          "in": "body",
+          "description": "Machine type to use for this codespace"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "working_directory",
+          "type": "string",
+          "in": "body",
+          "description": "Working directory for this codespace"
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "idle_timeout_minutes",
+          "type": "integer",
+          "in": "body",
+          "description": "Time in minutes before codespace stops from inactivity"
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "display_name",
+          "type": "string",
+          "in": "body",
+          "description": "Display name for this codespace"
+        }
+      }
+    },
+    {
+      "namespace_description": "List codespaces for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/codespaces",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "query",
+          "description": "ID of the Repository to filter on"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a codespace for the authenticated user",
+      "method": "post",
+      "endpoint": "/user/codespaces",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "body",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "body",
+          "description": "Required. Repository id for this codespace"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "body",
+          "description": "Git ref (typically a branch name) for this codespace"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "location",
+          "type": "string",
+          "in": "body",
+          "description": "Location for this codespace. Assigned by IP if not provided"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "machine",
+          "type": "string",
+          "in": "body",
+          "description": "Machine type to use for this codespace"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "working_directory",
+          "type": "string",
+          "in": "body",
+          "description": "Working directory for this codespace"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "idle_timeout_minutes",
+          "type": "integer",
+          "in": "body",
+          "description": "Time in minutes before codespace stops from inactivity"
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "display_name",
+          "type": "string",
+          "in": "body",
+          "description": "Display name for this codespace"
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "pull_request",
+          "type": "object",
+          "in": "body",
+          "description": "Required. Pull request number for this codespace"
+        }
+      },
+      "field_9": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thepull_requestobjectName (Type)Descriptionpull_request_number (integer)Required. Pull request numberrepository_id (integer)Required. Repository id for this codespace",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a codespace for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/codespaces/{codespace_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "codespace_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the codespace."
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a codespace for the authenticated user",
+      "method": "patch",
+      "endpoint": "/user/codespaces/{codespace_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "codespace_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the codespace."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "machine",
+          "type": "string",
+          "in": "body",
+          "description": "A valid machine to transition this codespace to."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "display_name",
+          "type": "string",
+          "in": "body",
+          "description": "Display name for this codespace"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "recent_folders",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Recently opened folders inside the codespace. It is currently used by the clients to determine the folder path to load the codespace in."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a codespace for the authenticated user",
+      "method": "delete",
+      "endpoint": "/user/codespaces/{codespace_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "codespace_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the codespace."
+        }
+      }
+    },
+    {
+      "namespace_description": "Export a codespace for the authenticated user",
+      "method": "post",
+      "endpoint": "/user/codespaces/{codespace_name}/exports",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "codespace_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the codespace."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get details about a codespace export",
+      "method": "get",
+      "endpoint": "/user/codespaces/{codespace_name}/exports/{export_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "codespace_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the codespace."
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "export_id",
+          "type": "string",
+          "in": "path",
+          "description": "The ID of the export operation, or latest. Currently only latest is currently supported."
+        }
+      }
+    },
+    {
+      "namespace_description": "Start a codespace for the authenticated user",
+      "method": "post",
+      "endpoint": "/user/codespaces/{codespace_name}/start",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "codespace_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the codespace."
+        }
+      }
+    },
+    {
+      "namespace_description": "Stop a codespace for the authenticated user",
+      "method": "post",
+      "endpoint": "/user/codespaces/{codespace_name}/stop",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "codespace_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the codespace."
+        }
+      }
+    },
+    {
+      "namespace_description": "List available machine types for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/codespaces/machines",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "location",
+          "type": "string",
+          "in": "query",
+          "description": "The location to check for available machines. Assigned by IP if not provided."
+        }
+      }
+    },
+    {
+      "namespace_description": "List machine types for a codespace",
+      "method": "get",
+      "endpoint": "/user/codespaces/{codespace_name}/machines",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "codespace_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the codespace."
+        }
+      }
+    },
+    {
+      "namespace_description": "List secrets for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/codespaces/secrets",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get public key for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/codespaces/secrets/public-key",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a secret for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/codespaces/secrets/{secret_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create or update a secret for the authenticated user",
+      "method": "require\"rbnacl\"require\"base64\"\"+ZYvJDZMHUfBkJdyq5Zm9SKqeuBQ4sj+6sfjlH4CgG0=\"\"my_secret\"# Print the base64 encoded secretput",
+      "endpoint": "const sodium = require('tweetsodium');\n\nconst key = \"base64-encoded-public-key\";\nconst value = \"plain-text-secret\";\n\n// Convert the message and key to Uint8Array's (Buffer implements that interface)\nconst messageBytes = Buffer.from(value);\nconst keyBytes = Buffer.from(key, 'base64');\n\n// Encrypt using LibSodium.\nconst encryptedBytes = sodium.seal(messageBytes, keyBytes);\n\n// Base64 the encrypted secret\nconst encrypted = Buffer.from(encryptedBytes).toString('base64');\n\nconsole.log(encrypted);\n",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "encrypted_value",
+          "type": "string",
+          "in": "body",
+          "description": "Value for your secret, encrypted with LibSodium using the public key retrieved from the Get the public key for the authenticated user endpoint."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "key_id",
+          "type": "string",
+          "in": "body",
+          "description": "Required. ID of the key you used to encrypt the secret."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "selected_repository_ids",
+          "type": "array of strings",
+          "in": "body",
+          "description": "An array of repository ids that can access the user secret. You can manage the list of selected repositories using the List selected repositories for a user secret, Set selected repositories for a user secret, and Remove a selected repository from a user secret endpoints."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a secret for the authenticated user",
+      "method": "delete",
+      "endpoint": "/user/codespaces/secrets/{secret_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List selected repositories for a user secret",
+      "method": "get",
+      "endpoint": "/user/codespaces/secrets/{secret_name}/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Set selected repositories for a user secret",
+      "method": "put",
+      "endpoint": "/user/codespaces/secrets/{secret_name}/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "selected_repository_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "Required. An array of repository ids for which a codespace can access the secret. You can manage the list of selected repositories using the List selected repositories for a user secret, Add a selected repository to a user secret, and Remove a selected repository from a user secret endpoints."
+        }
+      }
+    },
+    {
+      "namespace_description": "Add a selected repository to a user secret",
+      "method": "put",
+      "endpoint": "/user/codespaces/secrets/{secret_name}/repositories/{repository_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a selected repository from a user secret",
+      "method": "delete",
+      "endpoint": "/user/codespaces/secrets/{secret_name}/repositories/{repository_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "secret_name",
+          "type": "string",
+          "in": "path",
+          "description": "secret_name parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repository_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    }
+  ]
+}

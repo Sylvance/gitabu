@@ -1,0 +1,753 @@
+{
+  "result": [
+    {
+      "namespace_description": "List releases",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/releases",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a release",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/releases",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "tag_name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the tag."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "target_commitish",
+          "type": "string",
+          "in": "body",
+          "description": "Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch (usually master)."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "The name of the release."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Text describing the contents of the tag."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "draft",
+          "type": "boolean",
+          "in": "body",
+          "description": "true to create a draft (unpublished) release, false to create a published one."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "prerelease",
+          "type": "boolean",
+          "in": "body",
+          "description": "true to identify the release as a prerelease. false to identify the release as a full release."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "discussion_category_name",
+          "type": "string",
+          "in": "body",
+          "description": "If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. For more information, see \"Managing categories for discussions in your repository.\""
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "generate_release_notes",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether to automatically generate the name and body for this release. If name is specified, the specified name will be used; otherwise, a name will be automatically generated. If body is specified, the body will be pre-pended to the automatically generated notes."
+        }
+      }
+    },
+    {
+      "namespace_description": "Generate release notes content for a release",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/releases/generate-notes",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "tag_name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The tag name for the release. This can be an existing tag or a new one."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "target_commitish",
+          "type": "string",
+          "in": "body",
+          "description": "Specifies the commitish value that will be the target for the release's tag. Required if the supplied tag_name does not reference an existing tag. Ignored if the tag_name already exists."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "previous_tag_name",
+          "type": "string",
+          "in": "body",
+          "description": "The name of the previous tag to use as the starting point for the release notes. Use to manually specify the range for the set of changes considered as part this release."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "configuration_file_path",
+          "type": "string",
+          "in": "body",
+          "description": "Specifies a path to a file in the repository containing configuration settings used for generating the release notes. If unspecified, the configuration file located in the repository at '.github/release.yml' or '.github/release.yaml' will be used. If that is not present, the default configuration will be used."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get the latest release",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/releases/latest",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a release by tag name",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/releases/tags/{tag}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "tag",
+          "type": "string",
+          "in": "path",
+          "description": "tag parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a release",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/releases/{release_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "release_id",
+          "type": "integer",
+          "in": "path",
+          "description": "release_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a release",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/releases/{release_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "release_id",
+          "type": "integer",
+          "in": "path",
+          "description": "release_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "tag_name",
+          "type": "string",
+          "in": "body",
+          "description": "The name of the tag."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "target_commitish",
+          "type": "string",
+          "in": "body",
+          "description": "Specifies the commitish value that determines where the Git tag is created from. Can be any branch or commit SHA. Unused if the Git tag already exists. Default: the repository's default branch (usually master)."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "The name of the release."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Text describing the contents of the tag."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "draft",
+          "type": "boolean",
+          "in": "body",
+          "description": "true makes the release a draft, and false publishes the release."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "prerelease",
+          "type": "boolean",
+          "in": "body",
+          "description": "true to identify the release as a prerelease, false to identify the release as a full release."
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "discussion_category_name",
+          "type": "string",
+          "in": "body",
+          "description": "If specified, a discussion of the specified category is created and linked to the release. The value must be a category that already exists in the repository. If there is already a discussion linked to the release, this parameter is ignored. For more information, see \"Managing categories for discussions in your repository.\""
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a release",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/releases/{release_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "release_id",
+          "type": "integer",
+          "in": "path",
+          "description": "release_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a release asset",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/releases/assets/{asset_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "asset_id",
+          "type": "integer",
+          "in": "path",
+          "description": "asset_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a release asset",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/releases/assets/{asset_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "asset_id",
+          "type": "integer",
+          "in": "path",
+          "description": "asset_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "The file name of the asset."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "label",
+          "type": "string",
+          "in": "body",
+          "description": "An alternate short description of the asset. Used in place of the filename."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "body",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a release asset",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/releases/assets/{asset_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "asset_id",
+          "type": "integer",
+          "in": "path",
+          "description": "asset_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List release assets",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/releases/{release_id}/assets",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "release_id",
+          "type": "integer",
+          "in": "path",
+          "description": "release_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Upload a release asset",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/releases/{release_id}/assets",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "release_id",
+          "type": "integer",
+          "in": "path",
+          "description": "release_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "query",
+          "description": ""
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "label",
+          "type": "string",
+          "in": "query",
+          "description": ""
+        }
+      }
+    }
+  ]
+}

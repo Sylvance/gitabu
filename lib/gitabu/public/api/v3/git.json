@@ -1,0 +1,735 @@
+{
+  "result": [
+    {
+      "namespace_description": "Create a blob",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/git/blobs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The new blob's content."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "encoding",
+          "type": "string",
+          "in": "body",
+          "description": "The encoding used for content. Currently, \"utf-8\" and \"base64\" are supported.Default: utf-8"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a blob",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/git/blobs/{file_sha}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "file_sha",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a commit",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/git/commits",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "message",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The commit message"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "tree",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The SHA of the tree object this commit points to"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "parents",
+          "type": "array of strings",
+          "in": "body",
+          "description": "The SHAs of the commits that were the parents of this commit. If omitted or empty, the commit will be written as a root commit. For a single parent, an array of one SHA should be provided; for a merge commit, an array of more than one should be provided."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "author",
+          "type": "object",
+          "in": "body",
+          "description": "Information about the author of the commit. By default, the author will be the authenticated user and the current date. See the author and committer object below for details."
+        }
+      },
+      "field_7": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theauthorobjectName (Type)Descriptionname (string)Required. The name of the author (or committer) of the commitemail (string)Required. The email of the author (or committer) of the commitdate (string)Indicates when this commit was authored (or committed). This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "committer",
+          "type": "object",
+          "in": "body",
+          "description": "Information about the person who is making the commit. By default, committer will use the information set in author. See the author and committer object below for details."
+        }
+      },
+      "field_9": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thecommitterobjectName (Type)Descriptionname (string)The name of the author (or committer) of the commitemail (string)The email of the author (or committer) of the commitdate (string)Indicates when this commit was authored (or committed). This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "signature",
+          "type": "string",
+          "in": "body",
+          "description": "The PGP signature of the commit. GitHub adds the signature to the gpgsig header of the created commit. For a commit signature to be verifiable by Git or GitHub, it must be an ASCII-armored detached PGP signature over the string commit as it would be written to the object database. To pass a signature parameter, you need to first manually create a valid PGP signature, which can be complicated. You may find it easier to use the command line to create signed commits."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a commit",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/git/commits/{commit_sha}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "commit_sha",
+          "type": "string",
+          "in": "path",
+          "description": "commit_sha parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List matching references",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/git/matching-refs/{ref}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "path",
+          "description": "ref parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a reference",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/git/ref/{ref}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "path",
+          "description": "ref parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a reference",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/git/refs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the fully qualified reference (ie: refs/heads/master). If it doesn't start with 'refs' and have at least two slashes, it will be rejected."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "sha",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The SHA1 value for this reference."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "key",
+          "type": "string",
+          "in": "body",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a reference",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/git/refs/{ref}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "path",
+          "description": "ref parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "sha",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The SHA1 value to set this reference to"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "force",
+          "type": "boolean",
+          "in": "body",
+          "description": "Indicates whether to force the update or to make sure the update is a fast-forward update. Leaving this out or setting it to false will make sure you're not overwriting work."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a reference",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/git/refs/{ref}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "path",
+          "description": "ref parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a tag object",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/git/tags",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "tag",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The tag's name. This is typically a version (e.g., \"v0.0.1\")."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "message",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The tag message."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "object",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The SHA of the git object this is tagging."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "type",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The type of the object we're tagging. Normally this is a commit but it can also be a tree or a blob."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "tagger",
+          "type": "object",
+          "in": "body",
+          "description": "An object with information about the individual creating the tag."
+        }
+      },
+      "field_8": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thetaggerobjectName (Type)Descriptionname (string)Required. The name of the author of the tagemail (string)Required. The email of the author of the tagdate (string)When this object was tagged. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a tag",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/git/tags/{tag_sha}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "tag_sha",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a tree",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/git/trees",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "tree",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Required. Objects (of path, mode, type, and sha) specifying a tree structure."
+        }
+      },
+      "field_4": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thetreeitemsName (Type)Descriptionpath (string)The file referenced in the tree.mode (string)The file mode; one of 100644 for file (blob), 100755 for executable (blob), 040000 for subdirectory (tree), 160000 for submodule (commit), or 120000 for a blob that specifies the path of a symlink.type (string)Either blob, tree, or commit.sha (string or null)The SHA1 checksum ID of the object in the tree. Also called tree.sha. If the value is null then the file will be deleted.  \nNote: Use either tree.sha or content to specify the contents of the entry. Using both tree.sha and content will return an error.content (string)The content you want this file to have. GitHub will write this blob out and use that SHA for this entry. Use either this, or tree.sha.  \nNote: Use either tree.sha or content to specify the contents of the entry. Using both tree.sha and content will return an error.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "base_tree",
+          "type": "string",
+          "in": "body",
+          "description": "The SHA1 of an existing Git tree object which will be used as the base for the new tree. If provided, a new Git tree object will be created from entries in the Git tree object pointed to by base_tree and entries defined in the tree parameter. Entries defined in the tree parameter will overwrite items from base_tree with the same path. If you're creating new changes on a branch, then normally you'd set base_tree to the SHA1 of the Git tree object of the current latest commit on the branch you're working on.\nIf not provided, GitHub will create a new Git tree object from only the entries defined in the tree parameter. If you create a new commit pointing to such a tree, then all files which were a part of the parent commit's tree and were not defined in the tree parameter will be listed as deleted by the new commit."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a tree",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/git/trees/{tree_sha}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "tree_sha",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "recursive",
+          "type": "string",
+          "in": "query",
+          "description": "Setting this parameter to any value returns the objects or subtrees referenced by the tree specified in :tree_sha. For example, setting recursive to any of the following will enable returning objects or subtrees: 0, 1, \"true\", and \"false\". Omit this parameter to prevent recursively returning objects or subtrees."
+        }
+      }
+    }
+  ]
+}

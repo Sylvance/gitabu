@@ -1,0 +1,18 @@
+{
+  "result": [
+    {
+      "namespace_description": "Get rate limit status for the authenticated user",
+      "method": "get",
+      "endpoint": "/rate_limit",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      }
+    }
+  ]
+}

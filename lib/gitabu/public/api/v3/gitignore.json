@@ -1,0 +1,41 @@
+{
+  "result": [
+    {
+      "namespace_description": "Get all gitignore templates",
+      "method": "get",
+      "endpoint": "/gitignore/templates",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a gitignore template",
+      "method": "get",
+      "endpoint": "/gitignore/templates/{name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    }
+  ]
+}

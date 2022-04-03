@@ -1,0 +1,2314 @@
+{
+  "result": [
+    {
+      "namespace_description": "List organization repositories",
+      "method": "get",
+      "endpoint": "/orgs/{org}/repos",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "type",
+          "type": "string",
+          "in": "query",
+          "description": "Specifies the types of repositories you want returned. Can be one of all, public, private, forks, sources, member, internal. Note: For GitHub AE, can be one of all, private, forks, sources, member, internal. Default: all. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, type can also be internal. However, the internal value is not yet supported when a GitHub App calls this API with an installation access token."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "Can be one of created, updated, pushed, full_name.Default: created"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "Can be one of asc or desc. Default: when using full_name: asc, otherwise desc"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create an organization repository",
+      "method": "post",
+      "endpoint": "/orgs/{org}/repos",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the repository."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "A short description of the repository."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "homepage",
+          "type": "string",
+          "in": "body",
+          "description": "A URL with more information about the repository."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "private",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether the repository is private."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "visibility",
+          "type": "string",
+          "in": "body",
+          "description": "Can be public or private. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, visibility can also be internal. Note: For GitHub Enterprise Server and GitHub AE, this endpoint will only list repositories available to all users on the enterprise. For more information, see \"Creating an internal repository\" in the GitHub Help documentation."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "has_issues",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to enable issues for this repository or false to disable them.Default: "
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "has_projects",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to enable projects for this repository or false to disable them. Note: If you're creating a repository in an organization that has disabled repository projects, the default is false, and if you pass true, the API returns an error.Default: "
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "has_wiki",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to enable the wiki for this repository or false to disable it.Default: "
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "is_template",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to make this repo available as a template repository or false to prevent it."
+        }
+      },
+      "field_11": {
+        "field_type": "body",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "body",
+          "description": "The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization."
+        }
+      },
+      "field_12": {
+        "field_type": "body",
+        "fields": {
+          "name": "auto_init",
+          "type": "boolean",
+          "in": "body",
+          "description": "Pass true to create an initial commit with empty README."
+        }
+      },
+      "field_13": {
+        "field_type": "body",
+        "fields": {
+          "name": "gitignore_template",
+          "type": "string",
+          "in": "body",
+          "description": "Desired language or platform .gitignore template to apply. Use the name of the template without the extension. For example, \"Haskell\"."
+        }
+      },
+      "field_14": {
+        "field_type": "body",
+        "fields": {
+          "name": "license_template",
+          "type": "string",
+          "in": "body",
+          "description": "Choose an open source license template that best suits your needs, and then use the license keyword as the license_template string. For example, \"mit\" or \"mpl-2.0\"."
+        }
+      },
+      "field_15": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_squash_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to allow squash-merging pull requests, or false to prevent squash-merging.Default: "
+        }
+      },
+      "field_16": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_merge_commit",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to allow merging pull requests with a merge commit, or false to prevent merging pull requests with merge commits.Default: "
+        }
+      },
+      "field_17": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_rebase_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to allow rebase-merging pull requests, or false to prevent rebase-merging.Default: "
+        }
+      },
+      "field_18": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_auto_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to allow auto-merge on pull requests, or false to disallow auto-merge."
+        }
+      },
+      "field_19": {
+        "field_type": "body",
+        "fields": {
+          "name": "delete_branch_on_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to allow automatically deleting head branches when pull requests are merged, or false to prevent automatic deletion."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a repository",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "The name of the repository."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "A short description of the repository."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "homepage",
+          "type": "string",
+          "in": "body",
+          "description": "A URL with more information about the repository."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "private",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to make the repository private or false to make it public. Default: false.\nNote: You will get a 422 error if the organization restricts changing repository visibility to organization owners and a non-owner tries to change the value of private. Note: You will get a 422 error if the organization restricts changing repository visibility to organization owners and a non-owner tries to change the value of private."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "visibility",
+          "type": "string",
+          "in": "body",
+          "description": "Can be public or private. If your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+, visibility can also be internal.\""
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "security_and_analysis",
+          "type": "object or null",
+          "in": "body",
+          "description": "Specify which security and analysis features to enable or disable. For example, to enable GitHub Advanced Security, use this data in the body of the PATCH request: {\"security_and_analysis\": {\"advanced_security\": {\"status\": \"enabled\"}}}. If you have admin permissions for a private repository covered by an Advanced Security license, you can check which security and analysis features are currently enabled by using a GET /repos/{owner}/{repo} request."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "has_issues",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to enable issues for this repository or false to disable them.Default: "
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "has_projects",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to enable projects for this repository or false to disable them. Note: If you're creating a repository in an organization that has disabled repository projects, the default is false, and if you pass true, the API returns an error.Default: "
+        }
+      },
+      "field_11": {
+        "field_type": "body",
+        "fields": {
+          "name": "has_wiki",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to enable the wiki for this repository or false to disable it.Default: "
+        }
+      },
+      "field_12": {
+        "field_type": "body",
+        "fields": {
+          "name": "is_template",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to make this repo available as a template repository or false to prevent it."
+        }
+      },
+      "field_13": {
+        "field_type": "body",
+        "fields": {
+          "name": "default_branch",
+          "type": "string",
+          "in": "body",
+          "description": "Updates the default branch for this repository."
+        }
+      },
+      "field_14": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_squash_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to allow squash-merging pull requests, or false to prevent squash-merging.Default: "
+        }
+      },
+      "field_15": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_merge_commit",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to allow merging pull requests with a merge commit, or false to prevent merging pull requests with merge commits.Default: "
+        }
+      },
+      "field_16": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_rebase_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to allow rebase-merging pull requests, or false to prevent rebase-merging.Default: "
+        }
+      },
+      "field_17": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_auto_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to allow auto-merge on pull requests, or false to disallow auto-merge."
+        }
+      },
+      "field_18": {
+        "field_type": "body",
+        "fields": {
+          "name": "delete_branch_on_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to allow automatically deleting head branches when pull requests are merged, or false to prevent automatic deletion."
+        }
+      },
+      "field_19": {
+        "field_type": "body",
+        "fields": {
+          "name": "archived",
+          "type": "boolean",
+          "in": "body",
+          "description": "true to archive this repository. Note: You cannot unarchive repositories through the API."
+        }
+      },
+      "field_20": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_forking",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to allow private forks, or false to prevent private forks."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a repository",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Enable automated security fixes",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/automated-security-fixes",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Disable automated security fixes",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/automated-security-fixes",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List CODEOWNERS errors",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/codeowners/errors",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "query",
+          "description": "A branch, tag or commit name used to determine which version of the CODEOWNERS file to use. Default: the repository's default branch (e.g. main)"
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository contributors",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/contributors",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "anon",
+          "type": "string",
+          "in": "query",
+          "description": "Set to 1 or true to include anonymous contributors in results."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a repository dispatch event",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/dispatches",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "event_type",
+          "type": "string",
+          "in": "body",
+          "description": "Required. A custom webhook event name."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "client_payload",
+          "type": "object",
+          "in": "body",
+          "description": "JSON payload with extra information about the webhook event that your action or worklow may use."
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository languages",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/languages",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository tags",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/tags",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository teams",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/teams",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get all repository topics",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/topics",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      }
+    },
+    {
+      "namespace_description": "Replace all repository topics",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/topics",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "names",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. An array of topics to add to the repository. Pass one or more topics to replace the set of existing topics. Send an empty array ([]) to clear all topics from the repository. Note: Topic names cannot contain uppercase letters."
+        }
+      }
+    },
+    {
+      "namespace_description": "Transfer a repository",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/transfer",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "new_owner",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The username or organization name the repository will be transferred to."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "team_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories."
+        }
+      }
+    },
+    {
+      "namespace_description": "Check if vulnerability alerts are enabled for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/vulnerability-alerts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Enable vulnerability alerts",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/vulnerability-alerts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Disable vulnerability alerts",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/vulnerability-alerts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a repository using a template",
+      "method": "post",
+      "endpoint": "/repos/{template_owner}/{template_repo}/generate",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "template_owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "template_repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "body",
+          "description": "The organization or person who will own the new repository. To create a new repository in an organization, the authenticated user must be a member of the specified organization."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the new repository."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "A short description of the new repository."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "include_all_branches",
+          "type": "boolean",
+          "in": "body",
+          "description": "Set to true to include the directory structure and files from all branches in the template repository, and not just the default branch. Default: false."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "private",
+          "type": "boolean",
+          "in": "body",
+          "description": "Either true to create a new private repository or false to create a new public one."
+        }
+      }
+    },
+    {
+      "namespace_description": "List public repositories",
+      "method": "get",
+      "endpoint": "/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "integer",
+          "in": "query",
+          "description": "A repository ID. Only return repositories with an ID greater than this ID."
+        }
+      }
+    },
+    {
+      "namespace_description": "List repositories for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/repos",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "visibility",
+          "type": "string",
+          "in": "query",
+          "description": "Can be one of all, public, or private. Note: For GitHub AE, can be one of all, internal, or private.Default: all"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "affiliation",
+          "type": "string",
+          "in": "query",
+          "description": "Comma-separated list of values. Can include:\n* owner: Repositories that are owned by the authenticated user.\n* collaborator: Repositories that the user has been added to as a collaborator.\n* organization_member: Repositories that the user has access to through being a member of an organization. This includes every repository on every team that the user is on.Default: owner,collaborator,organization_member"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "type",
+          "type": "string",
+          "in": "query",
+          "description": "Can be one of all, owner, public, private, member. Note: For GitHub AE, can be one of all, owner, internal, private, member. Default: all  \nWill cause a 422 error if used in the same request as visibility or affiliation. Will cause a 422 error if used in the same request as visibility or affiliation.Default: all"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "Can be one of created, updated, pushed, full_name.Default: full_name"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "Can be one of asc or desc. Default: asc when using full_name, otherwise desc"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_9": {
+        "field_type": "query",
+        "fields": {
+          "name": "before",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated before the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a repository for the authenticated user",
+      "method": "post",
+      "endpoint": "/user/repos",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the repository."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "A short description of the repository."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "homepage",
+          "type": "string",
+          "in": "body",
+          "description": "A URL with more information about the repository."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "private",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether the repository is private."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "has_issues",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether issues are enabled.Default: "
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "has_projects",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether projects are enabled.Default: "
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "has_wiki",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether the wiki is enabled.Default: "
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "body",
+          "description": "The id of the team that will be granted access to this repository. This is only valid when creating a repository in an organization."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "auto_init",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether the repository is initialized with a minimal README."
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "gitignore_template",
+          "type": "string",
+          "in": "body",
+          "description": "The desired language or platform to apply to the .gitignore."
+        }
+      },
+      "field_11": {
+        "field_type": "body",
+        "fields": {
+          "name": "license_template",
+          "type": "string",
+          "in": "body",
+          "description": "The license keyword of the open source license for this repository."
+        }
+      },
+      "field_12": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_squash_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether to allow squash merges for pull requests.Default: "
+        }
+      },
+      "field_13": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_merge_commit",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether to allow merge commits for pull requests.Default: "
+        }
+      },
+      "field_14": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_rebase_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether to allow rebase merges for pull requests.Default: "
+        }
+      },
+      "field_15": {
+        "field_type": "body",
+        "fields": {
+          "name": "allow_auto_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether to allow Auto-merge to be used on pull requests."
+        }
+      },
+      "field_16": {
+        "field_type": "body",
+        "fields": {
+          "name": "delete_branch_on_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether to delete head branches when pull requests are merged"
+        }
+      },
+      "field_17": {
+        "field_type": "body",
+        "fields": {
+          "name": "has_downloads",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether downloads are enabled.Default: "
+        }
+      },
+      "field_18": {
+        "field_type": "body",
+        "fields": {
+          "name": "is_template",
+          "type": "boolean",
+          "in": "body",
+          "description": "Whether this repository acts as a template that can be used to generate new repositories."
+        }
+      }
+    },
+    {
+      "namespace_description": "List repositories for a user",
+      "method": "get",
+      "endpoint": "/users/{username}/repos",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "type",
+          "type": "string",
+          "in": "query",
+          "description": "Can be one of all, owner, member.Default: owner"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "Can be one of created, updated, pushed, full_name.Default: full_name"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "Can be one of asc or desc. Default: asc when using full_name, otherwise desc"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List all autolinks of a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/autolinks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create an autolink reference for a repository",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/autolinks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "key_prefix",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The prefix appended by a number will generate a link any time it is found in an issue, pull request, or commit."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "url_template",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The URL must contain  for the reference number."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an autolink reference of a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/autolinks/{autolink_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "autolink_id",
+          "type": "integer",
+          "in": "path",
+          "description": "autolink_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an autolink reference from a repository",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/autolinks/{autolink_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "autolink_id",
+          "type": "integer",
+          "in": "path",
+          "description": "autolink_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get repository content",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/contents/{path}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "path",
+          "type": "string",
+          "in": "path",
+          "description": "path parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "query",
+          "description": "The name of the commit/branch/tag. Default: the repository’s default branch (usually master)"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create or update file contents",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/contents/{path}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "path",
+          "type": "string",
+          "in": "path",
+          "description": "path parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "message",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The commit message."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The new file content, using Base64 encoding."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "sha",
+          "type": "string",
+          "in": "body",
+          "description": "Required if you are updating a file. The blob SHA of the file being replaced."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "body",
+          "description": "The branch name. Default: the repository’s default branch (usually master)"
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "committer",
+          "type": "object",
+          "in": "body",
+          "description": "The person that committed the file. Default: the authenticated user."
+        }
+      },
+      "field_9": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thecommitterobjectName (Type)Descriptionname (string)Required. The name of the author or committer of the commit. You'll receive a 422 status code if name is omitted.email (string)Required. The email of the author or committer of the commit. You'll receive a 422 status code if email is omitted.date (string)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "author",
+          "type": "object",
+          "in": "body",
+          "description": "The author of the file. Default: The committer or the authenticated user if you omit committer."
+        }
+      },
+      "field_11": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theauthorobjectName (Type)Descriptionname (string)Required. The name of the author or committer of the commit. You'll receive a 422 status code if name is omitted.email (string)Required. The email of the author or committer of the commit. You'll receive a 422 status code if email is omitted.date (string)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a file",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/contents/{path}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "path",
+          "type": "string",
+          "in": "path",
+          "description": "path parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "message",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The commit message."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "sha",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The blob SHA of the file being replaced."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "branch",
+          "type": "string",
+          "in": "body",
+          "description": "The branch name. Default: the repository’s default branch (usually master)"
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "committer",
+          "type": "object",
+          "in": "body",
+          "description": "object containing information about the committer."
+        }
+      },
+      "field_8": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thecommitterobjectName (Type)Descriptionname (string)The name of the author (or committer) of the commitemail (string)The email of the author (or committer) of the commit",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "author",
+          "type": "object",
+          "in": "body",
+          "description": "object containing information about the author."
+        }
+      },
+      "field_10": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theauthorobjectName (Type)Descriptionname (string)The name of the author (or committer) of the commitemail (string)The email of the author (or committer) of the commit",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a repository README",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/readme",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "query",
+          "description": "The name of the commit/branch/tag. Default: the repository’s default branch (usually master)"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a repository README for a directory",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/readme/{dir}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "dir",
+          "type": "string",
+          "in": "path",
+          "description": "The alternate path to look for a README file"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "query",
+          "description": "The name of the commit/branch/tag. Default: the repository’s default branch (usually master)"
+        }
+      }
+    },
+    {
+      "namespace_description": "Download a repository archive (tar)",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/tarball/{ref}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Download a repository archive (zip)",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/zipball/{ref}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List forks",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/forks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "The sort order. Can be either newest, oldest, or stargazers.Default: newest"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a fork",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/forks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "organization",
+          "type": "string",
+          "in": "body",
+          "description": "Optional parameter to specify the organization name if forking into an organization."
+        }
+      }
+    },
+    {
+      "namespace_description": "Enable Git LFS for a repository",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/lfs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Disable Git LFS for a repository",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/lfs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    }
+  ]
+}

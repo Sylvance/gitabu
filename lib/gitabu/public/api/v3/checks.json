@@ -1,0 +1,856 @@
+{
+  "result": [
+    {
+      "namespace_description": "Create a check run",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/check-runs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the check. For example, \"code-coverage\"."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "head_sha",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The SHA of the commit."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "details_url",
+          "type": "string",
+          "in": "body",
+          "description": "The URL of the integrator's site that has the full details of the check. If the integrator does not provide this, then the homepage of the GitHub app is used."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "external_id",
+          "type": "string",
+          "in": "body",
+          "description": "A reference for the run on the integrator's system."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "status",
+          "type": "string",
+          "in": "body",
+          "description": "The current status. Can be one of queued, in_progress, or completed.Default: queued"
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "started_at",
+          "type": "string",
+          "in": "body",
+          "description": "The time that the check run began. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "conclusion",
+          "type": "string",
+          "in": "body",
+          "description": "Required if you provide completed_at or a status of completed. The final conclusion of the check. Can be one of action_required, cancelled, failure, neutral, success, skipped, stale, or timed_out. When the conclusion is action_required, additional details should be provided on the site specified by details_url.\nNote: Providing conclusion will automatically set the status parameter to completed. You cannot change a check run conclusion to stale, only GitHub can set this."
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "completed_at",
+          "type": "string",
+          "in": "body",
+          "description": "The time the check completed. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_11": {
+        "field_type": "body",
+        "fields": {
+          "name": "output",
+          "type": "object",
+          "in": "body",
+          "description": "Check runs can accept a variety of data in the output object, including a title and summary and can optionally provide descriptive details about the run. See the output object description."
+        }
+      },
+      "field_12": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theoutputobjectName (Type)Descriptiontitle (string)Required. The title of the check run.summary (string)Required. The summary of the check run. This parameter supports Markdown.text (string)The details of the check run. This parameter supports Markdown.annotations (array of objects)Adds information from your analysis to specific lines of code. Annotations are visible on GitHub in the Checks and Files changed tab of the pull request. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the Update a check run endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. For details about how you can view annotations on GitHub, see \"About status checks\". See the annotations object description for details about how to use this parameter.images (array of objects)Adds images to the output displayed in the GitHub pull request UI. See the images object description for details.Properties of theannotationsitemsName (Type)Descriptionpath (string)Required. The path of the file to add an annotation to. For example, assets/css/main.css.start_line (integer)Required. The start line of the annotation.end_line (integer)Required. The end line of the annotation.start_column (integer)The start column of the annotation. Annotations only support start_column and end_column on the same line. Omit this parameter if start_line and end_line have different values.end_column (integer)The end column of the annotation. Annotations only support start_column and end_column on the same line. Omit this parameter if start_line and end_line have different values.annotation_level (string)Required. The level of the annotation. Can be one of notice, warning, or failure.message (string)Required. A short description of the feedback for these lines of code. The maximum size is 64 KB.title (string)The title that represents the annotation. The maximum size is 255 characters.raw_details (string)Details about this annotation. The maximum size is 64 KB.Properties of theimagesitemsName (Type)Descriptionalt (string)Required. The alternative text for the image.image_url (string)Required. The full URL of the image.caption (string)A short image description.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_13": {
+        "field_type": "body",
+        "fields": {
+          "name": "actions",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Displays a button on GitHub that can be clicked to alert your app to do additional tasks. For example, a code linting app can display a button that automatically fixes detected errors. The button created in this object is displayed after the check run completes. When a user clicks the button, GitHub sends the check_run.requested_action webhook to your app. Each action includes a label, identifier and description. A maximum of three actions are accepted. See the actions object description. To learn more about check runs and requested actions, see \"Check runs and requested actions.\""
+        }
+      },
+      "field_14": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theactionsitemsName (Type)Descriptionlabel (string)Required. The text to be displayed on a button in the web UI. The maximum size is 20 characters.description (string)Required. A short explanation of what this action would do. The maximum size is 40 characters.identifier (string)Required. A reference for the action on the integrator's system. The maximum size is 20 characters.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a check run",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/check-runs/{check_run_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "check_run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "check_run_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a check run",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/check-runs/{check_run_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "check_run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "check_run_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "The name of the check. For example, \"code-coverage\"."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "details_url",
+          "type": "string",
+          "in": "body",
+          "description": "The URL of the integrator's site that has the full details of the check."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "external_id",
+          "type": "string",
+          "in": "body",
+          "description": "A reference for the run on the integrator's system."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "started_at",
+          "type": "string",
+          "in": "body",
+          "description": "This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "status",
+          "type": "string",
+          "in": "body",
+          "description": "The current status. Can be one of queued, in_progress, or completed."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "conclusion",
+          "type": "string",
+          "in": "body",
+          "description": "Required if you provide completed_at or a status of completed. The final conclusion of the check. Can be one of action_required, cancelled, failure, neutral, success, skipped, stale, or timed_out.\nNote: Providing conclusion will automatically set the status parameter to completed. You cannot change a check run conclusion to stale, only GitHub can set this."
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "completed_at",
+          "type": "string",
+          "in": "body",
+          "description": "The time the check completed. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_11": {
+        "field_type": "body",
+        "fields": {
+          "name": "output",
+          "type": "object",
+          "in": "body",
+          "description": "Check runs can accept a variety of data in the output object, including a title and summary and can optionally provide descriptive details about the run. See the output object description."
+        }
+      },
+      "field_12": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theoutputobjectName (Type)Descriptiontitle (string)Required.summary (string)Required. Can contain Markdown.text (string)Can contain Markdown.annotations (array of objects)Adds information from your analysis to specific lines of code. Annotations are visible in GitHub's pull request UI. Annotations are visible in GitHub's pull request UI. The Checks API limits the number of annotations to a maximum of 50 per API request. To create more than 50 annotations, you have to make multiple requests to the Update a check run endpoint. Each time you update the check run, annotations are appended to the list of annotations that already exist for the check run. For details about annotations in the UI, see \"About status checks\". See the annotations object description for details.images (array of objects)Adds images to the output displayed in the GitHub pull request UI. See the images object description for details.Properties of theannotationsitemsName (Type)Descriptionpath (string)Required. The path of the file to add an annotation to. For example, assets/css/main.css.start_line (integer)Required. The start line of the annotation.end_line (integer)Required. The end line of the annotation.start_column (integer)The start column of the annotation. Annotations only support start_column and end_column on the same line. Omit this parameter if start_line and end_line have different values.end_column (integer)The end column of the annotation. Annotations only support start_column and end_column on the same line. Omit this parameter if start_line and end_line have different values.annotation_level (string)Required. The level of the annotation. Can be one of notice, warning, or failure.message (string)Required. A short description of the feedback for these lines of code. The maximum size is 64 KB.title (string)The title that represents the annotation. The maximum size is 255 characters.raw_details (string)Details about this annotation. The maximum size is 64 KB.Properties of theimagesitemsName (Type)Descriptionalt (string)Required. The alternative text for the image.image_url (string)Required. The full URL of the image.caption (string)A short image description.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_13": {
+        "field_type": "body",
+        "fields": {
+          "name": "actions",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Possible further actions the integrator can perform, which a user may trigger. Each action includes a label, identifier and description. A maximum of three actions are accepted. See the actions object description. To learn more about check runs and requested actions, see \"Check runs and requested actions.\""
+        }
+      },
+      "field_14": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theactionsitemsName (Type)Descriptionlabel (string)Required. The text to be displayed on a button in the web UI. The maximum size is 20 characters.description (string)Required. A short explanation of what this action would do. The maximum size is 40 characters.identifier (string)Required. A reference for the action on the integrator's system. The maximum size is 20 characters.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "List check run annotations",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/check-runs/{check_run_id}/annotations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "check_run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "check_run_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Rerequest a check run",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "check_run_id",
+          "type": "integer",
+          "in": "path",
+          "description": "check_run_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List check runs in a check suite",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/check-suites/{check_suite_id}/check-runs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "check_suite_id",
+          "type": "integer",
+          "in": "path",
+          "description": "check_suite_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "check_name",
+          "type": "string",
+          "in": "query",
+          "description": "Returns check runs with the specified name."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "status",
+          "type": "string",
+          "in": "query",
+          "description": "Returns check runs with the specified status. Can be one of queued, in_progress, or completed."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "filter",
+          "type": "string",
+          "in": "query",
+          "description": "Filters check runs by their completed_at timestamp. Can be one of latest (returning the most recent check runs) or all.Default: latest"
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List check runs for a Git reference",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/commits/{ref}/check-runs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "path",
+          "description": "ref parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "check_name",
+          "type": "string",
+          "in": "query",
+          "description": "Returns check runs with the specified name."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "status",
+          "type": "string",
+          "in": "query",
+          "description": "Returns check runs with the specified status. Can be one of queued, in_progress, or completed."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "filter",
+          "type": "string",
+          "in": "query",
+          "description": "Filters check runs by their completed_at timestamp. Can be one of latest (returning the most recent check runs) or all.Default: latest"
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_9": {
+        "field_type": "query",
+        "fields": {
+          "name": "app_id",
+          "type": "integer",
+          "in": "query",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a check suite",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/check-suites",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "head_sha",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The sha of the head commit."
+        }
+      }
+    },
+    {
+      "namespace_description": "Update repository preferences for check suites",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/check-suites/preferences",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "auto_trigger_checks",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Enables or disables automatic creation of CheckSuite events upon pushes to the repository. Enabled by default. See the auto_trigger_checks object description for details."
+        }
+      },
+      "field_4": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theauto_trigger_checksitemsName (Type)Descriptionapp_id (integer)Required. The id of the GitHub App.setting (boolean)Required. Set to true to enable automatic creation of CheckSuite events upon pushes to the repository, or false to disable them.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a check suite",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/check-suites/{check_suite_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "check_suite_id",
+          "type": "integer",
+          "in": "path",
+          "description": "check_suite_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Rerequest a check suite",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "check_suite_id",
+          "type": "integer",
+          "in": "path",
+          "description": "check_suite_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List check suites for a Git reference",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/commits/{ref}/check-suites",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "path",
+          "description": "ref parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "app_id",
+          "type": "integer",
+          "in": "query",
+          "description": "Filters check suites by GitHub App id."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "check_name",
+          "type": "string",
+          "in": "query",
+          "description": "Returns check runs with the specified name."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    }
+  ]
+}

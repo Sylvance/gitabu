@@ -1,0 +1,667 @@
+{
+  "result": [
+    {
+      "namespace_description": "Get a webhook configuration for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/hooks/{hook_id}/config",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a webhook configuration for a repository",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/hooks/{hook_id}/config",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "url",
+          "type": "string",
+          "in": "body",
+          "description": "The URL to which the payloads will be delivered."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "content_type",
+          "type": "string",
+          "in": "body",
+          "description": "The media type used to serialize the payloads. Supported values include json and form. The default is form."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "secret",
+          "type": "string",
+          "in": "body",
+          "description": "If provided, the secret will be used as the key to generate the HMAC hex digest value for delivery signature headers."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "insecure_ssl",
+          "type": "string or number or ",
+          "in": "body",
+          "description": "Determines whether the SSL certificate of the host for url will be verified when delivering payloads. Supported values include 0 (verification is performed) and 1 (verification is not performed). The default is 0. We strongly recommend not setting this to 1 as you are subject to man-in-the-middle and other attacks."
+        }
+      }
+    },
+    {
+      "namespace_description": "List deliveries for a repository webhook",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "cursor",
+          "type": "string",
+          "in": "query",
+          "description": "Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the link header for the next and previous page cursors."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a delivery for a repository webhook",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "delivery_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Redeliver a delivery for a repository webhook",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "delivery_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository webhooks",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/hooks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a repository webhook",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/hooks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Use web to create a webhook. Default: web. This parameter only accepts the value web."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "config",
+          "type": "object",
+          "in": "body",
+          "description": "Key/value pairs to provide settings for this webhook. These are defined below."
+        }
+      },
+      "field_5": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theconfigobjectName (Type)Descriptionurl (string)The URL to which the payloads will be delivered.content_type (string)The media type used to serialize the payloads. Supported values include json and form. The default is form.secret (string)If provided, the secret will be used as the key to generate the HMAC hex digest value for delivery signature headers.insecure_ssl (string or number or )Determines whether the SSL certificate of the host for url will be verified when delivering payloads. Supported values include 0 (verification is performed) and 1 (verification is not performed). The default is 0. We strongly recommend not setting this to 1 as you are subject to man-in-the-middle and other attacks.token (string)digest (string)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "events",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Determines what events the hook is triggered for.Default: push"
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "active",
+          "type": "boolean",
+          "in": "body",
+          "description": "Determines if notifications are sent when the webhook is triggered. Set to true to send notifications.Default: "
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a repository webhook",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/hooks/{hook_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a repository webhook",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/hooks/{hook_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "config",
+          "type": "object",
+          "in": "body",
+          "description": "Key/value pairs to provide settings for this webhook. These are defined below."
+        }
+      },
+      "field_5": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theconfigobjectName (Type)Descriptionurl (string)Required. The URL to which the payloads will be delivered.content_type (string)The media type used to serialize the payloads. Supported values include json and form. The default is form.secret (string)If provided, the secret will be used as the key to generate the HMAC hex digest value for delivery signature headers.insecure_ssl (string or number or )Determines whether the SSL certificate of the host for url will be verified when delivering payloads. Supported values include 0 (verification is performed) and 1 (verification is not performed). The default is 0. We strongly recommend not setting this to 1 as you are subject to man-in-the-middle and other attacks.address (string)room (string)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "events",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Determines what events the hook is triggered for. This replaces the entire array of events.Default: push"
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "add_events",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Determines a list of events to be added to the list of events that the Hook triggers for."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "remove_events",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Determines a list of events to be removed from the list of events that the Hook triggers for."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "active",
+          "type": "boolean",
+          "in": "body",
+          "description": "Determines if notifications are sent when the webhook is triggered. Set to true to send notifications.Default: "
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a repository webhook",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/hooks/{hook_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Ping a repository webhook",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/hooks/{hook_id}/pings",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Test the push repository webhook",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/hooks/{hook_id}/tests",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    }
+  ]
+}

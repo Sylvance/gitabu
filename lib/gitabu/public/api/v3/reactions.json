@@ -1,0 +1,1425 @@
+{
+  "result": [
+    {
+      "namespace_description": "List reactions for a team discussion comment",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "query",
+          "description": "Returns a single reaction type. Omit this parameter to list all reactions to a team discussion comment."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create reaction for a team discussion comment",
+      "method": "post",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The reaction type to add to the team discussion comment."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete team discussion comment reaction",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_5": {
+        "field_type": "path",
+        "fields": {
+          "name": "reaction_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List reactions for a team discussion",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "query",
+          "description": "Returns a single reaction type. Omit this parameter to list all reactions to a team discussion."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create reaction for a team discussion",
+      "method": "post",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The reaction type to add to the team discussion."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete team discussion reaction",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/reactions/{reaction_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "reaction_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List reactions for a commit comment",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/comments/{comment_id}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "query",
+          "description": "Returns a single reaction type. Omit this parameter to list all reactions to a commit comment."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create reaction for a commit comment",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/comments/{comment_id}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The reaction type to add to the commit comment."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a commit comment reaction",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "reaction_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List reactions for an issue comment",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "query",
+          "description": "Returns a single reaction type. Omit this parameter to list all reactions to an issue comment."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create reaction for an issue comment",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The reaction type to add to the issue comment."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an issue comment reaction",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/issues/comments/{comment_id}/reactions/{reaction_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "reaction_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List reactions for an issue",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "query",
+          "description": "Returns a single reaction type. Omit this parameter to list all reactions to an issue."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create reaction for an issue",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The reaction type to add to the issue."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an issue reaction",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "reaction_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List reactions for a pull request review comment",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "query",
+          "description": "Returns a single reaction type. Omit this parameter to list all reactions to a pull request review comment."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create reaction for a pull request review comment",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The reaction type to add to the pull request review comment."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a pull request comment reaction",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "reaction_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List reactions for a release",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/releases/{release_id}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "release_id",
+          "type": "integer",
+          "in": "path",
+          "description": "release_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "query",
+          "description": "Returns a single reaction type. Omit this parameter to list all reactions to a release."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create reaction for a release",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/releases/{release_id}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "release_id",
+          "type": "integer",
+          "in": "path",
+          "description": "release_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The reaction type to add to the release."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a release reaction",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/releases/{release_id}/reactions/{reaction_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "release_id",
+          "type": "integer",
+          "in": "path",
+          "description": "release_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "reaction_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List reactions for a team discussion comment (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "query",
+          "description": "Returns a single reaction type. Omit this parameter to list all reactions to a team discussion comment."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create reaction for a team discussion comment (Legacy)",
+      "method": "post",
+      "endpoint": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The reaction type to add to the team discussion comment."
+        }
+      }
+    },
+    {
+      "namespace_description": "List reactions for a team discussion (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/discussions/{discussion_number}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "query",
+          "description": "Returns a single reaction type. Omit this parameter to list all reactions to a team discussion."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create reaction for a team discussion (Legacy)",
+      "method": "post",
+      "endpoint": "/teams/{team_id}/discussions/{discussion_number}/reactions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "content",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The reaction type to add to the team discussion."
+        }
+      }
+    }
+  ]
+}

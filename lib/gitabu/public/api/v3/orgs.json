@@ -1,0 +1,1989 @@
+{
+  "result": [
+    {
+      "namespace_description": "List organizations",
+      "method": "get",
+      "endpoint": "/organizations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "integer",
+          "in": "query",
+          "description": "An organization ID. Only return organizations with an ID greater than this ID."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update an organization",
+      "method": "patch",
+      "endpoint": "/orgs/{org}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "billing_email",
+          "type": "string",
+          "in": "body",
+          "description": "Billing email address. This address is not publicized."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "company",
+          "type": "string",
+          "in": "body",
+          "description": "The company name."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "email",
+          "type": "string",
+          "in": "body",
+          "description": "The publicly visible email address."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "twitter_username",
+          "type": "string",
+          "in": "body",
+          "description": "The Twitter username of the company."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "location",
+          "type": "string",
+          "in": "body",
+          "description": "The location."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "The shorthand name of the company."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "The description of the company."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "has_organization_projects",
+          "type": "boolean",
+          "in": "body",
+          "description": "Toggles whether an organization can use organization projects."
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "has_repository_projects",
+          "type": "boolean",
+          "in": "body",
+          "description": "Toggles whether repositories that belong to the organization can use repository projects."
+        }
+      },
+      "field_11": {
+        "field_type": "body",
+        "fields": {
+          "name": "default_repository_permission",
+          "type": "string",
+          "in": "body",
+          "description": "Default permission level members have for organization repositories:\n* read - can pull, but not push to or administer this repository.\n* write - can pull and push, but not administer this repository.\n* admin - can pull, push, and administer this repository.\n* none - no permissions granted by default.Default: read"
+        }
+      },
+      "field_12": {
+        "field_type": "body",
+        "fields": {
+          "name": "members_can_create_repositories",
+          "type": "boolean",
+          "in": "body",
+          "description": "Toggles the ability of non-admin organization members to create repositories. Can be one of:\n* true - all organization members can create repositories.\n* false - only organization owners can create repositories.\nDefault: true\nNote: A parameter can override this parameter. See members_allowed_repository_creation_type in this table for details. Note: A parameter can override this parameter. See members_allowed_repository_creation_type in this table for details.Default: "
+        }
+      },
+      "field_13": {
+        "field_type": "body",
+        "fields": {
+          "name": "members_can_create_internal_repositories",
+          "type": "boolean",
+          "in": "body",
+          "description": "Toggles whether organization members can create internal repositories, which are visible to all enterprise members. You can only allow members to create internal repositories if your organization is associated with an enterprise account using GitHub Enterprise Cloud or GitHub Enterprise Server 2.20+. Can be one of:\n* true - all organization members can create internal repositories.\n* false - only organization owners can create internal repositories.\nDefault: true. For more information, see \"Restricting repository creation in your organization\" in the GitHub Help documentation."
+        }
+      },
+      "field_14": {
+        "field_type": "body",
+        "fields": {
+          "name": "members_can_create_private_repositories",
+          "type": "boolean",
+          "in": "body",
+          "description": "Toggles whether organization members can create private repositories, which are visible to organization members with permission. Can be one of:\n* true - all organization members can create private repositories.\n* false - only organization owners can create private repositories.\nDefault: true. For more information, see \"Restricting repository creation in your organization\" in the GitHub Help documentation."
+        }
+      },
+      "field_15": {
+        "field_type": "body",
+        "fields": {
+          "name": "members_can_create_public_repositories",
+          "type": "boolean",
+          "in": "body",
+          "description": "Toggles whether organization members can create public repositories, which are visible to anyone. Can be one of:\n* true - all organization members can create public repositories.\n* false - only organization owners can create public repositories.\nDefault: true. For more information, see \"Restricting repository creation in your organization\" in the GitHub Help documentation."
+        }
+      },
+      "field_16": {
+        "field_type": "body",
+        "fields": {
+          "name": "members_allowed_repository_creation_type",
+          "type": "string",
+          "in": "body",
+          "description": "Specifies which types of repositories non-admin organization members can create. Can be one of:\n* all - all organization members can create public and private repositories.\n* private - members can create private repositories. This option is only available to repositories that are part of an organization on GitHub Enterprise Cloud.\n* none - only admin members can create repositories.\nNote: This parameter is deprecated and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in members_can_create_repositories. See the parameter deprecation notice in the operation description for details."
+        }
+      },
+      "field_17": {
+        "field_type": "body",
+        "fields": {
+          "name": "members_can_create_pages",
+          "type": "boolean",
+          "in": "body",
+          "description": "Toggles whether organization members can create GitHub Pages sites. Can be one of:\n* true - all organization members can create GitHub Pages sites.\n* false - no organization members can create GitHub Pages sites. Existing published sites will not be impacted.Default: "
+        }
+      },
+      "field_18": {
+        "field_type": "body",
+        "fields": {
+          "name": "members_can_create_public_pages",
+          "type": "boolean",
+          "in": "body",
+          "description": "Toggles whether organization members can create public GitHub Pages sites. Can be one of:\n* true - all organization members can create public GitHub Pages sites.\n* false - no organization members can create public GitHub Pages sites. Existing published sites will not be impacted.Default: "
+        }
+      },
+      "field_19": {
+        "field_type": "body",
+        "fields": {
+          "name": "members_can_create_private_pages",
+          "type": "boolean",
+          "in": "body",
+          "description": "Toggles whether organization members can create private GitHub Pages sites. Can be one of:\n* true - all organization members can create private GitHub Pages sites.\n* false - no organization members can create private GitHub Pages sites. Existing published sites will not be impacted.Default: "
+        }
+      },
+      "field_20": {
+        "field_type": "body",
+        "fields": {
+          "name": "members_can_fork_private_repositories",
+          "type": "boolean",
+          "in": "body",
+          "description": "Toggles whether organization members can fork private organization repositories. Can be one of:\n* true - all organization members can fork private repositories within the organization.\n* false - no organization members can fork private repositories within the organization."
+        }
+      },
+      "field_21": {
+        "field_type": "body",
+        "fields": {
+          "name": "blog",
+          "type": "string",
+          "in": "body",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get the audit log for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/audit-log",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "phrase",
+          "type": "string",
+          "in": "query",
+          "description": "A search phrase. For more information, see Searching the audit log."
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "include",
+          "type": "string",
+          "in": "query",
+          "description": "The event types to include:\n\nweb - returns web (non-Git) events.\ngit - returns Git events.\nall - returns both web and Git events.\n\nThe default is web."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "after",
+          "type": "string",
+          "in": "query",
+          "description": "A cursor, as given in the Link header. If specified, the query only searches for events after this cursor."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "before",
+          "type": "string",
+          "in": "query",
+          "description": "A cursor, as given in the Link header. If specified, the query only searches for events before this cursor."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "order",
+          "type": "string",
+          "in": "query",
+          "description": "The order of audit log events. To list newest events first, specify desc. To list oldest events first, specify asc.\nThe default is desc."
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      }
+    },
+    {
+      "namespace_description": "List SAML SSO authorizations for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/credential-authorizations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page token"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "login",
+          "type": "string",
+          "in": "query",
+          "description": "Limits the list of credentials authorizations for an organization to a specific login"
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a SAML SSO authorization for an organization",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/credential-authorizations/{credential_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "credential_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List app installations for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/installations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List organizations for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/orgs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List organizations for a user",
+      "method": "get",
+      "endpoint": "/users/{username}/orgs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List users blocked by an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/blocks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Check if a user is blocked by an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/blocks/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Block a user from an organization",
+      "method": "put",
+      "endpoint": "/orgs/{org}/blocks/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Unblock a user from an organization",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/blocks/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List custom repository roles in an organization",
+      "method": "get",
+      "endpoint": "/organizations/{organization_id}/custom_roles",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "organization_id",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List failed organization invitations",
+      "method": "get",
+      "endpoint": "/orgs/{org}/failed_invitations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List pending organization invitations",
+      "method": "get",
+      "endpoint": "/orgs/{org}/invitations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create an organization invitation",
+      "method": "post",
+      "endpoint": "/orgs/{org}/invitations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "invitee_id",
+          "type": "integer",
+          "in": "body",
+          "description": "Required unless you provide email. GitHub user ID for the person you are inviting."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "email",
+          "type": "string",
+          "in": "body",
+          "description": "Required unless you provide invitee_id. Email address of the person you are inviting, which can be an existing GitHub user."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "role",
+          "type": "string",
+          "in": "body",
+          "description": "Specify role for new member. Can be one of:\n* admin - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.\n* direct_member - Non-owner organization members with ability to see other members and join teams by invitation.\n* billing_manager - Non-owner organization members with ability to manage the billing settings of your organization.Default: direct_member"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "team_ids",
+          "type": "array of integers",
+          "in": "body",
+          "description": "Specify IDs for the teams you want to invite new members to."
+        }
+      }
+    },
+    {
+      "namespace_description": "Cancel an organization invitation",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/invitations/{invitation_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "invitation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "invitation_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List organization invitation teams",
+      "method": "get",
+      "endpoint": "/orgs/{org}/invitations/{invitation_id}/teams",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "invitation_id",
+          "type": "integer",
+          "in": "path",
+          "description": "invitation_id parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List organization members",
+      "method": "get",
+      "endpoint": "/orgs/{org}/members",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "filter",
+          "type": "string",
+          "in": "query",
+          "description": "Filter members returned in the list. Can be one of:\n* 2fa_disabled - Members without two-factor authentication enabled. Available for organization owners.\n* all - All members the authenticated user can see.Default: all"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "role",
+          "type": "string",
+          "in": "query",
+          "description": "Filter members returned by their role. Can be one of:\n* all - All members of the organization, regardless of role.\n* admin - Organization owners.\n* member - Non-owner organization members.Default: all"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Check organization membership for a user",
+      "method": "get",
+      "endpoint": "/orgs/{org}/members/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove an organization member",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/members/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get organization membership for a user",
+      "method": "get",
+      "endpoint": "/orgs/{org}/memberships/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Set organization membership for a user",
+      "method": "put",
+      "endpoint": "/orgs/{org}/memberships/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "role",
+          "type": "string",
+          "in": "body",
+          "description": "The role to give the user in the organization. Can be one of:\n* admin - The user will become an owner of the organization.\n* member - The user will become a non-owner member of the organization.Default: member"
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove organization membership for a user",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/memberships/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List public organization members",
+      "method": "get",
+      "endpoint": "/orgs/{org}/public_members",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Check public organization membership for a user",
+      "method": "get",
+      "endpoint": "/orgs/{org}/public_members/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Set public organization membership for the authenticated user",
+      "method": "put",
+      "endpoint": "/orgs/{org}/public_members/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove public organization membership for the authenticated user",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/public_members/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List organization memberships for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/memberships/orgs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "query",
+          "description": "Indicates the state of the memberships to return. Can be either active or pending. If not specified, the API returns both active and pending memberships."
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an organization membership for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/memberships/orgs/{org}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update an organization membership for the authenticated user",
+      "method": "patch",
+      "endpoint": "/user/memberships/orgs/{org}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The state that the membership should be in. Only \"active\" will be accepted."
+        }
+      }
+    },
+    {
+      "namespace_description": "List outside collaborators for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/outside_collaborators",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "filter",
+          "type": "string",
+          "in": "query",
+          "description": "Filter the list of outside collaborators. Can be one of:\n* 2fa_disabled: Outside collaborators without two-factor authentication enabled.\n* all: All outside collaborators.Default: all"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Convert an organization member to outside collaborator",
+      "method": "put",
+      "endpoint": "/orgs/{org}/outside_collaborators/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove outside collaborator from an organization",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/outside_collaborators/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List organization webhooks",
+      "method": "get",
+      "endpoint": "/orgs/{org}/hooks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create an organization webhook",
+      "method": "post",
+      "endpoint": "/orgs/{org}/hooks",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Must be passed as \"web\"."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "config",
+          "type": "object",
+          "in": "body",
+          "description": "Required. Key/value pairs to provide settings for this webhook. These are defined below."
+        }
+      },
+      "field_4": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theconfigobjectName (Type)Descriptionurl (string)Required. The URL to which the payloads will be delivered.content_type (string)The media type used to serialize the payloads. Supported values include json and form. The default is form.secret (string)If provided, the secret will be used as the key to generate the HMAC hex digest value for delivery signature headers.insecure_ssl (string or number or )Determines whether the SSL certificate of the host for url will be verified when delivering payloads. Supported values include 0 (verification is performed) and 1 (verification is not performed). The default is 0. We strongly recommend not setting this to 1 as you are subject to man-in-the-middle and other attacks.username (string)password (string)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "events",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Determines what events the hook is triggered for.Default: push"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "active",
+          "type": "boolean",
+          "in": "body",
+          "description": "Determines if notifications are sent when the webhook is triggered. Set to true to send notifications.Default: "
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an organization webhook",
+      "method": "get",
+      "endpoint": "/orgs/{org}/hooks/{hook_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update an organization webhook",
+      "method": "patch",
+      "endpoint": "/orgs/{org}/hooks/{hook_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "config",
+          "type": "object",
+          "in": "body",
+          "description": "Key/value pairs to provide settings for this webhook. These are defined below."
+        }
+      },
+      "field_4": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of theconfigobjectName (Type)Descriptionurl (string)Required. The URL to which the payloads will be delivered.content_type (string)The media type used to serialize the payloads. Supported values include json and form. The default is form.secret (string)If provided, the secret will be used as the key to generate the HMAC hex digest value for delivery signature headers.insecure_ssl (string or number or )Determines whether the SSL certificate of the host for url will be verified when delivering payloads. Supported values include 0 (verification is performed) and 1 (verification is not performed). The default is 0. We strongly recommend not setting this to 1 as you are subject to man-in-the-middle and other attacks.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "events",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Determines what events the hook is triggered for.Default: push"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "active",
+          "type": "boolean",
+          "in": "body",
+          "description": "Determines if notifications are sent when the webhook is triggered. Set to true to send notifications.Default: "
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an organization webhook",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/hooks/{hook_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a webhook configuration for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/hooks/{hook_id}/config",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a webhook configuration for an organization",
+      "method": "patch",
+      "endpoint": "/orgs/{org}/hooks/{hook_id}/config",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "url",
+          "type": "string",
+          "in": "body",
+          "description": "The URL to which the payloads will be delivered."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "content_type",
+          "type": "string",
+          "in": "body",
+          "description": "The media type used to serialize the payloads. Supported values include json and form. The default is form."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "secret",
+          "type": "string",
+          "in": "body",
+          "description": "If provided, the secret will be used as the key to generate the HMAC hex digest value for delivery signature headers."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "insecure_ssl",
+          "type": "string or number or ",
+          "in": "body",
+          "description": "Determines whether the SSL certificate of the host for url will be verified when delivering payloads. Supported values include 0 (verification is performed) and 1 (verification is not performed). The default is 0. We strongly recommend not setting this to 1 as you are subject to man-in-the-middle and other attacks."
+        }
+      }
+    },
+    {
+      "namespace_description": "List deliveries for an organization webhook",
+      "method": "get",
+      "endpoint": "/orgs/{org}/hooks/{hook_id}/deliveries",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "cursor",
+          "type": "string",
+          "in": "query",
+          "description": "Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the link header for the next and previous page cursors."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a webhook delivery for an organization webhook",
+      "method": "get",
+      "endpoint": "/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "delivery_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Redeliver a delivery for an organization webhook",
+      "method": "post",
+      "endpoint": "/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "delivery_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Ping an organization webhook",
+      "method": "post",
+      "endpoint": "/orgs/{org}/hooks/{hook_id}/pings",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "hook_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    }
+  ]
+}

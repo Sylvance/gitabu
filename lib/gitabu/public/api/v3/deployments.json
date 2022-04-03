@@ -1,0 +1,698 @@
+{
+  "result": [
+    {
+      "namespace_description": "List deployments",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/deployments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "sha",
+          "type": "string",
+          "in": "query",
+          "description": "The SHA recorded at creation time.Default: none"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "query",
+          "description": "The name of the ref. This can be a branch, tag, or SHA.Default: none"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "task",
+          "type": "string",
+          "in": "query",
+          "description": "The name of the task for the deployment (e.g., deploy or deploy:migrations).Default: none"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "environment",
+          "type": "stringnull",
+          "in": "query",
+          "description": "The name of the environment that was deployed to (e.g., staging or production).Default: none"
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a deployment",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/deployments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "ref",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The ref to deploy. This can be a branch, tag, or SHA."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "task",
+          "type": "string",
+          "in": "body",
+          "description": "Specifies a task to execute (e.g., deploy or deploy:migrations).Default: deploy"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "auto_merge",
+          "type": "boolean",
+          "in": "body",
+          "description": "Attempts to automatically merge the default branch into the requested ref, if it's behind the default branch.Default: "
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "required_contexts",
+          "type": "array of strings",
+          "in": "body",
+          "description": "The status contexts to verify against commit status checks. If you omit this parameter, GitHub verifies all unique contexts before creating a deployment. To bypass checking entirely, pass an empty array. Defaults to all unique contexts."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "payload",
+          "type": "object or string or ",
+          "in": "body",
+          "description": "JSON payload with extra information about the deployment."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "environment",
+          "type": "string",
+          "in": "body",
+          "description": "Name for the target deployment environment (e.g., production, staging, qa).Default: production"
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string or null",
+          "in": "body",
+          "description": "Short description of the deployment."
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "transient_environment",
+          "type": "boolean",
+          "in": "body",
+          "description": "Specifies if the given environment is specific to the deployment and will no longer exist at some point in the future. Default: false"
+        }
+      },
+      "field_11": {
+        "field_type": "body",
+        "fields": {
+          "name": "production_environment",
+          "type": "boolean",
+          "in": "body",
+          "description": "Specifies if the given environment is one that end-users directly interact with. Default: true when environment is production and false otherwise."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a deployment",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/deployments/{deployment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "deployment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "deployment_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a deployment",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/deployments/{deployment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "deployment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "deployment_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get all environments",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/environments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an environment",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/environments/{environment_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "environment_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the environment"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create or update an environment",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/environments/{environment_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "environment_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the environment"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "wait_timer",
+          "type": "integer",
+          "in": "body",
+          "description": "The amount of time to delay a job after the job is initially triggered. The time (in minutes) must be an integer between 0 and 43,200 (30 days)."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "reviewers",
+          "type": "array of objects or null",
+          "in": "body",
+          "description": "The people or teams that may review jobs that reference the environment. You can list up to six users or teams as reviewers. The reviewers must have at least read access to the repository. Only one of the required reviewers needs to approve the job for it to proceed."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "deployment_branch_policy",
+          "type": "object or null",
+          "in": "body",
+          "description": "The type of deployment branch policy for this environment. To allow all branches to deploy, set to null."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an environment",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/environments/{environment_name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "environment_name",
+          "type": "string",
+          "in": "path",
+          "description": "The name of the environment"
+        }
+      }
+    },
+    {
+      "namespace_description": "List deployment statuses",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "deployment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "deployment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a deployment status",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "deployment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "deployment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The state of the status. Can be one of error, failure, inactive, in_progress, queued, pending, or success. When you set a transient deployment to inactive, the deployment will be shown as destroyed in GitHub."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "target_url",
+          "type": "string",
+          "in": "body",
+          "description": "The target URL to associate with this status. This URL should contain output to keep the user updated while the task is running or serve as historical information for what happened in the deployment. Note: It's recommended to use the log_url parameter, which replaces target_url."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "log_url",
+          "type": "string",
+          "in": "body",
+          "description": "The full URL of the deployment's output. This parameter replaces target_url. We will continue to accept target_url to support legacy uses, but we recommend replacing target_url with log_url. Setting log_url will automatically set target_url to the same value. Default: \"\""
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "A short description of the status. The maximum description length is 140 characters."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "environment",
+          "type": "string",
+          "in": "body",
+          "description": "Name for the target deployment environment, which can be changed when setting a deploy status. For example, production, staging, or qa."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "environment_url",
+          "type": "string",
+          "in": "body",
+          "description": "Sets the URL for accessing your environment. Default: \"\""
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "auto_inactive",
+          "type": "boolean",
+          "in": "body",
+          "description": "Adds a new inactive status to all prior non-transient, non-production environment deployments with the same repository and environment name as the created status's deployment. An inactive status is only added to deployments that had a success state. Default: true"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a deployment status",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "deployment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "deployment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "status_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    }
+  ]
+}

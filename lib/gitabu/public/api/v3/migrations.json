@@ -1,0 +1,960 @@
+{
+  "result": [
+    {
+      "namespace_description": "List organization migrations",
+      "method": "get",
+      "endpoint": "/orgs/{org}/migrations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "exclude",
+          "type": "array",
+          "in": "query",
+          "description": "Exclude attributes from the API response to improve performance"
+        }
+      }
+    },
+    {
+      "namespace_description": "Start an organization migration",
+      "method": "post",
+      "endpoint": "/orgs/{org}/migrations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "repositories",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. A list of arrays indicating which repositories should be migrated."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "lock_repositories",
+          "type": "boolean",
+          "in": "body",
+          "description": "Indicates whether repositories should be locked (to prevent manipulation) while migrating data."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "exclude_attachments",
+          "type": "boolean",
+          "in": "body",
+          "description": "Indicates whether attachments should be excluded from the migration (to reduce migration archive file size)."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "exclude_releases",
+          "type": "boolean",
+          "in": "body",
+          "description": "Indicates whether releases should be excluded from the migration (to reduce migration archive file size)."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "exclude_owner_projects",
+          "type": "boolean",
+          "in": "body",
+          "description": "Indicates whether projects owned by the organization or users should be excluded. from the migration."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "exclude",
+          "type": "array of strings",
+          "in": "body",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an organization migration status",
+      "method": "get",
+      "endpoint": "/orgs/{org}/migrations/{migration_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "migration_id",
+          "type": "integer",
+          "in": "path",
+          "description": "migration_id parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "exclude",
+          "type": "array",
+          "in": "query",
+          "description": "Exclude attributes from the API response to improve performance"
+        }
+      }
+    },
+    {
+      "namespace_description": "Download an organization migration archive",
+      "method": "get",
+      "endpoint": "/orgs/{org}/migrations/{migration_id}/archive",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "migration_id",
+          "type": "integer",
+          "in": "path",
+          "description": "migration_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an organization migration archive",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/migrations/{migration_id}/archive",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "migration_id",
+          "type": "integer",
+          "in": "path",
+          "description": "migration_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Unlock an organization repository",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "migration_id",
+          "type": "integer",
+          "in": "path",
+          "description": "migration_id parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo_name",
+          "type": "string",
+          "in": "path",
+          "description": "repo_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List repositories in an organization migration",
+      "method": "get",
+      "endpoint": "/orgs/{org}/migrations/{migration_id}/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "migration_id",
+          "type": "integer",
+          "in": "path",
+          "description": "migration_id parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an import status",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/import",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Start an import",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/import",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "vcs_url",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The URL of the originating repository."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "vcs",
+          "type": "string",
+          "in": "body",
+          "description": "The originating VCS type. Can be one of subversion, git, mercurial, or tfvc. Please be aware that without this parameter, the import job will take additional time to detect the VCS type before beginning the import. This detection step will be reflected in the response."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "vcs_username",
+          "type": "string",
+          "in": "body",
+          "description": "If authentication is required, the username to provide to vcs_url."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "vcs_password",
+          "type": "string",
+          "in": "body",
+          "description": "If authentication is required, the password to provide to vcs_url."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "tfvc_project",
+          "type": "string",
+          "in": "body",
+          "description": "For a tfvc import, the name of the project that is being imported."
+        }
+      }
+    },
+    {
+      "namespace_description": "Update an import",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/import",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "vcs_username",
+          "type": "string",
+          "in": "body",
+          "description": "The username to provide to the originating repository."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "vcs_password",
+          "type": "string",
+          "in": "body",
+          "description": "The password to provide to the originating repository."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "vcs",
+          "type": "string",
+          "in": "body",
+          "description": "The type of version control system you are migrating from."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "tfvc_project",
+          "type": "string",
+          "in": "body",
+          "description": "For a tfvc import, the name of the project that is being imported."
+        }
+      }
+    },
+    {
+      "namespace_description": "Cancel an import",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/import",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get commit authors",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/import/authors",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "integer",
+          "in": "query",
+          "description": "A user ID. Only return users with an ID greater than this ID."
+        }
+      }
+    },
+    {
+      "namespace_description": "Map a commit author",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/import/authors/{author_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "author_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "email",
+          "type": "string",
+          "in": "body",
+          "description": "The new Git author email."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "The new Git author name."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get large files",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/import/large_files",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update Git LFS preference",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/import/lfs",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "use_lfs",
+          "type": "string",
+          "in": "body",
+          "description": "Required. Can be one of opt_in (large files will be stored using Git LFS) or opt_out (large files will be removed during the import)."
+        }
+      }
+    },
+    {
+      "namespace_description": "List user migrations",
+      "method": "get",
+      "endpoint": "/user/migrations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Start a user migration",
+      "method": "post",
+      "endpoint": "/user/migrations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "body",
+        "fields": {
+          "name": "lock_repositories",
+          "type": "boolean",
+          "in": "body",
+          "description": "Lock the repositories being migrated at the start of the migration"
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "exclude_attachments",
+          "type": "boolean",
+          "in": "body",
+          "description": "Do not include attachments in the migration"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "exclude_releases",
+          "type": "boolean",
+          "in": "body",
+          "description": "Do not include releases in the migration"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "exclude_owner_projects",
+          "type": "boolean",
+          "in": "body",
+          "description": "Indicates whether projects owned by the organization or users should be excluded."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "exclude",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Exclude attributes from the API response to improve performance"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "repositories",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Required. "
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a user migration status",
+      "method": "get",
+      "endpoint": "/user/migrations/{migration_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "migration_id",
+          "type": "integer",
+          "in": "path",
+          "description": "migration_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "exclude",
+          "type": "array",
+          "in": "query",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Download a user migration archive",
+      "method": "get",
+      "endpoint": "/user/migrations/{migration_id}/archive",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "migration_id",
+          "type": "integer",
+          "in": "path",
+          "description": "migration_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a user migration archive",
+      "method": "delete",
+      "endpoint": "/user/migrations/{migration_id}/archive",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "migration_id",
+          "type": "integer",
+          "in": "path",
+          "description": "migration_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Unlock a user repository",
+      "method": "delete",
+      "endpoint": "/user/migrations/{migration_id}/repos/{repo_name}/lock",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "migration_id",
+          "type": "integer",
+          "in": "path",
+          "description": "migration_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo_name",
+          "type": "string",
+          "in": "path",
+          "description": "repo_name parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List repositories for a user migration",
+      "method": "get",
+      "endpoint": "/user/migrations/{migration_id}/repositories",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "migration_id",
+          "type": "integer",
+          "in": "path",
+          "description": "migration_id parameter"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    }
+  ]
+}

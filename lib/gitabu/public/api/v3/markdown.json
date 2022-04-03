@@ -1,0 +1,59 @@
+{
+  "result": [
+    {
+      "namespace_description": "Render a Markdown document",
+      "method": "post",
+      "endpoint": "/markdown",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "body",
+        "fields": {
+          "name": "text",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The Markdown text to render in HTML."
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "mode",
+          "type": "string",
+          "in": "body",
+          "description": "The rendering mode. Can be either markdown or gfm.Default: markdown"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "context",
+          "type": "string",
+          "in": "body",
+          "description": "The repository context to use when creating references in gfm mode.  For example, setting context to octo-org/octo-repo will change the text #42 into an HTML link to issue 42 in the octo-org/octo-repo repository."
+        }
+      }
+    },
+    {
+      "namespace_description": "Render a Markdown document in raw mode",
+      "method": "post",
+      "endpoint": "/markdown/raw",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      }
+    }
+  ]
+}

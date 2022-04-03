@@ -1,0 +1,2359 @@
+{
+  "result": [
+    {
+      "namespace_description": "List issues assigned to the authenticated user",
+      "method": "get",
+      "endpoint": "/issues",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "filter",
+          "type": "string",
+          "in": "query",
+          "description": "Indicates which sorts of issues to return. Can be one of:\n* assigned: Issues assigned to you\n* created: Issues created by you\n* mentioned: Issues mentioning you\n* subscribed: Issues you're subscribed to updates for\n* all or repos: All issues the authenticated user can see, regardless of participation or creationDefault: assigned"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "query",
+          "description": "Indicates the state of the issues to return. Can be either open, closed, or all.Default: open"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "labels",
+          "type": "string",
+          "in": "query",
+          "description": "A list of comma separated label names. Example: bug,ui,@high"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "What to sort results by. Can be either created, updated, comments.Default: created"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "One of asc (ascending) or desc (descending).Default: desc"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "collab",
+          "type": "boolean",
+          "in": "query",
+          "description": ""
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "orgs",
+          "type": "boolean",
+          "in": "query",
+          "description": ""
+        }
+      },
+      "field_9": {
+        "field_type": "query",
+        "fields": {
+          "name": "owned",
+          "type": "boolean",
+          "in": "query",
+          "description": ""
+        }
+      },
+      "field_10": {
+        "field_type": "query",
+        "fields": {
+          "name": "pulls",
+          "type": "boolean",
+          "in": "query",
+          "description": ""
+        }
+      },
+      "field_11": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_12": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List organization issues assigned to the authenticated user",
+      "method": "get",
+      "endpoint": "/orgs/{org}/issues",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "filter",
+          "type": "string",
+          "in": "query",
+          "description": "Indicates which sorts of issues to return. Can be one of:\n* assigned: Issues assigned to you\n* created: Issues created by you\n* mentioned: Issues mentioning you\n* subscribed: Issues you're subscribed to updates for\n* all or repos: All issues the authenticated user can see, regardless of participation or creationDefault: assigned"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "query",
+          "description": "Indicates the state of the issues to return. Can be either open, closed, or all.Default: open"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "labels",
+          "type": "string",
+          "in": "query",
+          "description": "A list of comma separated label names. Example: bug,ui,@high"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "What to sort results by. Can be either created, updated, comments.Default: created"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "One of asc (ascending) or desc (descending).Default: desc"
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_9": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List repository issues",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/issues",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "milestone",
+          "type": "string",
+          "in": "query",
+          "description": "If an integer is passed, it should refer to a milestone by its number field. If the string * is passed, issues with any milestone are accepted. If the string none is passed, issues without milestones are returned."
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "query",
+          "description": "Indicates the state of the issues to return. Can be either open, closed, or all.Default: open"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "assignee",
+          "type": "string",
+          "in": "query",
+          "description": "Can be the name of a user. Pass in none for issues with no assigned user, and * for issues assigned to any user."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "creator",
+          "type": "string",
+          "in": "query",
+          "description": "The user that created the issue."
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "mentioned",
+          "type": "string",
+          "in": "query",
+          "description": "A user that's mentioned in the issue."
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "labels",
+          "type": "string",
+          "in": "query",
+          "description": "A list of comma separated label names. Example: bug,ui,@high"
+        }
+      },
+      "field_9": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "What to sort results by. Can be either created, updated, comments.Default: created"
+        }
+      },
+      "field_10": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "One of asc (ascending) or desc (descending).Default: desc"
+        }
+      },
+      "field_11": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_12": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_13": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create an issue",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/issues",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "title",
+          "type": "string or integer or ",
+          "in": "body",
+          "description": "Required. The title of the issue."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "The contents of the issue."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "assignee",
+          "type": "string or null",
+          "in": "body",
+          "description": "Login for the user that this issue should be assigned to. NOTE: Only users with push access can set the assignee for new issues. The assignee is silently dropped otherwise. This field is deprecated."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "milestone",
+          "type": "string or integer or null or string or integer",
+          "in": "body",
+          "description": "The number of the milestone to associate this issue with. NOTE: Only users with push access can set the milestone for new issues. The milestone is silently dropped otherwise."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "labels",
+          "type": "array of strings or array of objects",
+          "in": "body",
+          "description": "Labels to associate with this issue. NOTE: Only users with push access can set labels for new issues. Labels are silently dropped otherwise."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "assignees",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Logins for Users to assign to this issue. NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an issue",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update an issue",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "title",
+          "type": "string or integer or null or string or integer",
+          "in": "body",
+          "description": "The title of the issue."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string or null",
+          "in": "body",
+          "description": "The contents of the issue."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "assignee",
+          "type": "string or null",
+          "in": "body",
+          "description": "Login for the user that this issue should be assigned to. This field is deprecated."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "body",
+          "description": "State of the issue. Either open or closed."
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "milestone",
+          "type": "string or integer or null or string or integer",
+          "in": "body",
+          "description": "The number of the milestone to associate this issue with or null to remove current. NOTE: Only users with push access can set the milestone for issues. The milestone is silently dropped otherwise."
+        }
+      },
+      "field_9": {
+        "field_type": "body",
+        "fields": {
+          "name": "labels",
+          "type": "array of strings or array of objects",
+          "in": "body",
+          "description": "Labels to associate with this issue. Pass one or more Labels to replace the set of Labels on this Issue. Send an empty array ([]) to clear all Labels from the Issue. NOTE: Only users with push access can set labels for issues. Labels are silently dropped otherwise."
+        }
+      },
+      "field_10": {
+        "field_type": "body",
+        "fields": {
+          "name": "assignees",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Logins for Users to assign to this issue. Pass one or more user logins to replace the set of assignees on this Issue. Send an empty array ([]) to clear all assignees from the Issue. NOTE: Only users with push access can set assignees for new issues. Assignees are silently dropped otherwise."
+        }
+      }
+    },
+    {
+      "namespace_description": "Lock an issue",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "lock_reason",
+          "type": "string",
+          "in": "body",
+          "description": "The reason for locking the issue or pull request conversation. Lock will fail if you don't use one of these reasons:\n* off-topic\n* too heated\n* resolved\n* spam"
+        }
+      }
+    },
+    {
+      "namespace_description": "Unlock an issue",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/lock",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List user account issues assigned to the authenticated user",
+      "method": "get",
+      "endpoint": "/user/issues",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "filter",
+          "type": "string",
+          "in": "query",
+          "description": "Indicates which sorts of issues to return. Can be one of:\n* assigned: Issues assigned to you\n* created: Issues created by you\n* mentioned: Issues mentioning you\n* subscribed: Issues you're subscribed to updates for\n* all or repos: All issues the authenticated user can see, regardless of participation or creationDefault: assigned"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "query",
+          "description": "Indicates the state of the issues to return. Can be either open, closed, or all.Default: open"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "labels",
+          "type": "string",
+          "in": "query",
+          "description": "A list of comma separated label names. Example: bug,ui,@high"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "What to sort results by. Can be either created, updated, comments.Default: created"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "One of asc (ascending) or desc (descending).Default: desc"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_8": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List assignees",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/assignees",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Check if a user can be assigned",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/assignees/{assignee}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "assignee",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Add assignees to an issue",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/assignees",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "assignees",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Usernames of people to assign this issue to. NOTE: Only users with push access can add assignees to an issue. Assignees are silently ignored otherwise."
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove assignees from an issue",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/assignees",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "assignees",
+          "type": "array of strings",
+          "in": "body",
+          "description": "Usernames of assignees to remove from an issue. NOTE: Only users with push access can remove assignees from an issue. Assignees are silently ignored otherwise."
+        }
+      }
+    },
+    {
+      "namespace_description": "List issue comments for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/issues/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "One of created (when the repository was starred) or updated (when it was last pushed to).Default: created"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "Either asc or desc. Ignored without the sort parameter."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an issue comment",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update an issue comment",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The contents of the comment."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete an issue comment",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/issues/comments/{comment_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_id",
+          "type": "integer",
+          "in": "path",
+          "description": "comment_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List issue comments",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "since",
+          "type": "string",
+          "in": "query",
+          "description": "Only show notifications updated after the given time. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create an issue comment",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The contents of the comment."
+        }
+      }
+    },
+    {
+      "namespace_description": "List issue events for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/issues/events",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an issue event",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/issues/events/{event_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "event_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List issue events",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/events",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List labels for an issue",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Add labels to an issue",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "labels",
+          "type": "array of strings",
+          "in": "body",
+          "description": "The names of the labels to add to the issue's existing labels. You can pass an empty array to remove all labels. Alternatively, you can pass a single label as a string or an array of labels directly, but GitHub recommends passing an object with the labels key. You can also replace all of the labels for an issue. For more information, see \"Set labels for an issue.\""
+        }
+      }
+    },
+    {
+      "namespace_description": "Set labels for an issue",
+      "method": "put",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "labels",
+          "type": "array of strings",
+          "in": "body",
+          "description": "The names of the labels to set for the issue. The labels you set replace any existing labels. You can pass an empty array to remove all labels. Alternatively, you can pass a single label as a string or an array of labels directly, but GitHub recommends passing an object with the labels key. You can also add labels to the existing labels for an issue. For more information, see \"Add labels to an issue.\""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove all labels from an issue",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a label from an issue",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/labels/{name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List labels for a repository",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a label",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing :strawberry: will render the emoji . For a full list of available emoji and codes, see \"Emoji cheat sheet.\""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "color",
+          "type": "string",
+          "in": "body",
+          "description": "The hexadecimal color code for the label, without the leading #."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "A short description of the label. Must be 100 characters or fewer."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a label",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/labels/{name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a label",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/labels/{name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "new_name",
+          "type": "string",
+          "in": "body",
+          "description": "The new name of the label. Emoji can be added to label names, using either native emoji or colon-style markup. For example, typing :strawberry: will render the emoji . For a full list of available emoji and codes, see \"Emoji cheat sheet.\""
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "color",
+          "type": "string",
+          "in": "body",
+          "description": "The hexadecimal color code for the label, without the leading #."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "A short description of the label. Must be 100 characters or fewer."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a label",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/labels/{name}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List labels for issues in a milestone",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/milestones/{milestone_number}/labels",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "milestone_number",
+          "type": "integer",
+          "in": "path",
+          "description": "milestone_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List milestones",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/milestones",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "query",
+          "description": "The state of the milestone. Either open, closed, or all.Default: open"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "sort",
+          "type": "string",
+          "in": "query",
+          "description": "What to sort results by. Either due_on or completeness.Default: due_on"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "The direction of the sort. Either asc or desc.Default: asc"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_7": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a milestone",
+      "method": "post",
+      "endpoint": "/repos/{owner}/{repo}/milestones",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "title",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The title of the milestone."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "body",
+          "description": "The state of the milestone. Either open or closed.Default: open"
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "A description of the milestone."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "due_on",
+          "type": "string",
+          "in": "body",
+          "description": "The milestone due date. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a milestone",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/milestones/{milestone_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "milestone_number",
+          "type": "integer",
+          "in": "path",
+          "description": "milestone_number parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a milestone",
+      "method": "patch",
+      "endpoint": "/repos/{owner}/{repo}/milestones/{milestone_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "milestone_number",
+          "type": "integer",
+          "in": "path",
+          "description": "milestone_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "title",
+          "type": "string",
+          "in": "body",
+          "description": "The title of the milestone."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "state",
+          "type": "string",
+          "in": "body",
+          "description": "The state of the milestone. Either open or closed.Default: open"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "A description of the milestone."
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "due_on",
+          "type": "string",
+          "in": "body",
+          "description": "The milestone due date. This is a timestamp in ISO 8601 format: YYYY-MM-DDTHH:MM:SSZ."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a milestone",
+      "method": "delete",
+      "endpoint": "/repos/{owner}/{repo}/milestones/{milestone_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "milestone_number",
+          "type": "integer",
+          "in": "path",
+          "description": "milestone_number parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List timeline events for an issue",
+      "method": "get",
+      "endpoint": "/repos/{owner}/{repo}/issues/{issue_number}/timeline",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "issue_number",
+          "type": "integer",
+          "in": "path",
+          "description": "issue_number parameter"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    }
+  ]
+}

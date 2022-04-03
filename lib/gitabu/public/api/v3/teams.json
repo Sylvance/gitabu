@@ -1,0 +1,3126 @@
+{
+  "result": [
+    {
+      "namespace_description": "List teams",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a team",
+      "method": "post",
+      "endpoint": "/orgs/{org}/teams",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the team."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "The description of the team."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "maintainers",
+          "type": "array of strings",
+          "in": "body",
+          "description": "List GitHub IDs for organization members who will become team maintainers."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "repo_names",
+          "type": "array of strings",
+          "in": "body",
+          "description": "The full name (e.g., \"organization-name/repository-name\") of repositories to add the team to."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "privacy",
+          "type": "string",
+          "in": "body",
+          "description": "The level of privacy this team should have. The options are:\nFor a non-nested team:\n* secret - only visible to organization owners and members of this team.\n* closed - visible to all members of this organization.\nDefault: secret\nFor a parent or child team:\n* closed - visible to all members of this organization.\nDefault for child team: closed"
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "permission",
+          "type": "string",
+          "in": "body",
+          "description": "Deprecated. The permission that new repositories will be added to the team with when none is specified. Can be one of:\n* pull - team members can pull, but not push to or administer newly-added repositories.\n* push - team members can pull and push, but not administer newly-added repositories.Default: pull"
+        }
+      },
+      "field_8": {
+        "field_type": "body",
+        "fields": {
+          "name": "parent_team_id",
+          "type": "integer",
+          "in": "body",
+          "description": "The ID of a team to set as the parent team."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a team by name",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a team",
+      "method": "patch",
+      "endpoint": "/orgs/{org}/teams/{team_slug}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "The name of the team."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "The description of the team."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "privacy",
+          "type": "string",
+          "in": "body",
+          "description": "The level of privacy this team should have. Editing teams without specifying this parameter leaves privacy intact. When a team is nested, the privacy for parent teams cannot be secret. The options are:\nFor a non-nested team:\n* secret - only visible to organization owners and members of this team.\n* closed - visible to all members of this organization.\nFor a parent or child team:\n* closed - visible to all members of this organization."
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "permission",
+          "type": "string",
+          "in": "body",
+          "description": "Deprecated. The permission that new repositories will be added to the team with when none is specified. Can be one of:\n* pull - team members can pull, but not push to or administer newly-added repositories.\n* push - team members can pull and push, but not administer newly-added repositories.\n* admin - team members can pull, push and administer newly-added repositories.Default: pull"
+        }
+      },
+      "field_7": {
+        "field_type": "body",
+        "fields": {
+          "name": "parent_team_id",
+          "type": "integer or null",
+          "in": "body",
+          "description": "The ID of a team to set as the parent team."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a team",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/teams/{team_slug}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List team projects",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/projects",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Check team permissions for a project",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Add or update team project permissions",
+      "method": "put",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "permission",
+          "type": "string",
+          "in": "body",
+          "description": "The permission to grant to the team for this project. Can be one of:\n* read - team members can read, but not write to or administer this project.\n* write - team members can read and write, but not administer this project.\n* admin - team members can read, write and administer this project.\nDefault: the team's permission attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set Content-Length to zero when calling out to this endpoint. For more information, see \"HTTP verbs.\""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a project from a team",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/projects/{project_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List team repositories",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/repos",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Check team permissions for a repository",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Add or update team repository permissions",
+      "method": "put",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "permission",
+          "type": "string",
+          "in": "body",
+          "description": "The permission to grant the team on this repository. Can be one of:\n* pull - team members can pull, but not push to or administer this repository.\n* push - team members can pull and push, but not administer this repository.\n* admin - team members can pull, push and administer this repository.\n* maintain - team members can manage the repository without access to sensitive or destructive actions. Recommended for project managers. Only applies to repositories owned by organizations.\n* triage - team members can proactively manage issues and pull requests without write access. Recommended for contributors who triage a repository. Only applies to repositories owned by organizations.\n* custom repository role name - A custom repository role if the owning organization has defined any.  \nIf no permission is specified, the team's permission attribute will be used to determine what permission to grant the team on this repository.Default: push"
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a repository from a team",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List child teams",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/teams",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a team (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a team (Legacy)",
+      "method": "patch",
+      "endpoint": "/teams/{team_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "name",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The name of the team."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "description",
+          "type": "string",
+          "in": "body",
+          "description": "The description of the team."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "privacy",
+          "type": "string",
+          "in": "body",
+          "description": "The level of privacy this team should have. Editing teams without specifying this parameter leaves privacy intact. The options are:\nFor a non-nested team:\n* secret - only visible to organization owners and members of this team.\n* closed - visible to all members of this organization.\nFor a parent or child team:\n* closed - visible to all members of this organization."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "permission",
+          "type": "string",
+          "in": "body",
+          "description": "Deprecated. The permission that new repositories will be added to the team with when none is specified. Can be one of:\n* pull - team members can pull, but not push to or administer newly-added repositories.\n* push - team members can pull and push, but not administer newly-added repositories.\n* admin - team members can pull, push and administer newly-added repositories.Default: pull"
+        }
+      },
+      "field_6": {
+        "field_type": "body",
+        "fields": {
+          "name": "parent_team_id",
+          "type": "integer or null",
+          "in": "body",
+          "description": "The ID of a team to set as the parent team."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a team (Legacy)",
+      "method": "delete",
+      "endpoint": "/teams/{team_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List team projects (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/projects",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Check team permissions for a project (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/projects/{project_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Add or update team project permissions (Legacy)",
+      "method": "put",
+      "endpoint": "/teams/{team_id}/projects/{project_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "permission",
+          "type": "string",
+          "in": "body",
+          "description": "The permission to grant to the team for this project. Can be one of:\n* read - team members can read, but not write to or administer this project.\n* write - team members can read and write, but not administer this project.\n* admin - team members can read, write and administer this project.\nDefault: the team's permission attribute will be used to determine what permission to grant the team on this project. Note that, if you choose not to pass any parameters, you'll need to set Content-Length to zero when calling out to this endpoint. For more information, see \"HTTP verbs.\""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a project from a team (Legacy)",
+      "method": "delete",
+      "endpoint": "/teams/{team_id}/projects/{project_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "project_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List team repositories (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/repos",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Check team permissions for a repository (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/repos/{owner}/{repo}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Add or update team repository permissions (Legacy)",
+      "method": "put",
+      "endpoint": "/teams/{team_id}/repos/{owner}/{repo}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "permission",
+          "type": "string",
+          "in": "body",
+          "description": "The permission to grant the team on this repository. Can be one of:\n* pull - team members can pull, but not push to or administer this repository.\n* push - team members can pull and push, but not administer this repository.\n* admin - team members can pull, push and administer this repository.  \nIf no permission is specified, the team's permission attribute will be used to determine what permission to grant the team on this repository."
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove a repository from a team (Legacy)",
+      "method": "delete",
+      "endpoint": "/teams/{team_id}/repos/{owner}/{repo}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "owner",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "repo",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List child teams (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/teams",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List teams for the authenticated user",
+      "method": "get",
+      "endpoint": "/user/teams",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List discussion comments",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "One of asc (ascending) or desc (descending).Default: desc"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a discussion comment",
+      "method": "post",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The discussion comment's body text."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a discussion comment",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a discussion comment",
+      "method": "patch",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The discussion comment's body text."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a discussion comment",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List discussion comments (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/discussions/{discussion_number}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "One of asc (ascending) or desc (descending).Default: desc"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a discussion comment (Legacy)",
+      "method": "post",
+      "endpoint": "/teams/{team_id}/discussions/{discussion_number}/comments",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The discussion comment's body text."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a discussion comment (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a discussion comment (Legacy)",
+      "method": "patch",
+      "endpoint": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The discussion comment's body text."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a discussion comment (Legacy)",
+      "method": "delete",
+      "endpoint": "/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "comment_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List discussions",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "One of asc (ascending) or desc (descending).Default: desc"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      },
+      "field_6": {
+        "field_type": "query",
+        "fields": {
+          "name": "pinned",
+          "type": "string",
+          "in": "query",
+          "description": "Pinned discussions only filter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a discussion",
+      "method": "post",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "title",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The discussion post's title."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The discussion post's body text."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "private",
+          "type": "boolean",
+          "in": "body",
+          "description": "Private posts are only visible to team members, organization owners, and team maintainers. Public posts are visible to all members of the organization. Set to true to create a private post."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a discussion",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a discussion",
+      "method": "patch",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "title",
+          "type": "string",
+          "in": "body",
+          "description": "The discussion post's title."
+        }
+      },
+      "field_5": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "The discussion post's body text."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a discussion",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List discussions (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/discussions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "direction",
+          "type": "string",
+          "in": "query",
+          "description": "One of asc (ascending) or desc (descending).Default: desc"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create a discussion (Legacy)",
+      "method": "post",
+      "endpoint": "/teams/{team_id}/discussions",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "title",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The discussion post's title."
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "Required. The discussion post's body text."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "private",
+          "type": "boolean",
+          "in": "body",
+          "description": "Private posts are only visible to team members, organization owners, and team maintainers. Public posts are visible to all members of the organization. Set to true to create a private post."
+        }
+      }
+    },
+    {
+      "namespace_description": "Get a discussion (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/discussions/{discussion_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Update a discussion (Legacy)",
+      "method": "patch",
+      "endpoint": "/teams/{team_id}/discussions/{discussion_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "title",
+          "type": "string",
+          "in": "body",
+          "description": "The discussion post's title."
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "body",
+          "type": "string",
+          "in": "body",
+          "description": "The discussion post's body text."
+        }
+      }
+    },
+    {
+      "namespace_description": "Delete a discussion (Legacy)",
+      "method": "delete",
+      "endpoint": "/teams/{team_id}/discussions/{discussion_number}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "discussion_number",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get an external group",
+      "method": "get",
+      "endpoint": "/orgs/{org}/external-group/{group_id}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "group_id",
+          "type": "integer",
+          "in": "path",
+          "description": "group_id parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List external groups in an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/external-groups",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page token"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "display_name",
+          "type": "string",
+          "in": "query",
+          "description": "Limits the list to groups containing the text in the group name"
+        }
+      }
+    },
+    {
+      "namespace_description": "List a connection between an external group and a team",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/external-groups",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Update the connection between an external group and a team",
+      "method": "patch",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/external-groups",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "group_id",
+          "type": "integer",
+          "in": "body",
+          "description": "Required. External Group Id"
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove the connection between an external group and a team",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/external-groups",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "List pending team invitations",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/invitations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List team members",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/members",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "role",
+          "type": "string",
+          "in": "query",
+          "description": "Filters members returned by their role in the team. Can be one of:\n* member - normal members of the team.\n* maintainer - team maintainers.\n* all - all members of the team.Default: all"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_5": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get team membership for a user",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Add or update team membership for a user",
+      "method": "put",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "role",
+          "type": "string",
+          "in": "body",
+          "description": "The role that this user should have in the team. Can be one of:\n* member - a normal member of the team.\n* maintainer - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.Default: member"
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove team membership for a user",
+      "method": "delete",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/memberships/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List pending team invitations (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/invitations",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "List team members (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/members",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "role",
+          "type": "string",
+          "in": "query",
+          "description": "Filters members returned by their role in the team. Can be one of:\n* member - normal members of the team.\n* maintainer - team maintainers.\n* all - all members of the team.Default: all"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_4": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "integer",
+          "in": "query",
+          "description": "Page number of the results to fetch.Default: 1"
+        }
+      }
+    },
+    {
+      "namespace_description": "Get team member (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/members/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Add team member (Legacy)",
+      "method": "put",
+      "endpoint": "/teams/{team_id}/members/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove team member (Legacy)",
+      "method": "delete",
+      "endpoint": "/teams/{team_id}/members/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Get team membership for a user (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/memberships/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Add or update team membership for a user (Legacy)",
+      "method": "put",
+      "endpoint": "/teams/{team_id}/memberships/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "role",
+          "type": "string",
+          "in": "body",
+          "description": "The role that this user should have in the team. Can be one of:\n* member - a normal member of the team.\n* maintainer - a team maintainer. Able to add/remove other team members, promote other team members to team maintainer, and edit the team's name and description.Default: member"
+        }
+      }
+    },
+    {
+      "namespace_description": "Remove team membership for a user (Legacy)",
+      "method": "delete",
+      "endpoint": "/teams/{team_id}/memberships/{username}",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "username",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "List IdP groups for an organization",
+      "method": "get",
+      "endpoint": "/orgs/{org}/team-sync/groups",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "query",
+        "fields": {
+          "name": "per_page",
+          "type": "integer",
+          "in": "query",
+          "description": "Results per page (max 100)Default: 30"
+        }
+      },
+      "field_3": {
+        "field_type": "query",
+        "fields": {
+          "name": "page",
+          "type": "string",
+          "in": "query",
+          "description": "Page token"
+        }
+      }
+    },
+    {
+      "namespace_description": "List IdP groups for a team",
+      "method": "get",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/team-sync/group-mappings",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      }
+    },
+    {
+      "namespace_description": "Create or update IdP group connections",
+      "method": "patch",
+      "endpoint": "/orgs/{org}/teams/{team_slug}/team-sync/group-mappings",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "org",
+          "type": "string",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_slug",
+          "type": "string",
+          "in": "path",
+          "description": "team_slug parameter"
+        }
+      },
+      "field_3": {
+        "field_type": "body",
+        "fields": {
+          "name": "groups",
+          "type": "array of objects",
+          "in": "body",
+          "description": "The IdP groups you want to connect to a GitHub team. When updating, the new groups object will replace the original one. You must include any existing groups that you don't want to remove."
+        }
+      },
+      "field_4": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thegroupsitemsName (Type)Descriptiongroup_id (string)Required. ID of the IdP group.group_name (string)Required. Name of the IdP group.group_description (string)Required. Description of the IdP group.",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      }
+    },
+    {
+      "namespace_description": "List IdP groups for a team (Legacy)",
+      "method": "get",
+      "endpoint": "/teams/{team_id}/team-sync/group-mappings",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      }
+    },
+    {
+      "namespace_description": "Create or update IdP group connections (Legacy)",
+      "method": "patch",
+      "endpoint": "/teams/{team_id}/team-sync/group-mappings",
+      "field_0": {
+        "field_type": "header",
+        "fields": {
+          "name": "accept",
+          "type": "string",
+          "in": "header",
+          "description": "Setting toapplication/vnd.github.v3+json is recommended."
+        }
+      },
+      "field_1": {
+        "field_type": "path",
+        "fields": {
+          "name": "team_id",
+          "type": "integer",
+          "in": "path",
+          "description": ""
+        }
+      },
+      "field_2": {
+        "field_type": "body",
+        "fields": {
+          "name": "groups",
+          "type": "array of objects",
+          "in": "body",
+          "description": "Required. The IdP groups you want to connect to a GitHub team. When updating, the new groups object will replace the original one. You must include any existing groups that you don't want to remove."
+        }
+      },
+      "field_3": {
+        "field_type": null,
+        "fields": {
+          "name": "Properties of thegroupsitemsName (Type)Descriptiongroup_id (string)Required. ID of the IdP group.group_name (string)Required. Name of the IdP group.group_description (string)Required. Description of the IdP group.id (string)name (string)description (string)",
+          "type": null,
+          "in": null,
+          "description": null
+        }
+      },
+      "field_4": {
+        "field_type": "body",
+        "fields": {
+          "name": "synced_at",
+          "type": "string",
+          "in": "body",
+          "description": ""
+        }
+      }
+    }
+  ]
+}
