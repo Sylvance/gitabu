@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 require "json"
+require "fileutils"
 
 require_relative "builder"
-require "fileutils"
 require_relative "items"
 require_relative "scraper"
 

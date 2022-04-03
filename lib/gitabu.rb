@@ -7,6 +7,7 @@ require_relative "gitabu/client"
 require_relative "gitabu/generator"
 require_relative "gitabu/http_client"
 require_relative "gitabu/items"
+require_relative "gitabu/run"
 require_relative "gitabu/scraper"
 require_relative "gitabu/version"
 

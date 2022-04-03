@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative "generator"
+
 # Ruby gem that helps you work with Github API.
 module Gitabu
   # Run class to introduce generated classes.
