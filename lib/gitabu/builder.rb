@@ -8,16 +8,18 @@ module Gitabu
   class Builder
     include ERB::Util
 
-    attr_accessor :items, :target, :template
+    attr_accessor :class_name, :items, :target, :template, :version
 
-    def self.save(items:, target:, template:)
-      new(items, target, template).save
+    def self.save(class_name:, items:, target:, template:, version:)
+      new(class_name, items, target, template, version).save
     end
 
-    def initialize(items, target, template)
-      @items     = items
-      @target    = target
-      @template  = template
+    def initialize(class_name, items, target, template, version)
+      @class_name = class_name
+      @items      = items
+      @target     = target
+      @template   = template
+      @version    = version
     end
 
     def save

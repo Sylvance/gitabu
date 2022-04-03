@@ -2,8 +2,11 @@
 
 require "ostruct"
 
+require_relative "gitabu/builder"
 require_relative "gitabu/client"
+require_relative "gitabu/generator"
 require_relative "gitabu/http_client"
+require_relative "gitabu/items"
 require_relative "gitabu/scraper"
 require_relative "gitabu/version"
 

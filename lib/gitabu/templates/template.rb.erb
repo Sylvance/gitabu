@@ -1,11 +1,18 @@
 # frozen_string_literal: true
 
+# INFO ON GENERATED CODE
+#
+# This file is generated.
+# See the contribution guide on how to improve the code.
+#
+# INFO ON GENERATED CODE
+
 # Ruby gem that helps you work with Github API.
 module Gitabu
   # API module
   module Api
-    # Github Version <%= @version_number %>
-    module V<%= @version_number %>
+    # Github Version <%= @version %>
+    module V<%= @version %>
       # Class to display <%= @class_name %> result
       class <%= @class_name %>Result
         attr_accessor :result, :message
@@ -28,27 +35,32 @@ module Gitabu
 
       # <%= @class_name %> endpoints.
       class <%= @class_name %>
-      <% for @item in @items %>
-        def self.<%= @item['method_name'] %>(<%= @item['params_key_value_flat'] %>)
-          new.<%= @item['method_name'] %>(<%= @item['params_flat'] %>)
+      <% for item in @items %>
+        def self.<%= item['method_name'] %><%= item['params_key_value'] %>
+          new.<%= item['method_name'] %><%= item['path_params_flat'] %>
         end
       <% end %>
 
         private
-      <% for @item in @items %>
-        def <%= @item['method_name'] %>(<%= @item['params_flat'] %>)
-          uri = "#{Gitabu::BASE_URL}<%= @item['endpoint'] %>"
-          headers = "<%= @item['headers'] %>"
-          params = "<%= @item['params'] %>" unless options.nil?
-          body = "<%= @item['body'] %>"
-          auth = "<%= @item['auth'] %>"
+      <% for item in @items %>
+        # <%= item['description'] %>
+        #
+        <%= item['documentation'] %>
+        #
+        # @return <%= @class_name %>Result, <%= @class_name %>ErrorResult
+        def <%= item['method_name'] %><%= item['path_params_flat'] %>
+          auth    = <%= item['auth'] %>
+          body    = <%= item['body'] %>
+          headers = <%= item['headers'] %>
+          params  = <%= item['params'] %>
+          uri     = "#{Gitabu::BASE_URL}<%= item['endpoint'] %>"
 
-          http_call = Gitabu::HttpClient.call(auth: auth, body: body, headers: headers, method: :<%= @item['method'] %>, params: params, uri: uri)
+          http_call = Gitabu::HttpClient.call(auth: auth, body: body, headers: headers, method: :<%= item['http_method'] %>, params: params, uri: uri)
 
           if http_call.successful?
-            <%= @class_name %>Result.new(result: http_call, message: "Successful call to <%= @item['description'] %> endpoint.")
+            <%= @class_name %>Result.new(result: http_call, message: "Successful call to endpoint. #{http_call.result.message}")
           else
-            <%= @class_name %>ErrorResult.new(result: http_call, message: "Failure while calling <%= @item['description'] %> endpoint.")
+            <%= @class_name %>ErrorResult.new(result: http_call, message: "Failure while calling endpoint. #{http_call.result.message}")
           end
         end
       <% end %>
